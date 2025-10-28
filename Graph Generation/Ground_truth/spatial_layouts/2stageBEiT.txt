@@ -1,0 +1,42 @@
+Source File: 2stageBEiT.pdf
+================================================================================
+
+The diagram is organized into a two-stage horizontal layout with a mix of hierarchical and sequential elements:
+
+**Stage 1:**
+
+- **Layout:** Horizontal flow from left to right.
+- **Components:**
+  - Left: Original Image (single block)
+  - Center-left: Tokenizer (single block)
+  - Center-right: Numerical token representation (array of numbers)
+  - Right: Decoder (single block)
+  - Far right: Reconstructed Image (single block)
+- **Flow:** Straight horizontal flow from the Original Image through to the Reconstructed Image via Tokenizer, token representation, and Decoder.
+
+**Stage 2:**
+
+- **Layout:** Mixed hierarchical and sequential.
+- **Components:**
+  - Top Left: Image input flowing into Tokenizer (single block with lock icon)
+  - Right of Tokenizer: Token output with sample highlighted numbers.
+  - Beneath the Tokenizer: Masked Image Modeling Head (horizontal component spanning the width)
+  - Below Masked Image Modeling Head: BEiT Encoder (a large single block directly below)
+  - Bottom: Sequence of Patch Embedding and Position Embedding aligned horizontally and indexed numerically.
+  - Bottom Left: Image patches arranged in a 4x4 grid.
+- **Flow:** 
+  - Begins with image input to Tokenizer (left to right).
+  - Tokens flow downwards to the Masked Image Modeling Head and then to the BEiT Encoder.
+  - Encoder outputs are further processed through Patch Embedding and Position Embedding (left to right).
+
+**Connections:**
+
+- Stage 1 and Stage 2 are distinct but appear connected through the concept of using image data.
+- In Stage 2, connections are primarily top-to-bottom within the BEiT Encoder flow and left-to-right for Patch Embedding.
+
+**Grouping:**
+
+- **Stage 1** is linear and straightforward, focusing on tokenization and reconstruction.
+- **Stage 2** involves a layered approach, with a focus on embedding and encoding processes, highlighting a more complex, layered architecture.
+
+The diagram showcases a clear division between the simple flow of Stage 1 and the intricate embedding and modeling processes in Stage 2.

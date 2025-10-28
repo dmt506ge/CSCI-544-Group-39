@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4d4d4d"/>
+    </marker>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #1a1a1a; font-weight: 600; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #1a1a1a; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #333333; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 10px; fill: #555555; }
+      .box { fill: #ffffff; stroke: #7f8c8d; stroke-width: 1.5; }
+      .wire { stroke: #4d4d4d; stroke-width: 2.2; fill: none; }
+      .dot { fill: #e24a3b; opacity: 0.9; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff"/>
+
+  <!-- Top Section Title -->
+  <text x="80" y="100" class="title">Point cloud adapter</text>
+
+  <!-- Top Left Block: input features -->
+  <g id="top-left-block">
+    <rect x="80" y="150" width="220" height="120" rx="8" class="box"/>
+    <!-- inner colored squares 5x3 -->
+    <!-- row 1 -->
+    <rect x="100" y="170" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="124" y="170" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="148" y="170" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="172" y="170" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="196" y="170" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <!-- row 2 -->
+    <rect x="100" y="194" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="124" y="194" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="148" y="194" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="172" y="194" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="196" y="194" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <!-- row 3 -->
+    <rect x="100" y="218" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="124" y="218" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="148" y="218" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="172" y="218" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="196" y="218" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <text x="90" y="165" class="tiny">current</text>
+    <text x="190" y="285" class="small" text-anchor="middle">input features</text>
+  </g>
+
+  <!-- Mid Block after sparsify -->
+  <g id="mid-block">
+    <rect x="360" y="160" width="160" height="100" rx="8" class="box"/>
+    <!-- teal squares -->
+    <rect x="380" y="180" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="404" y="180" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="428" y="180" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="380" y="204" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="404" y="204" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="428" y="204" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <text x="370" y="170" class="tiny">query input</text>
+    <text x="440" y="280" class="small" text-anchor="middle">sparse voxels</text>
+  </g>
+
+  <!-- Aggregated Features Block -->
+  <g id="agg-block">
+    <rect x="620" y="150" width="220" height="120" rx="8" class="box"/>
+    <!-- red squares -->
+    <rect x="640" y="170" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="664" y="170" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="688" y="170" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="712" y="170" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="736" y="170" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="640" y="194" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="664" y="194" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="688" y="194" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="712" y="194" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <rect x="736" y="194" width="18" height="18" fill="#e24a3b" stroke="#c0392b" stroke-width="1"/>
+    <text x="630" y="165" class="tiny">aggregated</text>
+    <text x="730" y="285" class="small" text-anchor="middle">aggregated voxels</text>
+  </g>
+
+  <!-- NMS Block -->
+  <g id="nms-block">
+    <rect x="870" y="180" width="120" height="60" rx="8" class="box"/>
+    <text x="930" y="212" class="label" text-anchor="middle">3D NMS</text>
+  </g>
+
+  <!-- Instance masks area -->
+  <g id="mask-area">
+    <rect x="1015" y="155" width="160" height="110" rx="10" class="box"/>
+    <g id="scatter">
+      <circle cx="1035" cy="180" r="4" class="dot"/>
+      <circle cx="1060" cy="195" r="5" class="dot"/>
+      <circle cx="1085" cy="170" r="4" class="dot"/>
+      <circle cx="1110" cy="210" r="6" class="dot"/>
+      <circle cx="1135" cy="185" r="4" class="dot"/>
+      <circle cx="1160" cy="205" r="5" class="dot"/>
+      <circle cx="1150" cy="170" r="4" class="dot"/>
+      <circle cx="1045" cy="215" r="5" class="dot"/>
+    </g>
+    <text x="1025" y="168" class="tiny">masks</text>
+    <text x="1095" y="280" class="small" text-anchor="middle">instance masks</text>
+  </g>
+
+  <!-- Top section arrows and labels -->
+  <!-- sparsify: left to mid -->
+  <line x1="300" y1="210" x2="360" y2="210" class="wire" marker-end="url(#arrow)"/>
+  <text x="330" y="190" class="label" text-anchor="middle">sparsify</text>
+
+  <!-- attention based aggregation: mid to aggregated -->
+  <line x1="520" y1="210" x2="620" y2="210" class="wire" marker-end="url(#arrow)"/>
+  <text x="570" y="170" class="small" text-anchor="middle">Aggregated = Attention(Queue_t, Current Features_t)</text>
+  <text x="570" y="190" class="label" text-anchor="middle">attention based aggregation</text>
+
+  <!-- aggregated to NMS -->
+  <line x1="840" y1="210" x2="870" y2="210" class="wire" marker-end="url(#arrow)"/>
+  <text x="905" y="185" class="small" text-anchor="middle">on aggregated features</text>
+
+  <!-- NMS to instance masks -->
+  <line x1="990" y1="210" x2="1015" y2="210" class="wire" marker-end="url(#arrow)"/>
+
+  <!-- memory query loop: updated memory to attention input, routed around title -->
+  <path d="M840 570 L1120 570 L1120 130 L440 130 L440 160" class="wire" marker-end="url(#arrow)"/>
+  <text x="980" y="120" class="label" text-anchor="middle">memory query</text>
+
+  <!-- Top to bottom vertical link from top input to voxelize -->
+  <path d="M190 270 L190 480 L220 480 L220 520" class="wire" marker-end="url(#arrow)"/>
+  <text x="232" y="445" class="label">add</text>
+
+  <!-- Bottom Section Title -->
+  <text x="80" y="470" class="title">Point cloud memory</text>
+
+  <!-- Bottom left voxelize block -->
+  <g id="voxelize-block">
+    <rect x="140" y="520" width="160" height="100" rx="8" class="box"/>
+    <!-- teal squares -->
+    <rect x="160" y="540" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="184" y="540" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="208" y="540" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="232" y="540" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="160" y="564" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="184" y="564" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="208" y="564" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="232" y="564" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <text x="150" y="535" class="tiny">current</text>
+    <text x="220" y="512" class="label" text-anchor="middle">voxelize</text>
+  </g>
+
+  <!-- Center previous memory tall stack -->
+  <g id="previous-memory">
+    <rect x="380" y="490" width="140" height="160" rx="8" class="box"/>
+    <!-- gray squares grid -->
+    <rect x="395" y="505" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="415" y="505" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="435" y="505" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="455" y="505" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+
+    <rect x="395" y="525" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="415" y="525" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="435" y="525" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="455" y="525" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+
+    <rect x="395" y="545" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="415" y="545" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="435" y="545" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="455" y="545" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+
+    <rect x="395" y="565" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="415" y="565" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="435" y="565" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="455" y="565" width="16" height="16" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+
+    <text x="388" y="500" class="tiny">previous</text>
+    <text x="450" y="482" class="label" text-anchor="middle">previous memory</text>
+  </g>
+
+  <!-- Right updated memory -->
+  <g id="updated-memory">
+    <rect x="620" y="500" width="220" height="140" rx="8" class="box"/>
+    <!-- composite colored squares -->
+    <rect x="640" y="520" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="664" y="520" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="688" y="520" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="712" y="520" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="736" y="520" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+
+    <rect x="640" y="544" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="664" y="544" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="688" y="544" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="712" y="544" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="736" y="544" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+
+    <rect x="640" y="568" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="664" y="568" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+    <rect x="688" y="568" width="18" height="18" fill="#2cb1a6" stroke="#2b908f" stroke-width="1"/>
+    <rect x="712" y="568" width="18" height="18" fill="#f2c94c" stroke="#caa531" stroke-width="1"/>
+    <rect x="736" y="568" width="18" height="18" fill="#bdbdbd" stroke="#9a9a9a" stroke-width="1"/>
+
+    <text x="630" y="515" class="tiny">updated</text>
+    <text x="730" y="492" class="label" text-anchor="middle">updated memory</text>
+  </g>
+
+  <!-- Bottom linear arrows and labels -->
+  <line x1="300" y1="570" x2="380" y2="570" class="wire" marker-end="url(#arrow)"/>
+  <text x="340" y="555" class="label" text-anchor="middle">merge</text>
+
+  <line x1="520" y1="570" x2="620" y2="570" class="wire" marker-end="url(#arrow)"/>
+  <text x="570" y="555" class="label" text-anchor="middle">update</text>
+
+  <!-- Concise queue rule near bottom arrows -->
+  <text x="570" y="610" class="small" text-anchor="middle">Queue_t = Queue_{t-1} ∪ Current Features_t</text>
+</svg>

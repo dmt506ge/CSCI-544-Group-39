@@ -1,0 +1,262 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8B4789" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#228B22" />
+    </marker>
+    <linearGradient id="featureGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B9BD1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A7BA7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="memoryGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F4A460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CD853F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="adapterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90C695;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B9B6E;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#F8F9FA"/>
+  
+  <!-- Background shading for paths -->
+  <rect x="40" y="20" width="1120" height="320" fill="#E8F4F8" opacity="0.3" rx="10"/>
+  <rect x="40" y="400" width="1120" height="360" fill="#F8F4E8" opacity="0.3" rx="10"/>
+  
+  <!-- Top Section Box -->
+  <rect x="250" y="30" width="900" height="300" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5,5" rx="5"/>
+  
+  <!-- Bottom Section Box -->
+  <rect x="50" y="410" width="1100" height="340" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5,5" rx="5"/>
+  
+  <!-- Path Labels -->
+  <text x="130" y="25" font-family="Arial, sans-serif" font-size="13" fill="#2C5F8D" font-weight="bold">2D Image Feature Processing Path</text>
+  <text x="130" y="400" font-family="Arial, sans-serif" font-size="13" fill="#8B6914" font-weight="bold">3D Context Management Path</text>
+  
+  <!-- Input Feature (layered stack) -->
+  <rect x="70" y="100" width="120" height="15" fill="url(#featureGrad)" stroke="#333" stroke-width="1.5" opacity="0.3"/>
+  <rect x="70" y="110" width="120" height="15" fill="url(#featureGrad)" stroke="#333" stroke-width="1.5" opacity="0.5"/>
+  <rect x="70" y="120" width="120" height="15" fill="url(#featureGrad)" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+  <rect x="70" y="130" width="120" height="15" fill="url(#featureGrad)" stroke="#333" stroke-width="1.5"/>
+  <rect x="70" y="140" width="120" height="15" fill="url(#featureGrad)" stroke="#333" stroke-width="1.5"/>
+  <text x="130" y="175" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Input feature</text>
+  <text x="130" y="190" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">(C channels, H x W)</text>
+  
+  <!-- Image Memory Section (highlighted) -->
+  <rect x="280" y="60" width="280" height="230" fill="#FFF8DC" stroke="#D2691E" stroke-width="3" rx="5"/>
+  <text x="420" y="85" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Image Memory</text>
+  <text x="420" y="100" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle" font-style="italic">(Temporal Information Storage)</text>
+  
+  <!-- Reorganize block -->
+  <rect x="300" y="115" width="100" height="40" fill="#FFE4B5" stroke="#333" stroke-width="1.5" rx="3"/>
+  <text x="350" y="140" font-family="Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">Reorganize</text>
+  
+  <!-- Shift Out block -->
+  <rect x="300" y="170" width="100" height="40" fill="#FFDAB9" stroke="#333" stroke-width="1.5" rx="3"/>
+  <text x="350" y="187" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">Shift Out</text>
+  <text x="350" y="202" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">(channels at t)</text>
+  
+  <!-- Memory Buffer (layered with time indicators) -->
+  <g>
+    <rect x="430" y="115" width="80" height="10" fill="url(#memoryGrad)" stroke="#333" stroke-width="1" opacity="0.4"/>
+    <rect x="430" y="123" width="80" height="10" fill="url(#memoryGrad)" stroke="#333" stroke-width="1" opacity="0.6"/>
+    <rect x="430" y="131" width="80" height="10" fill="url(#memoryGrad)" stroke="#333" stroke-width="1" opacity="0.8"/>
+    <rect x="430" y="139" width="80" height="10" fill="url(#memoryGrad)" stroke="#333" stroke-width="1"/>
+    <text x="470" y="165" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">Memory Buffer</text>
+    <text x="470" y="178" font-family="Arial, sans-serif" font-size="9" fill="#666" text-anchor="middle">(temporal storage)</text>
+    <text x="515" y="127" font-family="Arial, sans-serif" font-size="9" fill="#8B4513" font-style="italic">t-3</text>
+    <text x="515" y="135" font-family="Arial, sans-serif" font-size="9" fill="#8B4513" font-style="italic">t-2</text>
+    <text x="515" y="143" font-family="Arial, sans-serif" font-size="9" fill="#8B4513" font-style="italic">t-1</text>
+  </g>
+  
+  <!-- Add/Aggregate block -->
+  <rect x="300" y="230" width="100" height="40" fill="#E6F3FF" stroke="#333" stroke-width="1.5" rx="3"/>
+  <text x="350" y="252" font-family="Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">Aggregate</text>
+  <text x="350" y="264" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">(Temporal Fusion)</text>
+  
+  <!-- Shift In indication -->
+  <rect x="430" y="230" width="80" height="40" fill="#FFFACD" stroke="#333" stroke-width="1.5" rx="3"/>
+  <text x="470" y="247" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">Shift In</text>
+  <text x="470" y="260" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle">(memory at t-1)</text>
+  
+  <!-- Image Adapter (2D Conv) - highlighted -->
+  <rect x="640" y="80" width="150" height="180" fill="#E8F5E9" stroke="#2E7D32" stroke-width="3" rx="5"/>
+  <text x="715" y="105" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Image Adapter</text>
+  <text x="715" y="125" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">(2D Convolution)</text>
+  <text x="715" y="138" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle" font-style="italic">(dilated/recurrent layers)</text>
+  
+  <!-- Conv layers visualization -->
+  <rect x="665" y="153" width="100" height="12" fill="url(#adapterGrad)" stroke="#333" stroke-width="1" opacity="0.5"/>
+  <rect x="665" y="168" width="100" height="12" fill="url(#adapterGrad)" stroke="#333" stroke-width="1" opacity="0.7"/>
+  <rect x="665" y="183" width="100" height="12" fill="url(#adapterGrad)" stroke="#333" stroke-width="1" opacity="0.9"/>
+  <rect x="665" y="198" width="100" height="12" fill="url(#adapterGrad)" stroke="#333" stroke-width="1"/>
+  <text x="715" y="230" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle" font-weight="bold">Temporal</text>
+  <text x="715" y="245" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle" font-weight="bold">Aggregation</text>
+  
+  <!-- Output from Image Adapter -->
+  <rect x="870" y="145" width="120" height="15" fill="url(#adapterGrad)" stroke="#333" stroke-width="1.5" opacity="0.3"/>
+  <rect x="870" y="155" width="120" height="15" fill="url(#adapterGrad)" stroke="#333" stroke-width="1.5" opacity="0.5"/>
+  <rect x="870" y="165" width="120" height="15" fill="url(#adapterGrad)" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+  <rect x="870" y="175" width="120" height="15" fill="url(#adapterGrad)" stroke="#333" stroke-width="1.5"/>
+  <text x="930" y="210" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Output features</text>
+  <text x="930" y="225" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">(with temporal context)</text>
+  
+  <!-- 3D Memory (cube representation) - highlighted -->
+  <g transform="translate(120, 480)">
+    <rect x="-10" y="-10" width="140" height="200" fill="#E6D5F0" opacity="0.3" rx="5"/>
+    <!-- Back face -->
+    <polygon points="20,20 100,20 120,0 40,0" fill="#B8A8D0" stroke="#333" stroke-width="2" opacity="0.7"/>
+    <!-- Top face -->
+    <polygon points="0,40 80,40 100,20 20,20" fill="#D4C5E8" stroke="#333" stroke-width="2"/>
+    <!-- Front face -->
+    <polygon points="0,40 80,40 80,120 0,120" fill="#9A87B5" stroke="#333" stroke-width="2"/>
+    <!-- Right face -->
+    <polygon points="80,40 100,20 100,100 80,120" fill="#C0B0D8" stroke="#333" stroke-width="2"/>
+    <text x="40" y="150" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">3D Memory</text>
+    <text x="40" y="168" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">(Global Context)</text>
+    <text x="40" y="182" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle" font-style="italic">(spatial + temporal)</text>
+  </g>
+  
+  <!-- Project operation -->
+  <rect x="320" y="530" width="100" height="50" fill="#FFE4E1" stroke="#333" stroke-width="1.5" rx="3"/>
+  <text x="370" y="560" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Project</text>
+  
+  <!-- Processing Grid (Aggregate/Densify) -->
+  <rect x="500" y="480" width="280" height="220" fill="#F0FFF0" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="640" y="505" font-family="Arial, sans-serif" font-size="15" fill="#333" text-anchor="middle" font-weight="bold">Aggregate / Densify</text>
+  <text x="640" y="520" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle" font-style="italic">(3D processing grid)</text>
+  
+  <!-- Grid representation -->
+  <g transform="translate(530, 535)">
+    <rect x="0" y="0" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="30" y="0" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="60" y="0" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="90" y="0" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="120" y="0" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="150" y="0" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="180" y="0" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    
+    <rect x="0" y="30" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="30" y="30" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="60" y="30" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="90" y="30" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="120" y="30" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="150" y="30" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="180" y="30" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    
+    <rect x="0" y="60" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="30" y="60" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="60" y="60" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="90" y="60" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="120" y="60" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="150" y="60" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="180" y="60" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    
+    <rect x="0" y="90" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="30" y="90" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="60" y="90" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="90" y="90" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="120" y="90" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+    <rect x="150" y="90" width="30" height="30" fill="#D0E8D0" stroke="#666" stroke-width="1"/>
+    <rect x="180" y="90" width="30" height="30" fill="#C8E0C8" stroke="#666" stroke-width="1"/>
+  </g>
+  
+  <!-- 3D to 2D Adapter -->
+  <rect x="860" y="530" width="240" height="120" fill="#FFF4E6" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="980" y="555" font-family="Arial, sans-serif" font-size="15" fill="#333" text-anchor="middle" font-weight="bold">3D to 2D Adapter</text>
+  <text x="980" y="570" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle" font-style="italic">(dimensional transformation)</text>
+  
+  <!-- 2D Grid -->
+  <g transform="translate(905, 582)">
+    <rect x="0" y="0" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="20" y="0" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="40" y="0" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="60" y="0" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="80" y="0" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="100" y="0" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="120" y="0" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    
+    <rect x="0" y="20" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="20" y="20" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="40" y="20" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="60" y="20" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="80" y="20" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="100" y="20" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="120" y="20" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    
+    <rect x="0" y="40" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="20" y="40" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="40" y="40" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="60" y="40" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="80" y="40" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+    <rect x="100" y="40" width="20" height="20" fill="#FFDBB8" stroke="#666" stroke-width="1"/>
+    <rect x="120" y="40" width="20" height="20" fill="#FFE5CC" stroke="#666" stroke-width="1"/>
+  </g>
+  
+  <!-- Context Fusion Module -->
+  <rect x="610" y="310" width="140" height="50" fill="#FFF0F5" stroke="#8B4789" stroke-width="2" rx="5"/>
+  <text x="680" y="332" font-family="Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">Context Fusion</text>
+  <text x="680" y="347" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">(3D + 2D Integration)</text>
+  
+  <!-- Arrows and Flow -->
+  <!-- Input to Image Memory -->
+  <line x1="190" y1="130" x2="280" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Reorganize to Shift Out -->
+  <line x1="350" y1="155" x2="350" y2="170" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Shift Out to Memory Buffer -->
+  <line x1="400" y1="190" x2="430" y2="145" stroke="#D2691E" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Memory Buffer to Shift In -->
+  <line x1="470" y1="178" x2="470" y2="230" stroke="#D2691E" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Shift In to Aggregate -->
+  <line x1="430" y1="250" x2="400" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Aggregate to Image Adapter -->
+  <line x1="350" y1="270" x2="350" y2="290" stroke="#333" stroke-width="2"/>
+  <line x1="350" y1="290" x2="625" y2="290" stroke="#333" stroke-width="2"/>
+  <line x1="625" y1="290" x2="640" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Image Adapter to Output -->
+  <line x1="790" y1="170" x2="870" y2="170" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 3D Memory to Project -->
+  <line x1="240" y1="555" x2="320" y2="555" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Project to Processing Grid -->
+  <line x1="420" y1="555" x2="500" y2="555" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Processing Grid to 3D to 2D Adapter -->
+  <line x1="780" y1="590" x2="860" y2="590" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Output features to Context Fusion -->
+  <line x1="930" y1="225" x2="930" y2="295" stroke="#333" stroke-width="2"/>
+  <line x1="930" y1="295" x2="750" y2="335" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Context Fusion to 3D Memory (feedback) -->
+  <line x1="610" y1="335" x2="240" y2="335" stroke="#8B4789" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="240" y1="335" x2="200" y2="480" stroke="#8B4789" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrowhead-purple)"/>
+  
+  <!-- 3D to 2D Adapter to Context Fusion (global context flow) -->
+  <line x1="980" y1="530" x2="980" y2="380" stroke="#228B22" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="980" y1="380" x2="680" y2="380" stroke="#228B22" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="680" y1="380" x2="680" y2="360" stroke="#228B22" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrowhead-green)"/>
+  
+  <!-- Labels for connections -->
+  <text x="250" y="320" font-family="Arial, sans-serif" font-size="11" fill="#8B4789" font-style="italic">features to 3D memory</text>
+  <text x="800" y="370" font-family="Arial, sans-serif" font-size="11" fill="#228B22" font-style="italic">global context from 3D</text>
+  
+  <!-- Temporal indicators -->
+  <text x="215" y="150" font-family="Arial, sans-serif" font-size="10" fill="#8B4513" font-weight="bold">t</text>
+  <text x="515" y="252" font-family="Arial, sans-serif" font-size="10" fill="#8B4513" font-weight="bold">t-1</text>
+  
+</svg>

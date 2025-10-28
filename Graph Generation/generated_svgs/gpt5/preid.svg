@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#616161"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="620" fill="#ffffff"/>
+
+  <g id="left-stage">
+    <rect x="40" y="250" width="180" height="110" rx="8" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2"/>
+    <text x="130" y="285" font-family="Arial" font-size="16" text-anchor="middle" fill="#0d47a1">Multi camera system</text>
+    <text x="130" y="307" font-family="Arial" font-size="12" text-anchor="middle" fill="#0d47a1">Curated person data</text>
+  </g>
+
+  <g id="middle-input">
+    <rect x="260" y="250" width="220" height="110" rx="8" fill="#f1f8e9" stroke="#43a047" stroke-width="2"/>
+    <text x="370" y="285" font-family="Arial" font-size="16" text-anchor="middle" fill="#1b5e20">Images and videos</text>
+    <text x="370" y="307" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">Training and gallery</text>
+    <rect x="275" y="320" width="120" height="28" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="335" y="338" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">Gallery features</text>
+  </g>
+
+  <g id="query-input">
+    <rect x="600" y="40" width="200" height="80" rx="8" fill="#ede7f6" stroke="#5e35b1" stroke-width="2"/>
+    <text x="700" y="75" font-family="Arial" font-size="16" text-anchor="middle" fill="#311b92">Query image or video</text>
+  </g>
+
+  <g id="reid-model">
+    <rect x="520" y="150" width="360" height="380" rx="10" fill="#fffde7" stroke="#f9a825" stroke-width="2"/>
+    <text x="700" y="145" font-family="Arial" font-size="16" text-anchor="middle" fill="#f57f17">ReID Model</text>
+
+    <rect x="540" y="170" width="320" height="60" rx="8" fill="#fff3e0" stroke="#fb8c00" stroke-width="2"/>
+    <text x="700" y="198" font-family="Arial" font-size="15" text-anchor="middle" fill="#e65100">Feature extractor</text>
+    <text x="700" y="216" font-family="Arial" font-size="12" text-anchor="middle" fill="#e65100">Backbone features for persons</text>
+
+    <rect x="540" y="240" width="150" height="70" rx="8" fill="#e0f7fa" stroke="#00838f" stroke-width="2"/>
+    <text x="615" y="262" font-family="Arial" font-size="14" text-anchor="middle" fill="#006064">Memory bank</text>
+    <text x="615" y="280" font-family="Arial" font-size="12" text-anchor="middle" fill="#006064">Lookup table</text>
+    <text x="615" y="296" font-family="Arial" font-size="12" text-anchor="middle" fill="#006064">OIM identity keys</text>
+
+    <rect x="710" y="240" width="150" height="70" rx="8" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+    <text x="785" y="262" font-family="Arial" font-size="14" text-anchor="middle" fill="#1a237e">Camera aware invariance</text>
+    <rect x="720" y="255" width="60" height="20" rx="4" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1"/>
+    <text x="750" y="269" font-family="Arial" font-size="12" text-anchor="middle" fill="#0d47a1">Intra</text>
+    <rect x="785" y="255" width="60" height="20" rx="4" fill="#c5cae9" stroke="#3949ab" stroke-width="1"/>
+    <text x="815" y="269" font-family="Arial" font-size="12" text-anchor="middle" fill="#1a237e">Inter</text>
+    <text x="785" y="288" font-family="Arial" font-size="12" text-anchor="middle" fill="#1a237e">SCCT MetaCam Mixup</text>
+
+    <rect x="540" y="320" width="320" height="60" rx="8" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
+    <text x="700" y="345" font-family="Arial" font-size="14" text-anchor="middle" fill="#880e4f">Clustering and label assignment</text>
+    <text x="700" y="363" font-family="Arial" font-size="12" text-anchor="middle" fill="#880e4f">Unsupervised soft labels TSSL OIM</text>
+
+    <rect x="540" y="385" width="320" height="50" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="700" y="410" font-family="Arial" font-size="14" text-anchor="middle" fill="#4a148c">Losses and robustness</text>
+    <text x="700" y="426" font-family="Arial" font-size="12" text-anchor="middle" fill="#4a148c">Hard batch triplet HCT UGA DSCE</text>
+
+    <line x1="520" y1="440" x2="880" y2="440" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6,6"/>
+    <text x="530" y="435" font-family="Arial" font-size="12" fill="#616161">train</text>
+    <text x="530" y="458" font-family="Arial" font-size="12" fill="#616161">test</text>
+
+    <rect x="540" y="445" width="100" height="70" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+    <text x="590" y="468" font-family="Arial" font-size="13" text-anchor="middle" fill="#004d40">Tracklet</text>
+    <text x="590" y="486" font-family="Arial" font-size="12" text-anchor="middle" fill="#004d40">JVTC TSSL</text>
+
+    <rect x="650" y="445" width="100" height="70" rx="8" fill="#f1f8e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="700" y="468" font-family="Arial" font-size="13" text-anchor="middle" fill="#1b5e20">Camera aware probability</text>
+    <text x="700" y="486" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">Mixup weighting</text>
+
+    <rect x="760" y="445" width="100" height="70" rx="8" fill="#ede7f6" stroke="#5e35b1" stroke-width="2"/>
+    <text x="810" y="468" font-family="Arial" font-size="13" text-anchor="middle" fill="#311b92">Similarity</text>
+    <text x="810" y="486" font-family="Arial" font-size="12" text-anchor="middle" fill="#311b92">Retrieval score</text>
+  </g>
+
+  <g id="right-stage">
+    <rect x="920" y="250" width="220" height="110" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="1030" y="282" font-family="Arial" font-size="16" text-anchor="middle" fill="#1b5e20">Ranking list</text>
+    <text x="940" y="306" font-family="Arial" font-size="12" fill="#1b5e20">1 person A</text>
+    <text x="940" y="324" font-family="Arial" font-size="12" fill="#1b5e20">2 person B</text>
+    <text x="940" y="342" font-family="Arial" font-size="12" fill="#1b5e20">3 person C</text>
+  </g>
+
+  <!-- External flow -->
+  <line x1="220" y1="305" x2="260" y2="305" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="480" y1="305" x2="520" y2="305" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="700" y1="120" x2="700" y2="150" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Into feature extractor -->
+  <polyline points="520,305 520,200 540,200" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="700" y1="150" x2="700" y2="170" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- From feature extractor to components -->
+  <polyline points="700,230 615,230 615,240" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <polyline points="700,230 785,230 785,240" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="700" y1="230" x2="700" y2="320" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Memory bank to clustering and probability -->
+  <polyline points="690,275 700,275 700,320" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <polyline points="615,310 615,440 700,440 700,445" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Camera aware to clustering and probability -->
+  <polyline points="785,310 785,320 700,320" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <polyline points="750,275 750,440 700,440 700,445" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <polyline points="815,275 815,440 700,440 700,445" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Probability to label assignment -->
+  <polyline points="650,480 650,350 540,350" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Clustering to losses -->
+  <line x1="700" y1="380" x2="700" y2="385" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Tracklet influences -->
+  <polyline points="590,445 590,350 540,350" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+  <polyline points="590,445 590,200 540,200" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Gallery features to similarity and production in feature extractor -->
+  <polyline points="395,334 480,334 480,445 810,445" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Query features to similarity -->
+  <polyline points="700,230 700,440 810,440 810,445" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Similarity to Ranking list direct path -->
+  <polyline points="860,480 900,480 900,305 920,305" fill="none" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

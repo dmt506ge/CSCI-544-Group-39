@@ -1,0 +1,354 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="960">
+  <defs>
+    <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <style>
+      .label { font-family: Arial, sans-serif; font-size: 16px; fill: #222; }
+      .small { font-family: Arial, sans-serif; font-size: 11px; fill: #222; }
+      .input { fill: #f8e7c1; stroke: #c7b48a; stroke-width: 1.2; }
+      .output { fill: #f8e7c1; stroke: #c7b48a; stroke-width: 1.2; }
+      .down { fill: #5b8def; stroke: #386bb8; stroke-width: 1.2; }
+      .feature { fill: #4f7ed6; stroke: #386bb8; stroke-width: 1.2; }
+      .adapter { fill: #4caf50; stroke: #3e8e41; stroke-width: 1.2; }
+      .seg { fill: #f6d55c; stroke: #c6a847; stroke-width: 1.2; }
+      .roi { fill: #b0b0b0; stroke: #8b8b8b; stroke-width: 1.2; }
+      .det { fill: #f29f3a; stroke: #c77f2f; stroke-width: 1.2; }
+      .conv { fill: #e74c3c; stroke: #b53d30; stroke-width: 1.2; }
+      .up { fill: #9b59b6; stroke: #7d4692; stroke-width: 1.2; }
+      .link { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowHead); }
+      .dashLink { stroke: #555; stroke-width: 1.8; stroke-dasharray: 6 4; fill: none; marker-end: url(#arrowHead); }
+      .op { fill: #ffffff; stroke: #333333; stroke-width: 1.2; }
+      .memory { fill: #e0f2f1; stroke: #4ca3a1; stroke-width: 1.2; }
+      .nms { fill: #d0d0d0; stroke: #8b8b8b; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <!-- Section A TD3D -->
+  <g transform="translate(0,20)">
+    <text x="20" y="20" class="label">(A) TD3D</text>
+
+    <!-- Modules -->
+    <rect x="80" y="60" width="120" height="44" rx="6" class="input"/>
+    <text x="140" y="87" text-anchor="middle" class="label">Input</text>
+
+    <rect x="240" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="300" y="87" text-anchor="middle" class="label">DownConv</text>
+    <text x="352" y="72" class="small">S1</text>
+
+    <rect x="400" y="60" width="120" height="44" rx="6" class="adapter"/>
+    <text x="460" y="87" text-anchor="middle" class="label">Adapter</text>
+    <text x="514" y="72" class="small">S2</text>
+    <text x="406" y="98" class="small">RW</text>
+
+    <rect x="560" y="60" width="120" height="44" rx="6" class="seg"/>
+    <text x="620" y="87" text-anchor="middle" class="label">Seg head</text>
+
+    <rect x="720" y="60" width="120" height="44" rx="6" class="roi"/>
+    <text x="780" y="87" text-anchor="middle" class="label">ROI extractor</text>
+
+    <rect x="880" y="60" width="120" height="44" rx="6" class="det"/>
+    <text x="940" y="87" text-anchor="middle" class="label">Det head</text>
+
+    <rect x="1040" y="60" width="120" height="44" rx="6" class="nms"/>
+    <text x="1100" y="87" text-anchor="middle" class="label">3D NMS</text>
+
+    <!-- Memory -->
+    <rect x="400" y="120" width="120" height="34" rx="6" class="memory"/>
+    <text x="460" y="142" text-anchor="middle" class="small">Point memory</text>
+
+    <!-- Ops nodes -->
+    <!-- add circle -->
+    <circle cx="540" cy="82" r="10" class="op"/>
+    <!-- concat diamond -->
+    <polygon points="860 70, 872 82, 860 94, 848 82" class="op"/>
+
+    <!-- Main flow arrows -->
+    <line x1="200" y1="82" x2="240" y2="82" class="link"/>
+    <line x1="360" y1="82" x2="400" y2="82" class="link"/>
+    <!-- Adapter to add node border -->
+    <line x1="520" y1="82" x2="530" y2="82" class="link"/>
+    <!-- Add node to Seg head -->
+    <line x1="550" y1="82" x2="560" y2="82" class="link"/>
+    <!-- Seg head to ROI -->
+    <line x1="680" y1="82" x2="720" y2="82" class="link"/>
+    <!-- ROI to concat diamond -->
+    <line x1="840" y1="82" x2="848" y2="82" class="link"/>
+    <!-- concat to Det head -->
+    <line x1="872" y1="82" x2="880" y2="82" class="link"/>
+    <!-- Det head to 3D NMS -->
+    <line x1="1000" y1="82" x2="1040" y2="82" class="link"/>
+
+    <!-- Skips -->
+    <!-- Input to add node top route -->
+    <polyline points="200 60, 200 40, 540 40, 540 72" class="link"/>
+    <!-- Seg head to concat node top route -->
+    <polyline points="680 60, 680 40, 860 40, 860 70" class="link"/>
+
+    <!-- Feedback loop Det head back to ROI bottom route -->
+    <polyline points="940 104, 940 120, 780 120, 780 104" class="link"/>
+
+    <!-- Memory links -->
+    <polyline points="460 104, 460 120" class="dashLink"/>
+    <polyline points="520 137, 700 137, 700 104, 780 104" class="dashLink"/>
+  </g>
+
+  <!-- Section B FCAF3D -->
+  <g transform="translate(0,200)">
+    <text x="20" y="20" class="label">(B) FCAF3D</text>
+
+    <!-- Modules -->
+    <rect x="80" y="60" width="120" height="44" rx="6" class="input"/>
+    <text x="140" y="87" text-anchor="middle" class="label">Input</text>
+
+    <rect x="240" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="300" y="87" text-anchor="middle" class="label">DownConv1</text>
+    <text x="352" y="72" class="small">S1</text>
+
+    <rect x="400" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="460" y="87" text-anchor="middle" class="label">DownConv2</text>
+
+    <rect x="560" y="60" width="120" height="44" rx="6" class="adapter"/>
+    <text x="620" y="87" text-anchor="middle" class="label">Adapter</text>
+    <text x="674" y="72" class="small">S2</text>
+    <text x="566" y="98" class="small">RW</text>
+
+    <rect x="720" y="60" width="120" height="44" rx="6" class="det"/>
+    <text x="780" y="87" text-anchor="middle" class="label">Det head</text>
+
+    <rect x="880" y="60" width="120" height="44" rx="6" class="up"/>
+    <text x="940" y="87" text-anchor="middle" class="label">UpConv</text>
+
+    <rect x="1040" y="60" width="120" height="44" rx="6" class="conv"/>
+    <text x="1100" y="87" text-anchor="middle" class="label">Conv</text>
+
+    <rect x="1040" y="120" width="120" height="44" rx="6" class="output"/>
+    <text x="1100" y="147" text-anchor="middle" class="label">Det output</text>
+
+    <!-- Memory -->
+    <rect x="560" y="120" width="120" height="34" rx="6" class="memory"/>
+    <text x="620" y="142" text-anchor="middle" class="small">Point memory</text>
+
+    <!-- Ops nodes -->
+    <circle cx="520" cy="82" r="10" class="op"/>
+    <polygon points="900 108, 912 120, 900 132, 888 120" class="op"/>
+
+    <!-- Main flow -->
+    <line x1="200" y1="82" x2="240" y2="82" class="link"/>
+    <line x1="360" y1="82" x2="400" y2="82" class="link"/>
+    <line x1="520" y1="82" x2="560" y2="82" class="link"/>
+    <line x1="680" y1="82" x2="720" y2="82" class="link"/>
+    <line x1="840" y1="82" x2="880" y2="82" class="link"/>
+    <line x1="1000" y1="82" x2="1040" y2="82" class="link"/>
+    <!-- Conv to Det output -->
+    <polyline points="1100 104, 1100 120" class="link"/>
+
+    <!-- Skips -->
+    <!-- Input to add node -->
+    <polyline points="200 60, 200 40, 520 40, 520 72" class="link"/>
+    <!-- DownConv2 to concat node with elbow -->
+    <polyline points="460 104, 460 140, 888 140, 888 120" class="link"/>
+    <!-- concat to UpConv -->
+    <line x1="912" y1="120" x2="880" y2="120" class="link"/>
+
+    <!-- Feedback loop Conv back to Adapter with elbows -->
+    <polyline points="1100 104, 1100 170, 620 170, 620 104" class="link"/>
+
+    <!-- Memory links -->
+    <polyline points="620 104, 620 120" class="dashLink"/>
+  </g>
+
+  <!-- Section C MinkUnet -->
+  <g transform="translate(0,380)">
+    <text x="20" y="20" class="label">(C) MinkUnet</text>
+
+    <!-- Modules -->
+    <rect x="80" y="60" width="120" height="44" rx="6" class="input"/>
+    <text x="140" y="87" text-anchor="middle" class="label">Input</text>
+
+    <rect x="240" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="300" y="87" text-anchor="middle" class="label">DownConv1</text>
+    <text x="352" y="72" class="small">S1</text>
+
+    <rect x="400" y="60" width="120" height="44" rx="6" class="adapter"/>
+    <text x="460" y="87" text-anchor="middle" class="label">Adapter1</text>
+    <text x="514" y="72" class="small">S2</text>
+    <text x="406" y="98" class="small">RW</text>
+
+    <rect x="560" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="620" y="87" text-anchor="middle" class="label">DownConv2</text>
+
+    <rect x="720" y="60" width="120" height="44" rx="6" class="adapter"/>
+    <text x="780" y="87" text-anchor="middle" class="label">Adapter2</text>
+    <text x="834" y="72" class="small">S2</text>
+    <text x="726" y="98" class="small">RW</text>
+
+    <rect x="1040" y="60" width="120" height="44" rx="6" class="seg"/>
+    <text x="1100" y="87" text-anchor="middle" class="label">Seg head</text>
+
+    <rect x="1040" y="120" width="120" height="44" rx="6" class="conv"/>
+    <text x="1100" y="147" text-anchor="middle" class="label">Conv</text>
+
+    <rect x="1040" y="180" width="120" height="44" rx="6" class="output"/>
+    <text x="1100" y="207" text-anchor="middle" class="label">Output</text>
+
+    <!-- Shared point memory -->
+    <rect x="560" y="120" width="120" height="34" rx="6" class="memory"/>
+    <text x="620" y="142" text-anchor="middle" class="small">Point memory</text>
+
+    <!-- Ops nodes -->
+    <circle cx="520" cy="82" r="10" class="op"/>
+    <circle cx="900" cy="104" r="10" class="op"/>
+
+    <!-- Main flow -->
+    <line x1="200" y1="82" x2="240" y2="82" class="link"/>
+    <line x1="360" y1="82" x2="400" y2="82" class="link"/>
+    <line x1="520" y1="82" x2="560" y2="82" class="link"/>
+    <line x1="680" y1="82" x2="720" y2="82" class="link"/>
+
+    <!-- Adapter2 to add node border -->
+    <line x1="840" y1="82" x2="890" y2="82" class="link"/>
+    <!-- add node to Seg head with elbow to hit left border -->
+    <polyline points="910 104, 1040 104, 1040 82" class="link"/>
+    <!-- Seg head to Conv -->
+    <polyline points="1100 104, 1100 120" class="link"/>
+    <!-- Conv to Output -->
+    <polyline points="1100 164, 1100 180" class="link"/>
+
+    <!-- Skips -->
+    <!-- Input to add node 1 -->
+    <polyline points="200 60, 200 40, 520 40, 520 72" class="link"/>
+    <!-- DownConv2 to add node 2 via top -->
+    <polyline points="680 60, 680 40, 900 40, 900 94" class="link"/>
+
+    <!-- Memory links -->
+    <polyline points="460 104, 460 120, 560 120" class="dashLink"/>
+    <polyline points="780 104, 780 120, 680 120" class="dashLink"/>
+  </g>
+
+  <!-- Section D Unet -->
+  <g transform="translate(0,560)">
+    <text x="20" y="20" class="label">(D) Unet</text>
+
+    <!-- Modules -->
+    <rect x="80" y="60" width="120" height="44" rx="6" class="input"/>
+    <text x="140" y="87" text-anchor="middle" class="label">Input</text>
+
+    <rect x="240" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="300" y="87" text-anchor="middle" class="label">DownConv1</text>
+    <text x="352" y="72" class="small">S1</text>
+
+    <rect x="400" y="60" width="120" height="44" rx="6" class="adapter"/>
+    <text x="460" y="87" text-anchor="middle" class="label">Adapter1</text>
+    <text x="514" y="72" class="small">S2</text>
+    <text x="406" y="98" class="small">RW</text>
+
+    <rect x="560" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="620" y="87" text-anchor="middle" class="label">DownConv2</text>
+
+    <rect x="720" y="60" width="120" height="44" rx="6" class="adapter"/>
+    <text x="780" y="87" text-anchor="middle" class="label">Adapter2</text>
+    <text x="834" y="72" class="small">S2</text>
+    <text x="726" y="98" class="small">RW</text>
+
+    <rect x="880" y="40" width="120" height="44" rx="6" class="up"/>
+    <text x="940" y="67" text-anchor="middle" class="label">UpConv1</text>
+
+    <rect x="880" y="100" width="120" height="44" rx="6" class="up"/>
+    <text x="940" y="127" text-anchor="middle" class="label">UpConv2</text>
+
+    <rect x="1040" y="80" width="120" height="44" rx="6" class="seg"/>
+    <text x="1100" y="107" text-anchor="middle" class="label">Seg head</text>
+
+    <!-- Image memory -->
+    <rect x="720" y="120" width="120" height="34" rx="6" class="memory"/>
+    <text x="780" y="142" text-anchor="middle" class="small">3D to 2D memory</text>
+
+    <!-- Ops nodes -->
+    <circle cx="520" cy="82" r="10" class="op"/>
+    <polygon points="900 148, 912 160, 900 172, 888 160" class="op"/>
+
+    <!-- Main flow -->
+    <line x1="200" y1="82" x2="240" y2="82" class="link"/>
+    <line x1="360" y1="82" x2="400" y2="82" class="link"/>
+    <line x1="520" y1="82" x2="560" y2="82" class="link"/>
+    <line x1="680" y1="82" x2="720" y2="82" class="link"/>
+    <!-- Adapter2 to UpConv1 -->
+    <line x1="840" y1="82" x2="880" y2="82" class="link"/>
+    <!-- UpConv1 to UpConv2 -->
+    <polyline points="940 84, 940 100" class="link"/>
+    <!-- UpConv2 to Seg head, end on left border center -->
+    <line x1="1000" y1="122" x2="1040" y2="102" class="link"/>
+
+    <!-- Skips -->
+    <!-- Input to add -->
+    <polyline points="200 60, 200 40, 520 40, 520 72" class="link"/>
+    <!-- DownConv2 to concat bottom route -->
+    <polyline points="620 104, 620 160, 888 160" class="link"/>
+    <!-- Feature fusion concat to Seg head left border -->
+    <polyline points="912 160, 1040 160, 1040 102" class="link"/>
+
+    <!-- Memory links -->
+    <polyline points="780 104, 780 120" class="dashLink"/>
+    <polyline points="460 104, 460 130, 720 130" class="dashLink"/>
+  </g>
+
+  <!-- Section E ResNet plus FPN -->
+  <g transform="translate(0,740)">
+    <text x="20" y="20" class="label">(E) ResNet plus FPN</text>
+
+    <!-- Modules -->
+    <rect x="80" y="60" width="120" height="44" rx="6" class="input"/>
+    <text x="140" y="87" text-anchor="middle" class="label">Input</text>
+
+    <rect x="240" y="60" width="120" height="44" rx="6" class="down"/>
+    <text x="300" y="87" text-anchor="middle" class="label">DownConv</text>
+    <text x="352" y="72" class="small">S1</text>
+
+    <rect x="400" y="60" width="120" height="44" rx="6" class="adapter"/>
+    <text x="460" y="87" text-anchor="middle" class="label">Adapter</text>
+    <text x="514" y="72" class="small">S2</text>
+    <text x="406" y="98" class="small">RW</text>
+
+    <rect x="560" y="60" width="120" height="44" rx="6" class="det"/>
+    <text x="620" y="87" text-anchor="middle" class="label">Det head</text>
+
+    <rect x="720" y="60" width="120" height="44" rx="6" class="conv"/>
+    <text x="780" y="87" text-anchor="middle" class="label">Conv</text>
+
+    <!-- FPN feature maps aligned right -->
+    <rect x="1040" y="40" width="120" height="44" rx="6" class="feature"/>
+    <text x="1100" y="67" text-anchor="middle" class="label">Feature P3</text>
+
+    <rect x="1040" y="100" width="120" height="44" rx="6" class="feature"/>
+    <text x="1100" y="127" text-anchor="middle" class="label">Feature P4</text>
+
+    <rect x="1040" y="160" width="120" height="44" rx="6" class="feature"/>
+    <text x="1100" y="187" text-anchor="middle" class="label">Feature P5</text>
+
+    <!-- Image memory -->
+    <rect x="400" y="120" width="120" height="34" rx="6" class="memory"/>
+    <text x="460" y="142" text-anchor="middle" class="small">3D to 2D memory</text>
+
+    <!-- Ops nodes -->
+    <circle cx="520" cy="82" r="10" class="op"/>
+
+    <!-- Main flow -->
+    <line x1="200" y1="82" x2="240" y2="82" class="link"/>
+    <line x1="360" y1="82" x2="400" y2="82" class="link"/>
+    <line x1="520" y1="82" x2="560" y2="82" class="link"/>
+    <line x1="680" y1="82" x2="720" y2="82" class="link"/>
+
+    <!-- Conv to FPN features branches with precise end on left borders -->
+    <polyline points="840 82, 1040 62" class="link"/>
+    <polyline points="840 82, 1040 122" class="link"/>
+    <polyline points="840 82, 1040 182" class="link"/>
+
+    <!-- Skips -->
+    <!-- Input to add -->
+    <polyline points="200 60, 200 40, 520 40, 520 72" class="link"/>
+
+    <!-- Memory links -->
+    <polyline points="460 104, 460 120" class="dashLink"/>
+  </g>
+</svg>

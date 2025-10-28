@@ -1,0 +1,52 @@
+Source File: supp.pdf
+================================================================================
+
+The diagram follows a top-to-bottom vertical architecture with five distinct sections, each labeled (A) through (E). Each section corresponds to a different model architecture. Here is the spatial layout description:
+
+### Overall Structure
+- The diagram is organized vertically with sections aligned one below the other.
+- Each section represents a different model: TD3D, FCAF3D, MinkUnet, Unet, and ResNet+FPN.
+- Within each section, the components flow from the left to the right horizontally.
+
+### Section Analysis
+
+#### (A) TD3D
+- **Left:** Begins with an "Input" module (cream-colored rectangle).
+- **Middle:** Includes multiple layers: blue (DownConv), green (Adapter), yellow (Seg head), and gray (ROI extractor).
+- **Right:** Ends with orange (Det head) and red (Conv) modules.
+- **Flow:** Components are connected horizontally with arrows indicating the left-to-right flow. There are bidirectional and concatenation connections that loop back to earlier layers.
+
+#### (B) FCAF3D
+- **Left:** Starts with "Input" module.
+- **Middle:** Consists of multiple blue (DownConv), green (Adapter), and orange (Det head) modules.
+- **Right:** Includes purple (UpConv) and red (Conv) modules ending in an "Output" module.
+- **Flow:** Arrows indicate left-to-right progression with several add and concatenate loops.
+
+#### (C) MinkUnet
+- **Left:** Initiated by "Input" module.
+- **Middle:** Features blue (DownConv) and green (Adapter) modules repeatedly, followed by orange (Det head) and yellow (Seg head) modules.
+- **Right:** Culminates in red (Conv) module leading to "Output".
+- **Flow:** Consistent left-to-right flow with add operations.
+
+#### (D) Unet
+- **Left:** Commences with "Input".
+- **Middle:** Multiple iterations of blue and green modules (similar to previous sections).
+- **Right:** Ends with several purple (UpConv) modules connecting to a blue (Feature) module.
+- **Flow:** Direct left-to-right flow with add and concatenate functions.
+
+#### (E) ResNet+FPN
+- **Left:** Starts with "Input".
+- **Middle:** Comprises blue (DownConv), green (Adapter), orange (Det head), and red (Conv) modules.
+- **Right:** Concludes with multiple blue (Feature) modules.
+- **Flow:** Left-to-right with distinct layers and connections, including add operations.
+
+### Connections and Flow Direction
+- All sections maintain a predominant left-to-right flow.
+- Numerous bidirectional arrows indicating feedback loops within sections.
+- Arithmetical signs denote add and concatenate operations enhancing interactions between layers.
+
+### Groupings and Layers
+- Each section represents a separate model architecture forming independent groupings.
+- Vertical division into sections allows clear distinction between different architectures.
+
+This structured layout showcases the component interaction in diverse neural network architectures, emphasizing distinct computational paths and interconnections.

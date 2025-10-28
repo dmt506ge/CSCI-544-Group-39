@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <marker id="arrow-head" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#333"/>
+    </marker>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 16px; fill: #111; font-weight: bold; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #222; }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #111; }
+      .box { stroke: #333; stroke-width: 1.4; fill: #f9fafc; }
+      .divider { stroke: #888; stroke-width: 1; stroke-dasharray: 4 4; }
+      .arrow { stroke: #333; stroke-width: 1.8; fill: none; marker-end: url(#arrow-head); }
+      .arrow-aux { stroke: #999; stroke-width: 1.4; fill: none; stroke-dasharray: 3 3; marker-end: url(#arrow-head); }
+      .block-memory { fill: #fde7c5; stroke: #c98b2c; stroke-width: 1.2; }
+      .block-adapter { fill: #d9f2e6; stroke: #3a9c7c; stroke-width: 1.2; }
+      .block-io { fill: #e6f0ff; stroke: #3a6fb5; stroke-width: 1.2; }
+      .grid { fill: #f2f2f2; stroke: #999; stroke-width: 1; }
+      .port { fill: #eee; stroke: #666; stroke-width: 1; }
+      .cube-face { fill: #e9dcff; stroke: #6a55b3; stroke-width: 1.2; }
+      .cube-side { fill: #d7c9ff; stroke: #6a55b3; stroke-width: 1.2; }
+      .cube-top { fill: #efe7ff; stroke: #6a55b3; stroke-width: 1.2; }
+      .bg-top { fill: #f5fbff; stroke: #9cc9e8; stroke-width: 1.4; }
+      .bg-bottom { fill: #fff8f0; stroke: #e4b47a; stroke-width: 1.4; }
+      .junction { fill: #333; stroke: none; }
+      .toggle { fill: #eef6ff; stroke: #3a6fb5; stroke-width: 0.8; rx: 3; }
+    </style>
+  </defs>
+
+  <!-- Caption -->
+  <text x="600" y="30" text-anchor="middle" class="title">Memory based adapter for image features</text>
+  <text x="600" y="50" text-anchor="middle" class="label">Reorganize input shift channels to memory fuse with previous memory by 2d convolution add global context from 3d memory</text>
+
+  <!-- Top grouping container -->
+  <rect x="240" y="60" width="760" height="360" rx="6" class="bg-top"/>
+  <text x="250" y="84" class="label">Image memory and image adapter</text>
+  <!-- Top labels for left and right regions -->
+  <text x="440" y="76" text-anchor="middle" class="label">Image memory</text>
+  <text x="810" y="76" text-anchor="middle" class="label">Image adapter</text>
+  <!-- Vertical divider -->
+  <line x1="620" y1="60" x2="620" y2="420" class="divider"/>
+
+  <!-- Input feature stack -->
+  <rect x="70" y="130" width="140" height="120" rx="6" class="block-io" opacity="0.5"/>
+  <rect x="80" y="120" width="140" height="120" rx="6" class="block-io" opacity="0.7"/>
+  <rect x="60" y="120" width="140" height="120" rx="6" class="block-io"/>
+  <text x="130" y="150" text-anchor="middle" class="text">Input feature</text>
+  <text x="130" y="170" text-anchor="middle" class="label">from image backbone</text>
+  <text x="130" y="188" text-anchor="middle" class="label">shape C x H x W</text>
+
+  <!-- Top left region: Image memory -->
+  <text x="250" y="110" class="label">Image memory</text>
+
+  <!-- Blocks in left region -->
+  <rect x="290" y="158" width="170" height="44" rx="5" class="block-memory"/>
+  <text x="375" y="184" text-anchor="middle" class="text">Reorganize channels</text>
+
+  <rect x="290" y="210" width="170" height="40" rx="5" class="block-memory"/>
+  <text x="375" y="234" text-anchor="middle" class="text">Split channels</text>
+  <text x="375" y="246" text-anchor="middle" class="label">p between 0.25 and 0.5</text>
+
+  <!-- Inline split shape annotations near branches -->
+  <text x="480" y="246" class="label">C curr pC</text>
+  <text x="310" y="246" class="label" text-anchor="end">C mem 1 minus p C</text>
+
+  <rect x="260" y="260" width="150" height="40" rx="5" class="block-memory"/>
+  <text x="335" y="284" text-anchor="middle" class="text">Write memory</text>
+  <text x="335" y="300" text-anchor="middle" class="label">shift out to t plus 1</text>
+
+  <rect x="450" y="260" width="160" height="40" rx="5" class="block-memory"/>
+  <text x="530" y="284" text-anchor="middle" class="text">Current frame</text>
+  <text x="530" y="300" text-anchor="middle" class="label">kept channels t</text>
+
+  <!-- Memory ports on left border of top container -->
+  <rect x="240" y="320" width="14" height="14" class="port"/>
+  <text x="230" y="331" text-anchor="end" class="label">prev memory t minus 1</text>
+
+  <rect x="240" y="350" width="14" height="14" class="port"/>
+  <text x="230" y="361" text-anchor="end" class="label">next memory t plus 1</text>
+
+  <rect x="260" y="312" width="150" height="40" rx="5" class="block-memory"/>
+  <text x="335" y="336" text-anchor="middle" class="text">Read memory</text>
+  <text x="335" y="352" text-anchor="middle" class="label">shift in from t minus 1</text>
+
+  <!-- Top right region: Image adapter -->
+  <text x="630" y="110" class="label">Image adapter</text>
+
+  <rect x="650" y="200" width="220" height="44" rx="5" class="block-adapter"/>
+  <text x="760" y="226" text-anchor="middle" class="text">Temporal conv 2d</text>
+  <text x="760" y="254" text-anchor="middle" class="label">shape C x H x W</text>
+
+  <!-- Toggles moved outside the box with dashed connectors -->
+  <text x="900" y="196" class="label">pluggable</text>
+  <rect x="900" y="204" width="60" height="14" class="toggle"/>
+  <text x="930" y="215" text-anchor="middle" class="label">dilated</text>
+  <rect x="900" y="224" width="60" height="14" class="toggle"/>
+  <text x="930" y="235" text-anchor="middle" class="label">lstm like</text>
+  <!-- Dashed connectors from toggles to conv box border -->
+  <path d="M900,211 L870,211" class="arrow-aux"/>
+  <path d="M900,231 L870,231" class="arrow-aux"/>
+
+  <rect x="650" y="260" width="220" height="44" rx="5" class="block-adapter"/>
+  <text x="760" y="286" text-anchor="middle" class="text">Context fusion</text>
+  <text x="760" y="302" text-anchor="middle" class="label">concat then 1 x 1 conv or attention or add</text>
+
+  <rect x="650" y="320" width="220" height="44" rx="5" class="block-adapter"/>
+  <text x="760" y="346" text-anchor="middle" class="text">Adapter output</text>
+  <text x="760" y="362" text-anchor="middle" class="label">to next backbone layer</text>
+
+  <!-- Destination port for adapter output -->
+  <rect x="1000" y="336" width="14" height="14" class="port"/>
+  <text x="1020" y="334" class="text">Backbone layer k plus 1</text>
+
+  <!-- Arrows top layer -->
+  <!-- Input to reorganize -->
+  <line x1="200" y1="180" x2="290" y2="180" class="arrow"/>
+
+  <!-- Reorganize to split -->
+  <line x1="375" y1="202" x2="375" y2="210" class="arrow"/>
+
+  <!-- Split to write memory top -->
+  <path d="M375,250 L335,250 L335,260" class="arrow"/>
+  <!-- Split to current frame top -->
+  <path d="M375,250 L530,250 L530,260" class="arrow"/>
+
+  <!-- Labels for split directions -->
+  <text x="335" y="256" text-anchor="middle" class="label">to mem</text>
+  <text x="530" y="256" text-anchor="middle" class="label">to t</text>
+
+  <!-- Read prev memory port to read memory block, precise to border -->
+  <path d="M254,327 L260,327 L260,332" class="arrow"/>
+  <text x="268" y="324" class="label">read mem t minus 1</text>
+
+  <!-- Write memory to next memory port, precise to port edge -->
+  <path d="M260,280 L254,280 L254,357" class="arrow"/>
+  <text x="260" y="290" class="label">write to mem t plus 1</text>
+
+  <!-- Explicit merge junction before Temporal conv 2d -->
+  <circle cx="630" cy="222" r="5" class="junction"/>
+  <!-- Current frame to junction -->
+  <path d="M610,280 L620,280 L620,222 L625,222" class="arrow"/>
+  <!-- Read memory to junction -->
+  <path d="M410,332 L620,332 L620,222 L625,222" class="arrow"/>
+  <!-- Junction to Temporal conv 2d -->
+  <line x1="635" y1="222" x2="650" y2="222" class="arrow"/>
+
+  <!-- Temporal conv 2d to context fusion -->
+  <line x1="760" y1="244" x2="760" y2="260" class="arrow"/>
+  <!-- Context fusion to adapter output -->
+  <line x1="760" y1="304" x2="760" y2="320" class="arrow"/>
+  <!-- Adapter output to Backbone layer k plus 1 port -->
+  <line x1="870" y1="342" x2="1000" y2="342" class="arrow"/>
+  <text x="920" y="355" class="label">residual add</text>
+
+  <!-- Bottom grouping container -->
+  <rect x="240" y="420" width="760" height="280" rx="6" class="bg-bottom"/>
+  <text x="250" y="444" class="label">Projection and aggregation</text>
+
+  <!-- 3d memory cube -->
+  <g>
+    <!-- Front face -->
+    <rect x="60" y="470" width="120" height="100" class="cube-face" rx="2"/>
+    <!-- Top face -->
+    <polygon points="60,470 78,458 198,458 180,470" class="cube-top"/>
+    <!-- Side face -->
+    <polygon points="180,470 198,458 198,558 180,570" class="cube-side"/>
+    <text x="120" y="492" text-anchor="middle" class="text">3d memory</text>
+    <text x="120" y="512" text-anchor="middle" class="label">global scene context</text>
+    <text x="120" y="528" text-anchor="middle" class="label">maintained over time</text>
+  </g>
+
+  <!-- External update to 3d memory, dashed inbound -->
+  <path d="M40,520 L60,520" class="arrow-aux"/>
+  <text x="42" y="512" class="label">memory update external</text>
+
+  <!-- Bottom internal modules -->
+  <rect x="260" y="480" width="160" height="40" rx="5" class="block-io"/>
+  <text x="340" y="504" text-anchor="middle" class="text">Project to view</text>
+  <text x="340" y="520" text-anchor="middle" class="label">from 3d memory to temporal grid</text>
+
+  <rect x="450" y="460" width="140" height="100" rx="5" class="grid"/>
+  <text x="520" y="456" text-anchor="middle" class="label">temporal grid T x H x W</text>
+  <!-- small grid cells -->
+  <rect x="460" y="470" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="482" y="470" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="504" y="470" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="526" y="470" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+
+  <rect x="460" y="492" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="482" y="492" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="504" y="492" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="526" y="492" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+
+  <rect x="460" y="514" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="482" y="514" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="504" y="514" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="526" y="514" width="20" height="20" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+
+  <rect x="610" y="500" width="160" height="44" rx="5" class="block-io"/>
+  <text x="690" y="526" text-anchor="middle" class="text">Aggregate densify</text>
+  <text x="690" y="542" text-anchor="middle" class="label">temporal pooling or attention plus upsampling per pixel</text>
+
+  <rect x="790" y="470" width="180" height="120" rx="5" class="grid"/>
+  <text x="880" y="466" text-anchor="middle" class="label">3d to 2d adapter</text>
+  <!-- 2d grid cells -->
+  <rect x="800" y="480" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="826" y="480" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="852" y="480" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="878" y="480" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="904" y="480" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+
+  <rect x="800" y="508" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="826" y="508" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="852" y="508" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="878" y="508" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="904" y="508" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+
+  <rect x="800" y="536" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="826" y="536" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="852" y="536" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="878" y="536" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+  <rect x="904" y="536" width="24" height="24" fill="#ffffff" stroke="#bbb" stroke-width="0.8"/>
+
+  <!-- Bottom arrows -->
+  <!-- 3d memory to project -->
+  <path d="M180,520 L220,520 L220,500 L260,500" class="arrow"/>
+  <!-- project to temporal grid -->
+  <path d="M420,500 L440,500 L440,510 L450,510" class="arrow"/>
+  <!-- temporal grid to aggregate -->
+  <path d="M590,510 L600,510 L600,522 L610,522" class="arrow"/>
+  <!-- aggregate to 3d to 2d adapter -->
+  <path d="M770,522 L780,522 L780,530 L790,530" class="arrow"/>
+
+  <!-- Upward global context arrow with explicit origin and direction -->
+  <path d="M880,470 L880,360 L760,360 L760,304" class="arrow" marker-start="url(#arrow-head)"/>
+  <text x="884" y="388" class="label">to Context fusion</text>
+
+  <!-- Explanatory mini arrow inside top container showing internal vertical movement -->
+  <path d="M335,300 L335,312" class="arrow-aux"/>
+</svg>

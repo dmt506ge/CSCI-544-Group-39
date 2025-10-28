@@ -1,0 +1,292 @@
+<svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bbdefb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff3e0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffe0b2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e1bee7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="unifiedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e3f2fd;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#fff3e0;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f3e5f5;stop-opacity:0.3" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="700" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#222">
+    Online 3D Scene Perception Framework
+  </text>
+  
+  <!-- Unified Framework Indicator with Gradient Background -->
+  <rect x="30" y="45" width="1340" height="20" fill="url(#unifiedGrad)" rx="3"/>
+  <line x1="30" y1="55" x2="1370" y2="55" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Left Section: Online Semantic Segmentation -->
+  <g id="semantic-section">
+    <!-- Section Background -->
+    <rect x="30" y="70" width="410" height="780" fill="url(#grad1)" stroke="#1976d2" stroke-width="2" rx="10"/>
+    
+    <!-- Section Title -->
+    <text x="235" y="100" font-size="16" font-weight="bold" text-anchor="middle" fill="#0d47a1">
+      Online Semantic Segmentation
+    </text>
+    
+    <!-- Adapter Injection Indicator with Border -->
+    <rect x="50" y="110" width="370" height="18" fill="#1976d2" opacity="0.08" stroke="#1976d2" stroke-width="1" stroke-dasharray="2,2" rx="3"/>
+    <text x="235" y="122" font-size="10" text-anchor="middle" fill="#0d47a1" font-style="italic">
+      Memory Adapter Injection Layer
+    </text>
+    
+    <!-- Frame 1 with Sequence Indicator -->
+    <rect x="60" y="140" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="235" y="163" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t (t=0)</text>
+    <text x="235" y="177" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 0ms</text>
+    <!-- Simulated segmented regions -->
+    <rect x="75" y="185" width="95" height="110" fill="#ff6b6b" opacity="0.7"/>
+    <rect x="180" y="185" width="85" height="110" fill="#4ecdc4" opacity="0.7"/>
+    <rect x="275" y="185" width="120" height="110" fill="#ffe66d" opacity="0.7"/>
+    <text x="122" y="245" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Wall</text>
+    <text x="222" y="245" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Floor</text>
+    <text x="335" y="245" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Objects</text>
+    
+    <!-- Memory Icon 1 -->
+    <circle cx="395" cy="230" r="14" fill="#1976d2" opacity="0.3"/>
+    <text x="395" y="236" font-size="11" text-anchor="middle" fill="#0d47a1" font-weight="bold">M</text>
+    
+    <!-- Arrow 1 -->
+    <path d="M 235 320 L 235 390" fill="none" stroke="#333" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+    <text x="270" y="358" font-size="13" font-weight="bold" fill="#333">Memory</text>
+    
+    <!-- Frame 2 with Sequence Indicator -->
+    <rect x="60" y="390" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="235" y="413" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t+1 (t=1)</text>
+    <text x="235" y="427" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 33ms</text>
+    <rect x="75" y="435" width="100" height="110" fill="#ff6b6b" opacity="0.7"/>
+    <rect x="185" y="435" width="80" height="110" fill="#4ecdc4" opacity="0.7"/>
+    <rect x="275" y="435" width="120" height="110" fill="#95e1d3" opacity="0.7"/>
+    <text x="125" y="495" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Wall</text>
+    <text x="225" y="495" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Floor</text>
+    <text x="335" y="495" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Updated</text>
+    
+    <!-- Memory Icon 2 -->
+    <circle cx="395" cy="480" r="14" fill="#1976d2" opacity="0.3"/>
+    <text x="395" y="486" font-size="11" text-anchor="middle" fill="#0d47a1" font-weight="bold">M</text>
+    
+    <!-- Arrow 2 -->
+    <path d="M 235 570 L 235 640" fill="none" stroke="#333" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+    <text x="270" y="608" font-size="13" font-weight="bold" fill="#333">Refine</text>
+    
+    <!-- Frame 3 with Sequence Indicator -->
+    <rect x="60" y="640" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="235" y="663" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t+2 (t=2)</text>
+    <text x="235" y="677" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 66ms</text>
+    <rect x="75" y="685" width="105" height="110" fill="#ff6b6b" opacity="0.7"/>
+    <rect x="190" y="685" width="75" height="110" fill="#4ecdc4" opacity="0.7"/>
+    <rect x="275" y="685" width="120" height="110" fill="#a8e6cf" opacity="0.7"/>
+    <text x="127" y="745" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Wall</text>
+    <text x="227" y="745" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Floor</text>
+    <text x="335" y="745" font-size="11" text-anchor="middle" fill="#000" font-weight="bold">Refined</text>
+    
+    <!-- Memory Icon 3 -->
+    <circle cx="395" cy="730" r="14" fill="#1976d2" opacity="0.3"/>
+    <text x="395" y="736" font-size="11" text-anchor="middle" fill="#0d47a1" font-weight="bold">M</text>
+  </g>
+  
+  <!-- Middle Section: Online Object Detection -->
+  <g id="detection-section">
+    <!-- Section Background -->
+    <rect x="480" y="70" width="410" height="780" fill="url(#grad2)" stroke="#f57c00" stroke-width="2" rx="10"/>
+    
+    <!-- Section Title -->
+    <text x="685" y="100" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">
+      Online Object Detection
+    </text>
+    
+    <!-- Adapter Injection Indicator with Border -->
+    <rect x="500" y="110" width="370" height="18" fill="#f57c00" opacity="0.08" stroke="#f57c00" stroke-width="1" stroke-dasharray="2,2" rx="3"/>
+    <text x="685" y="122" font-size="10" text-anchor="middle" fill="#e65100" font-style="italic">
+      Memory Adapter Injection Layer
+    </text>
+    
+    <!-- Frame 1 with Sequence Indicator -->
+    <rect x="510" y="140" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="685" y="163" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t (t=0)</text>
+    <text x="685" y="177" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 0ms</text>
+    <!-- Bounding boxes -->
+    <rect x="540" y="185" width="85" height="65" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <text x="582" y="180" font-size="11" fill="#e74c3c" font-weight="bold">Chair</text>
+    <rect x="650" y="195" width="70" height="75" fill="none" stroke="#3498db" stroke-width="3"/>
+    <text x="685" y="190" font-size="11" fill="#3498db" font-weight="bold">Table</text>
+    <rect x="745" y="180" width="75" height="85" fill="none" stroke="#2ecc71" stroke-width="3"/>
+    <text x="782" y="175" font-size="11" fill="#2ecc71" font-weight="bold">Sofa</text>
+    
+    <!-- Memory Icon 1 -->
+    <circle cx="845" cy="230" r="14" fill="#f57c00" opacity="0.3"/>
+    <text x="845" y="236" font-size="11" text-anchor="middle" fill="#e65100" font-weight="bold">M</text>
+    
+    <!-- Arrow 1 -->
+    <path d="M 685 320 L 685 390" fill="none" stroke="#333" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+    <text x="730" y="358" font-size="13" font-weight="bold" fill="#333">3D Memory</text>
+    
+    <!-- Frame 2 with Sequence Indicator -->
+    <rect x="510" y="390" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="685" y="413" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t+1 (t=1)</text>
+    <text x="685" y="427" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 33ms</text>
+    <rect x="535" y="435" width="90" height="70" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <text x="580" y="430" font-size="11" fill="#e74c3c" font-weight="bold">Chair</text>
+    <rect x="645" y="445" width="75" height="80" fill="none" stroke="#3498db" stroke-width="3"/>
+    <text x="682" y="440" font-size="11" fill="#3498db" font-weight="bold">Table</text>
+    <rect x="740" y="430" width="80" height="90" fill="none" stroke="#2ecc71" stroke-width="3"/>
+    <text x="780" y="425" font-size="11" fill="#2ecc71" font-weight="bold">Sofa</text>
+    <rect x="770" y="485" width="55" height="45" fill="none" stroke="#f39c12" stroke-width="3"/>
+    <text x="797" y="478" font-size="11" fill="#f39c12" font-weight="bold">Lamp</text>
+    
+    <!-- Memory Icon 2 -->
+    <circle cx="845" cy="480" r="14" fill="#f57c00" opacity="0.3"/>
+    <text x="845" y="486" font-size="11" text-anchor="middle" fill="#e65100" font-weight="bold">M</text>
+    
+    <!-- Arrow 2 -->
+    <path d="M 685 570 L 685 640" fill="none" stroke="#333" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+    <text x="730" y="608" font-size="13" font-weight="bold" fill="#333">Track</text>
+    
+    <!-- Frame 3 with Sequence Indicator -->
+    <rect x="510" y="640" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="685" y="663" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t+2 (t=2)</text>
+    <text x="685" y="677" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 66ms</text>
+    <rect x="530" y="690" width="95" height="75" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <text x="577" y="683" font-size="11" fill="#e74c3c" font-weight="bold">Chair</text>
+    <rect x="640" y="695" width="80" height="85" fill="none" stroke="#3498db" stroke-width="3"/>
+    <text x="680" y="688" font-size="11" fill="#3498db" font-weight="bold">Table</text>
+    <rect x="735" y="680" width="85" height="95" fill="none" stroke="#2ecc71" stroke-width="3"/>
+    <text x="777" y="673" font-size="11" fill="#2ecc71" font-weight="bold">Sofa</text>
+    <rect x="760" y="740" width="60" height="50" fill="none" stroke="#f39c12" stroke-width="3"/>
+    <text x="790" y="733" font-size="11" fill="#f39c12" font-weight="bold">Lamp</text>
+    
+    <!-- Memory Icon 3 -->
+    <circle cx="845" cy="730" r="14" fill="#f57c00" opacity="0.3"/>
+    <text x="845" y="736" font-size="11" text-anchor="middle" fill="#e65100" font-weight="bold">M</text>
+  </g>
+  
+  <!-- Right Section: Online Instance Segmentation -->
+  <g id="instance-section">
+    <!-- Section Background -->
+    <rect x="930" y="70" width="410" height="780" fill="url(#grad3)" stroke="#8e24aa" stroke-width="2" rx="10"/>
+    
+    <!-- Section Title -->
+    <text x="1135" y="100" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+      Online Instance Segmentation
+    </text>
+    
+    <!-- Adapter Injection Indicator with Border -->
+    <rect x="950" y="110" width="370" height="18" fill="#8e24aa" opacity="0.08" stroke="#8e24aa" stroke-width="1" stroke-dasharray="2,2" rx="3"/>
+    <text x="1135" y="122" font-size="10" text-anchor="middle" fill="#6a1b9a" font-style="italic">
+      3D-to-2D Adapter + Memory Layer
+    </text>
+    
+    <!-- Frame 1 with Sequence Indicator -->
+    <rect x="960" y="140" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="1135" y="163" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t (t=0)</text>
+    <text x="1135" y="177" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 0ms</text>
+    <!-- Instance masks with 3D indicator -->
+    <ellipse cx="1020" cy="230" rx="42" ry="52" fill="#e91e63" opacity="0.7"/>
+    <text x="1020" y="235" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 1</text>
+    <path d="M 1090 190 L 1150 190 L 1150 270 L 1090 270 Z" fill="#9c27b0" opacity="0.7"/>
+    <text x="1120" y="235" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 2</text>
+    <ellipse cx="1220" cy="225" rx="47" ry="57" fill="#673ab7" opacity="0.7"/>
+    <text x="1220" y="230" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 3</text>
+    
+    <!-- 3D Layer Indicator -->
+    <rect x="960" y="285" width="350" height="25" fill="#8e24aa" opacity="0.08" stroke="#8e24aa" stroke-width="1" stroke-dasharray="2,2" rx="3"/>
+    <text x="1135" y="300" font-size="10" text-anchor="middle" fill="#6a1b9a" font-style="italic">
+      3D Memory Enhancement
+    </text>
+    
+    <!-- Memory Icon 1 -->
+    <circle cx="1295" cy="230" r="14" fill="#8e24aa" opacity="0.3"/>
+    <text x="1295" y="236" font-size="11" text-anchor="middle" fill="#6a1b9a" font-weight="bold">M</text>
+    
+    <!-- Arrow 1 -->
+    <path d="M 1135 320 L 1135 390" fill="none" stroke="#333" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+    <text x="1180" y="358" font-size="13" font-weight="bold" fill="#333">3D NMS</text>
+    
+    <!-- Frame 2 with Sequence Indicator -->
+    <rect x="960" y="390" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="1135" y="413" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t+1 (t=1)</text>
+    <text x="1135" y="427" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 33ms</text>
+    <ellipse cx="1015" cy="485" rx="45" ry="55" fill="#e91e63" opacity="0.7"/>
+    <text x="1015" y="490" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 1</text>
+    <path d="M 1085 445 L 1145 445 L 1145 525 L 1085 525 Z" fill="#9c27b0" opacity="0.7"/>
+    <text x="1115" y="490" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 2</text>
+    <ellipse cx="1215" cy="480" rx="49" ry="59" fill="#673ab7" opacity="0.7"/>
+    <text x="1215" y="485" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 3</text>
+    <ellipse cx="1280" cy="505" rx="27" ry="37" fill="#00bcd4" opacity="0.7"/>
+    <text x="1280" y="510" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 4</text>
+    
+    <!-- 3D Layer Indicator -->
+    <rect x="960" y="535" width="350" height="25" fill="#8e24aa" opacity="0.08" stroke="#8e24aa" stroke-width="1" stroke-dasharray="2,2" rx="3"/>
+    <text x="1135" y="550" font-size="10" text-anchor="middle" fill="#6a1b9a" font-style="italic">
+      3D Memory Enhancement
+    </text>
+    
+    <!-- Memory Icon 2 -->
+    <circle cx="1295" cy="480" r="14" fill="#8e24aa" opacity="0.3"/>
+    <text x="1295" y="486" font-size="11" text-anchor="middle" fill="#6a1b9a" font-weight="bold">M</text>
+    
+    <!-- Arrow 2 -->
+    <path d="M 1135 570 L 1135 640" fill="none" stroke="#333" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+    <text x="1180" y="608" font-size="13" font-weight="bold" fill="#333">Merge</text>
+    
+    <!-- Frame 3 with Sequence Indicator -->
+    <rect x="960" y="640" width="350" height="180" fill="#fff" stroke="#666" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    <text x="1135" y="663" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Frame t+2 (t=2)</text>
+    <text x="1135" y="677" font-size="9" text-anchor="middle" fill="#888" font-style="italic">Timestamp: 66ms</text>
+    <ellipse cx="1010" cy="745" rx="47" ry="57" fill="#e91e63" opacity="0.7"/>
+    <text x="1010" y="750" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 1</text>
+    <path d="M 1080 705 L 1140 705 L 1140 785 L 1080 785 Z" fill="#9c27b0" opacity="0.7"/>
+    <text x="1110" y="750" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 2</text>
+    <ellipse cx="1210" cy="740" rx="51" ry="61" fill="#673ab7" opacity="0.7"/>
+    <text x="1210" y="745" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 3</text>
+    <ellipse cx="1275" cy="765" rx="29" ry="39" fill="#00bcd4" opacity="0.7"/>
+    <text x="1275" y="770" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">Obj 4</text>
+    
+    <!-- 3D Layer Indicator -->
+    <rect x="960" y="785" width="350" height="25" fill="#8e24aa" opacity="0.08" stroke="#8e24aa" stroke-width="1" stroke-dasharray="2,2" rx="3"/>
+    <text x="1135" y="800" font-size="10" text-anchor="middle" fill="#6a1b9a" font-style="italic">
+      3D Memory Enhancement
+    </text>
+    
+    <!-- Memory Icon 3 -->
+    <circle cx="1295" cy="730" r="14" fill="#8e24aa" opacity="0.3"/>
+    <text x="1295" y="736" font-size="11" text-anchor="middle" fill="#6a1b9a" font-weight="bold">M</text>
+  </g>
+  
+  <!-- Bottom Note with Separator -->
+  <line x1="200" y1="855" x2="1200" y2="855" stroke="#ccc" stroke-width="1"/>
+  <text x="700" y="875" font-size="14" text-anchor="middle" fill="#555" font-style="italic">
+    Memory-based adapters enable seamless transition from offline to online perception
+  </text>
+  <text x="700" y="895" font-size="12" text-anchor="middle" fill="#777" font-style="italic">
+    Time-Aware Memory stores spatial-temporal information across frames
+  </text>
+</svg>

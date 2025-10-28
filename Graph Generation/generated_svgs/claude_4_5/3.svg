@@ -1,0 +1,141 @@
+<svg width="1000" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1e88e5" />
+    </marker>
+  </defs>
+  
+  <!-- Background shading for CPU and GPU sections -->
+  <rect x="0" y="0" width="500" height="1200" fill="#f9f9f9" opacity="0.5" />
+  <rect x="500" y="0" width="500" height="1200" fill="#d6ebf7" opacity="0.7" />
+  
+  <!-- Vertical dividing line -->
+  <line x1="500" y1="0" x2="500" y2="1200" stroke="#999" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- CPU Section Label -->
+  <text x="250" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">CPU</text>
+  
+  <!-- GPU Section Label -->
+  <text x="750" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e88e5">GPU</text>
+  
+  <!-- Video Sequences -->
+  <rect x="150" y="60" width="200" height="50" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="250" y="90" font-size="15" text-anchor="middle" fill="#333">Video Sequences</text>
+  
+  <!-- Arrow from Video Sequences to Embeddings -->
+  <line x1="250" y1="110" x2="250" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Patch i Pixel-wide Embeddings -->
+  <rect x="100" y="140" width="300" height="60" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="250" y="165" font-size="14" text-anchor="middle" fill="#333">Patch i Pixel-wide</text>
+  <text x="250" y="185" font-size="14" text-anchor="middle" fill="#333">Embeddings S_i</text>
+  
+  <!-- Arrow to random select -->
+  <line x1="250" y1="200" x2="250" y2="235" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Evenly random select N vectors -->
+  <rect x="80" y="235" width="340" height="60" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="250" y="260" font-size="14" text-anchor="middle" fill="#333">Evenly random select N vectors:</text>
+  <text x="250" y="280" font-size="14" text-anchor="middle" fill="#333">S_seed in S_i</text>
+  
+  <!-- Arrow to GPU Parallel Mean-shift (aligned to box border) -->
+  <line x1="420" y1="265" x2="580" y2="265" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead-blue)" />
+  
+  <!-- GPU: Parallel Mean-shift -->
+  <rect x="580" y="235" width="240" height="60" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2" rx="5" />
+  <text x="700" y="270" font-size="15" text-anchor="middle" fill="#1e88e5">Parallel Mean-shift</text>
+  
+  <!-- Arrow to Converged decision -->
+  <line x1="700" y1="295" x2="700" y2="345" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead-blue)" />
+  
+  <!-- GPU: Converged decision -->
+  <polygon points="700,345 760,385 700,425 640,385" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2" />
+  <text x="700" y="390" font-size="14" text-anchor="middle" fill="#1e88e5">Converged</text>
+  
+  <!-- Loop back arrow for not converged (smoother arc) -->
+  <path d="M 760 385 Q 850 385 850 265 L 820 265" stroke="#1e88e5" stroke-width="2" fill="none" marker-end="url(#arrowhead-blue)" />
+  <text x="865" y="330" font-size="12" fill="#1e88e5">N</text>
+  
+  <!-- Arrow back to CPU from GPU (converged clusters) -->
+  <line x1="640" y1="385" x2="420" y2="385" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="530" y="375" font-size="12" fill="#333">Y (clusters)</text>
+  
+  <!-- Arrow from random select to Prune and Cluster -->
+  <line x1="250" y1="295" x2="250" y2="365" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Prune and Cluster -->
+  <rect x="100" y="365" width="300" height="60" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="250" y="390" font-size="14" text-anchor="middle" fill="#333">Prune and Cluster,</text>
+  <text x="250" y="410" font-size="14" text-anchor="middle" fill="#333">get r (clusters) and I (indices)</text>
+  
+  <!-- Arrow to Obtain N_min -->
+  <line x1="250" y1="425" x2="250" y2="470" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Obtain N_min -->
+  <rect x="100" y="470" width="300" height="50" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="250" y="500" font-size="14" text-anchor="middle" fill="#333">Obtain N_min based on Eq. (19)</text>
+  
+  <!-- Arrow to first decision -->
+  <line x1="250" y1="520" x2="250" y2="575" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Decision: N <= L x N_min -->
+  <polygon points="250,575 360,625 250,675 140,625" fill="#fff9e6" stroke="#333" stroke-width="2" />
+  <text x="250" y="630" font-size="13" text-anchor="middle" fill="#333">N &lt;= L x N_min</text>
+  
+  <!-- Arrow Y from first decision to second decision -->
+  <line x1="250" y1="675" x2="250" y2="755" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="230" y="720" font-size="12" fill="#333">Y</text>
+  
+  <!-- Decision: N >= H x N_min (more spacing) -->
+  <polygon points="250,755 360,805 250,855 140,805" fill="#fff9e6" stroke="#333" stroke-width="2" />
+  <text x="250" y="810" font-size="13" text-anchor="middle" fill="#333">N &gt;= H x N_min</text>
+  
+  <!-- Arrow Y from second decision to third decision -->
+  <line x1="250" y1="855" x2="250" y2="915" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="230" y="890" font-size="12" fill="#333">Y</text>
+  
+  <!-- Decision: Patch i is last batch -->
+  <polygon points="250,915 360,965 250,1015 140,965" fill="#fff9e6" stroke="#333" stroke-width="2" />
+  <text x="250" y="960" font-size="13" text-anchor="middle" fill="#333">Patch i is</text>
+  <text x="250" y="975" font-size="13" text-anchor="middle" fill="#333">last batch</text>
+  
+  <!-- Arrow Y to End -->
+  <line x1="250" y1="1015" x2="250" y2="1065" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="230" y="1045" font-size="12" fill="#333">Y</text>
+  
+  <!-- End -->
+  <ellipse cx="250" cy="1085" rx="50" ry="30" fill="#d4edda" stroke="#333" stroke-width="2" />
+  <text x="250" y="1092" font-size="15" text-anchor="middle" fill="#333">End</text>
+  
+  <!-- Update N box (aligned and integrated with N = N x 2) -->
+  <rect x="15" y="600" width="110" height="70" fill="#ffe6e6" stroke="#333" stroke-width="2" rx="5" />
+  <text x="70" y="630" font-size="14" text-anchor="middle" fill="#333">Update N</text>
+  <text x="70" y="650" font-size="12" text-anchor="middle" fill="#333">(N = N x 2)</text>
+  
+  <!-- Arrow N from first decision to Update N -->
+  <line x1="140" y1="625" x2="125" y2="625" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="130" y="615" font-size="12" fill="#333">N</text>
+  
+  <!-- Arrow N from second decision to Update N with clearer path -->
+  <line x1="140" y1="805" x2="70" y2="805" stroke="#333" stroke-width="2" />
+  <line x1="70" y1="805" x2="70" y2="670" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="130" y="795" font-size="12" fill="#333">N</text>
+  
+  <!-- Arrow from Update N back to random select -->
+  <line x1="70" y1="600" x2="70" y2="265" stroke="#333" stroke-width="2" />
+  <line x1="70" y1="265" x2="80" y2="265" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Arrow N from third decision (i = i + 1) with thicker, more prominent line -->
+  <line x1="140" y1="965" x2="40" y2="965" stroke="#333" stroke-width="3" />
+  <line x1="40" y1="965" x2="40" y2="170" stroke="#333" stroke-width="3" />
+  <line x1="40" y1="170" x2="100" y2="170" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)" />
+  <text x="130" y="955" font-size="12" fill="#333">N</text>
+  
+  <!-- i = i + 1 label positioned clearly -->
+  <rect x="5" y="540" width="70" height="30" fill="#fff" stroke="#333" stroke-width="1" rx="3" />
+  <text x="40" y="560" font-size="12" text-anchor="middle" fill="#333">i = i + 1</text>
+  <line x1="55" y1="555" x2="40" y2="570" stroke="#333" stroke-width="1" />
+</svg>

@@ -1,0 +1,342 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <marker id="arrow" markerUnits="strokeWidth" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#555555"/>
+    </marker>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #222222; font-weight: 600; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #333333; }
+      .label-small { font-family: Arial, Helvetica, sans-serif; font-size: 11px; fill: #444444; }
+      .image { fill: #f3f5f7; stroke: #c7ccd1; stroke-width: 1.5; rx: 8; ry: 8; }
+      .mem-outer { fill: #eef7ff; stroke: #4aa3ff; stroke-width: 1.5; rx: 8; ry: 8; }
+      .mem-inner-a { fill: #d9efff; stroke: #4aa3ff; stroke-width: 1; rx: 6; ry: 6; }
+      .mem-inner-b { fill: #e8f7ed; stroke: #34c759; stroke-width: 1; rx: 6; ry: 6; }
+      .mem-inner-c { fill: #fff3d6; stroke: #ffb020; stroke-width: 1; rx: 6; ry: 6; }
+      .flow { stroke: #555555; stroke-width: 2; fill: none; }
+      .flow-read { stroke: #888888; stroke-width: 2; stroke-dasharray: 5 4; fill: none; }
+      .flow-thin { stroke: #666666; stroke-width: 1.5; fill: none; }
+      .bbox-a { fill: none; stroke: #ff6b6b; stroke-width: 2; }
+      .bbox-b { fill: none; stroke: #1e90ff; stroke-width: 2; }
+      .bbox-c { fill: none; stroke: #2ecc71; stroke-width: 2; }
+      .seg-a { fill: #77c9ff; opacity: 0.8; }
+      .seg-b { fill: #ffca64; opacity: 0.8; }
+      .seg-c { fill: #a3e6a3; opacity: 0.85; }
+      .seg-d { fill: #d7b3ff; opacity: 0.85; }
+      .seg-e { fill: #ff8a8a; opacity: 0.85; }
+      .sep { fill: #fafbfc; }
+      .icon-stroke { stroke: #6b7280; stroke-width: 1; fill: none; }
+      .chip { fill: #ffffff; stroke: #34c759; stroke-width: 0.8; rx: 8; ry: 8; }
+      .chip-text { font-family: Arial, Helvetica, sans-serif; font-size: 10px; fill: #2f855a; }
+    </style>
+  </defs>
+
+  <!-- Section backgrounds -->
+  <rect class="sep" x="10" y="10" width="360" height="600" rx="10" ry="10"/>
+  <rect class="sep" x="400" y="10" width="360" height="600" rx="10" ry="10"/>
+  <rect class="sep" x="790" y="10" width="360" height="600" rx="10" ry="10"/>
+
+  <!-- Left Section: Online Semantic Segmentation -->
+  <g id="section-left">
+    <text class="title" x="130" y="35">Online Semantic Segmentation</text>
+
+    <!-- Images -->
+    <rect class="image" x="30" y="90" width="220" height="110"/>
+    <rect class="image" x="30" y="260" width="220" height="110"/>
+    <rect class="image" x="30" y="430" width="220" height="110"/>
+
+    <!-- Per frame labels -->
+    <text class="label" x="40" y="110">frame t1</text>
+    <text class="label" x="40" y="280">frame t2</text>
+    <text class="label" x="40" y="450">frame t3</text>
+
+    <!-- Segmentation overlays for t1 -->
+    <rect class="seg-a" x="44" y="120" width="70" height="24" rx="4" ry="4"/>
+    <rect class="seg-b" x="120" y="132" width="90" height="26" rx="4" ry="4"/>
+    <rect class="seg-c" x="60" y="152" width="60" height="28" rx="4" ry="4"/>
+    <rect class="seg-d" x="150" y="160" width="50" height="22" rx="4" ry="4"/>
+    <rect class="seg-e" x="80" y="178" width="120" height="16" rx="4" ry="4"/>
+
+    <!-- Segmentation overlays for t2 -->
+    <rect class="seg-a" x="48" y="288" width="62" height="22" rx="4" ry="4"/>
+    <rect class="seg-b" x="118" y="298" width="96" height="24" rx="4" ry="4"/>
+    <rect class="seg-c" x="66" y="316" width="56" height="24" rx="4" ry="4"/>
+    <rect class="seg-d" x="152" y="328" width="52" height="22" rx="4" ry="4"/>
+    <rect class="seg-e" x="88" y="344" width="112" height="18" rx="4" ry="4"/>
+
+    <!-- Segmentation overlays for t3 -->
+    <rect class="seg-a" x="46" y="458" width="72" height="24" rx="4" ry="4"/>
+    <rect class="seg-b" x="128" y="470" width="86" height="26" rx="4" ry="4"/>
+    <rect class="seg-c" x="64" y="488" width="60" height="24" rx="4" ry="4"/>
+    <rect class="seg-d" x="154" y="498" width="48" height="20" rx="4" ry="4"/>
+    <rect class="seg-e" x="82" y="512" width="118" height="16" rx="4" ry="4"/>
+
+    <!-- Temporal arrows between frames with consistent inset -->
+    <path class="flow" d="M140 198 C100 230, 100 230, 140 262" marker-end="url(#arrow)"/>
+    <path class="flow" d="M140 368 C100 400, 100 400, 140 432" marker-end="url(#arrow)"/>
+
+    <!-- Memory and adapter module -->
+    <rect class="mem-outer" x="270" y="80" width="130" height="480"/>
+    <text class="label" x="280" y="100">Memory Adapters</text>
+
+    <!-- Inner blocks -->
+    <rect class="mem-inner-a" x="280" y="110" width="110" height="120"/>
+    <text class="label" x="288" y="135">Offline Model</text>
+    <text class="label-small" x="288" y="155">U-Net Minkowski-UNet</text>
+    <text class="label-small" x="288" y="172">FCAF3D TD3D</text>
+    <text class="label-small" x="288" y="190">Encoder Decoder</text>
+
+    <rect class="mem-inner-b" x="280" y="250" width="110" height="140"/>
+    <text class="label" x="288" y="275">Time Memory</text>
+    <text class="label-small" x="288" y="295">Key Value Cache</text>
+    <!-- Update policy chips -->
+    <rect class="chip" x="286" y="312" width="50" height="18"/>
+    <text class="chip-text" x="311" y="325" text-anchor="middle">enqueue</text>
+    <rect class="chip" x="286" y="334" width="50" height="18"/>
+    <text class="chip-text" x="311" y="347" text-anchor="middle">decay</text>
+    <rect class="chip" x="340" y="323" width="44" height="18"/>
+    <text class="chip-text" x="362" y="336" text-anchor="middle">top k</text>
+
+    <rect class="mem-inner-c" x="280" y="400" width="110" height="140"/>
+    <text class="label" x="288" y="425">3D-2D Adapter</text>
+    <text class="label-small" x="288" y="445">Feature Fusion</text>
+
+    <!-- 3D to 2D icon with camera rays -->
+    <g>
+      <!-- cube -->
+      <rect x="286" y="452" width="16" height="16" class="icon-stroke"/>
+      <path d="M286 452 L292 446 L308 446 L302 452 Z" class="icon-stroke"/>
+      <path d="M302 452 L308 446 L308 462 L302 468 Z" class="icon-stroke"/>
+      <!-- 2D grid -->
+      <rect x="318" y="456" width="26" height="16" class="icon-stroke"/>
+      <path d="M331 456 L331 472" class="icon-stroke"/>
+      <path d="M318 464 L344 464" class="icon-stroke"/>
+      <!-- projection arrow -->
+      <path class="flow-thin" d="M302 460 L318 464" marker-end="url(#arrow)"/>
+      <!-- camera and rays -->
+      <path class="icon-stroke" d="M314 440 L322 440 L318 446 Z"/>
+      <path class="icon-stroke" d="M318 446 L322 452"/>
+      <path class="icon-stroke" d="M318 446 L326 450"/>
+    </g>
+
+    <!-- Write arrows from frames to memory with consistent inset -->
+    <line class="flow" x1="248" y1="145" x2="268" y2="145" marker-end="url(#arrow)"/>
+    <line class="flow" x1="248" y1="315" x2="268" y2="315" marker-end="url(#arrow)"/>
+    <line class="flow" x1="248" y1="485" x2="268" y2="485" marker-end="url(#arrow)"/>
+
+    <!-- Write labels centered on shafts -->
+    <text class="label-small" x="258" y="136" text-anchor="middle">write update</text>
+    <text class="label-small" x="258" y="306" text-anchor="middle">write update</text>
+    <text class="label-small" x="258" y="476" text-anchor="middle">write update</text>
+
+    <!-- Read arrows from memory to next frame top border with inset -->
+    <line class="flow-read" x1="272" y1="262" x2="252" y2="262" marker-end="url(#arrow)"/>
+    <line class="flow-read" x1="272" y1="432" x2="252" y2="432" marker-end="url(#arrow)"/>
+
+    <!-- Read labels centered on shafts -->
+    <text class="label-small" x="262" y="274" text-anchor="middle">read from memory</text>
+    <text class="label-small" x="262" y="444" text-anchor="middle">read from memory</text>
+  </g>
+
+  <!-- Middle Section: Online Object Detection -->
+  <g id="section-mid">
+    <text class="title" x="510" y="35">Online Object Detection</text>
+
+    <!-- Images -->
+    <rect class="image" x="390" y="90" width="220" height="110"/>
+    <rect class="image" x="390" y="260" width="220" height="110"/>
+    <rect class="image" x="390" y="430" width="220" height="110"/>
+
+    <!-- Per frame labels -->
+    <text class="label" x="400" y="110">frame t1</text>
+    <text class="label" x="400" y="280">frame t2</text>
+    <text class="label" x="400" y="450">frame t3</text>
+
+    <!-- Detection boxes t1 -->
+    <rect class="bbox-a" x="410" y="118" width="70" height="44"/>
+    <rect class="bbox-b" x="495" y="128" width="80" height="50"/>
+    <rect class="bbox-c" x="450" y="160" width="60" height="28"/>
+
+    <!-- Detection boxes t2 -->
+    <rect class="bbox-a" x="414" y="288" width="66" height="42"/>
+    <rect class="bbox-b" x="498" y="298" width="82" height="46"/>
+    <rect class="bbox-c" x="452" y="330" width="58" height="26"/>
+
+    <!-- Detection boxes t3 -->
+    <rect class="bbox-a" x="412" y="458" width="72" height="46"/>
+    <rect class="bbox-b" x="500" y="470" width="78" height="48"/>
+    <rect class="bbox-c" x="448" y="504" width="62" height="24"/>
+
+    <!-- Temporal arrows between frames with consistent inset -->
+    <path class="flow" d="M500 198 C460 230, 460 230, 500 262" marker-end="url(#arrow)"/>
+    <path class="flow" d="M500 368 C460 400, 460 400, 500 432" marker-end="url(#arrow)"/>
+
+    <!-- Memory and adapter module -->
+    <rect class="mem-outer" x="630" y="80" width="130" height="480"/>
+    <text class="label" x="640" y="100">Memory Adapters</text>
+
+    <rect class="mem-inner-a" x="640" y="110" width="110" height="120"/>
+    <text class="label" x="648" y="135">Offline Model</text>
+    <text class="label-small" x="648" y="155">Detector Head</text>
+    <text class="label-small" x="648" y="175">FCAF3D TD3D</text>
+
+    <rect class="mem-inner-b" x="640" y="250" width="110" height="140"/>
+    <text class="label" x="648" y="275">Time Memory</text>
+    <text class="label-small" x="648" y="295">Box Feature Bank</text>
+    <!-- Update policy chips -->
+    <rect class="chip" x="646" y="312" width="50" height="18"/>
+    <text class="chip-text" x="671" y="325" text-anchor="middle">enqueue</text>
+    <rect class="chip" x="646" y="334" width="50" height="18"/>
+    <text class="chip-text" x="671" y="347" text-anchor="middle">decay</text>
+    <rect class="chip" x="700" y="323" width="44" height="18"/>
+    <text class="chip-text" x="722" y="336" text-anchor="middle">top k</text>
+
+    <rect class="mem-inner-c" x="640" y="400" width="110" height="140"/>
+    <text class="label" x="648" y="425">3D-2D Adapter</text>
+    <text class="label-small" x="648" y="445">Projection Fuse</text>
+
+    <!-- 3D to 2D icon with camera rays -->
+    <g>
+      <!-- cube -->
+      <rect x="646" y="452" width="16" height="16" class="icon-stroke"/>
+      <path d="M646 452 L652 446 L668 446 L662 452 Z" class="icon-stroke"/>
+      <path d="M662 452 L668 446 L668 462 L662 468 Z" class="icon-stroke"/>
+      <!-- 2D grid -->
+      <rect x="678" y="456" width="26" height="16" class="icon-stroke"/>
+      <path d="M691 456 L691 472" class="icon-stroke"/>
+      <path d="M678 464 L704 464" class="icon-stroke"/>
+      <!-- projection arrow -->
+      <path class="flow-thin" d="M662 460 L678 464" marker-end="url(#arrow)"/>
+      <!-- camera and rays -->
+      <path class="icon-stroke" d="M674 440 L682 440 L678 446 Z"/>
+      <path class="icon-stroke" d="M678 446 L682 452"/>
+      <path class="icon-stroke" d="M678 446 L686 450"/>
+    </g>
+
+    <!-- Write arrows from frames to memory with consistent inset -->
+    <line class="flow" x1="608" y1="145" x2="628" y2="145" marker-end="url(#arrow)"/>
+    <line class="flow" x1="608" y1="315" x2="628" y2="315" marker-end="url(#arrow)"/>
+    <line class="flow" x1="608" y1="485" x2="628" y2="485" marker-end="url(#arrow)"/>
+
+    <!-- Write labels centered on shafts -->
+    <text class="label-small" x="618" y="136" text-anchor="middle">write update</text>
+    <text class="label-small" x="618" y="306" text-anchor="middle">write update</text>
+    <text class="label-small" x="618" y="476" text-anchor="middle">write update</text>
+
+    <!-- Read arrows from memory to next frame top border with inset -->
+    <line class="flow-read" x1="632" y1="262" x2="612" y2="262" marker-end="url(#arrow)"/>
+    <line class="flow-read" x1="632" y1="432" x2="612" y2="432" marker-end="url(#arrow)"/>
+
+    <!-- Read labels centered on shafts -->
+    <text class="label-small" x="622" y="274" text-anchor="middle">read from memory</text>
+    <text class="label-small" x="622" y="444" text-anchor="middle">read from memory</text>
+  </g>
+
+  <!-- Right Section: Online Instance Segmentation -->
+  <g id="section-right">
+    <text class="title" x="870" y="35">Online Instance Segmentation</text>
+
+    <!-- Images -->
+    <rect class="image" x="760" y="90" width="220" height="110"/>
+    <rect class="image" x="760" y="260" width="220" height="110"/>
+    <rect class="image" x="760" y="430" width="220" height="110"/>
+
+    <!-- Per frame labels -->
+    <text class="label" x="770" y="110">frame t1</text>
+    <text class="label" x="770" y="280">frame t2</text>
+    <text class="label" x="770" y="450">frame t3</text>
+
+    <!-- Instance masks t1 -->
+    <rect class="seg-a" x="774" y="118" width="64" height="26" rx="4" ry="4"/>
+    <rect class="seg-b" x="846" y="126" width="68" height="28" rx="4" ry="4"/>
+    <rect class="seg-c" x="800" y="154" width="52" height="24" rx="4" ry="4"/>
+    <rect class="seg-d" x="876" y="160" width="44" height="22" rx="4" ry="4"/>
+    <rect class="seg-e" x="812" y="180" width="110" height="14" rx="4" ry="4"/>
+
+    <!-- Instance masks t2 -->
+    <rect class="seg-a" x="776" y="288" width="60" height="24" rx="4" ry="4"/>
+    <rect class="seg-b" x="848" y="296" width="70" height="28" rx="4" ry="4"/>
+    <rect class="seg-c" x="804" y="322" width="50" height="22" rx="4" ry="4"/>
+    <rect class="seg-d" x="878" y="328" width="42" height="20" rx="4" ry="4"/>
+    <rect class="seg-e" x="814" y="346" width="104" height="16" rx="4" ry="4"/>
+
+    <!-- Instance masks t3 -->
+    <rect class="seg-a" x="772" y="458" width="66" height="26" rx="4" ry="4"/>
+    <rect class="seg-b" x="848" y="468" width="66" height="28" rx="4" ry="4"/>
+    <rect class="seg-c" x="802" y="494" width="52" height="22" rx="4" ry="4"/>
+    <rect class="seg-d" x="876" y="500" width="44" height="20" rx="4" ry="4"/>
+    <rect class="seg-e" x="812" y="516" width="108" height="14" rx="4" ry="4"/>
+
+    <!-- Temporal arrows between frames with consistent inset -->
+    <path class="flow" d="M870 198 C830 230, 830 230, 870 262" marker-end="url(#arrow)"/>
+    <path class="flow" d="M870 368 C830 400, 830 400, 870 432" marker-end="url(#arrow)"/>
+
+    <!-- Memory and adapter module -->
+    <rect class="mem-outer" x="1000" y="80" width="130" height="480"/>
+    <text class="label" x="1010" y="100">Memory Adapters</text>
+
+    <rect class="mem-inner-a" x="1010" y="110" width="110" height="120"/>
+    <text class="label" x="1018" y="135">Offline Model</text>
+    <text class="label-small" x="1018" y="155">Mask Head</text>
+
+    <rect class="mem-inner-b" x="1010" y="250" width="110" height="140"/>
+    <text class="label" x="1018" y="275">Time Memory</text>
+    <text class="label-small" x="1018" y="295">Instance Bank</text>
+    <!-- Update policy chips -->
+    <rect class="chip" x="1016" y="312" width="50" height="18"/>
+    <text class="chip-text" x="1041" y="325" text-anchor="middle">enqueue</text>
+    <rect class="chip" x="1016" y="334" width="50" height="18"/>
+    <text class="chip-text" x="1041" y="347" text-anchor="middle">decay</text>
+    <rect class="chip" x="1070" y="323" width="44" height="18"/>
+    <text class="chip-text" x="1092" y="336" text-anchor="middle">top k</text>
+
+    <rect class="mem-inner-c" x="1010" y="400" width="110" height="140"/>
+    <text class="label" x="1018" y="425">3D-2D Adapter</text>
+    <text class="label-small" x="1018" y="445">Mask Refine</text>
+
+    <!-- Explicit 3D NMS block inside adapter area -->
+    <rect x="1010" y="412" width="110" height="28" fill="#ffe8cc" stroke="#ffb86b" stroke-width="1" rx="6" ry="6"/>
+    <text class="label" x="1048" y="430" text-anchor="middle">3D NMS</text>
+
+    <!-- Internal connections for instance pipeline -->
+    <!-- Time memory to 3D NMS with consistent inset -->
+    <line class="flow" x1="1065" y1="392" x2="1065" y2="410" marker-end="url(#arrow)"/>
+    <!-- 3D NMS up to mask head via right side routed path -->
+    <path class="flow" d="M1065 440 L1130 440 L1130 230 L1012 230" marker-end="url(#arrow)"/>
+
+    <!-- 3D to 2D icon with camera rays -->
+    <g>
+      <!-- cube -->
+      <rect x="1016" y="452" width="16" height="16" class="icon-stroke"/>
+      <path d="M1016 452 L1022 446 L1038 446 L1032 452 Z" class="icon-stroke"/>
+      <path d="M1032 452 L1038 446 L1038 462 L1032 468 Z" class="icon-stroke"/>
+      <!-- 2D grid -->
+      <rect x="1048" y="456" width="26" height="16" class="icon-stroke"/>
+      <path d="M1061 456 L1061 472" class="icon-stroke"/>
+      <path d="M1048 464 L1074 464" class="icon-stroke"/>
+      <!-- projection arrow -->
+      <path class="flow-thin" d="M1032 460 L1048 464" marker-end="url(#arrow)"/>
+      <!-- camera and rays -->
+      <path class="icon-stroke" d="M1044 440 L1052 440 L1048 446 Z"/>
+      <path class="icon-stroke" d="M1048 446 L1052 452"/>
+      <path class="icon-stroke" d="M1048 446 L1056 450"/>
+    </g>
+
+    <!-- Write arrows from frames to memory with consistent inset -->
+    <line class="flow" x1="978" y1="145" x2="998" y2="145" marker-end="url(#arrow)"/>
+    <line class="flow" x1="978" y1="315" x2="998" y2="315" marker-end="url(#arrow)"/>
+    <line class="flow" x1="978" y1="485" x2="998" y2="485" marker-end="url(#arrow)"/>
+
+    <!-- Write labels centered on shafts -->
+    <text class="label-small" x="988" y="136" text-anchor="middle">write update</text>
+    <text class="label-small" x="988" y="306" text-anchor="middle">write update</text>
+    <text class="label-small" x="988" y="476" text-anchor="middle">write update</text>
+
+    <!-- Read arrows from memory to next frame top border with inset -->
+    <line class="flow-read" x1="1002" y1="262" x2="982" y2="262" marker-end="url(#arrow)"/>
+    <line class="flow-read" x1="1002" y1="432" x2="982" y2="432" marker-end="url(#arrow)"/>
+
+    <!-- Read labels centered on shafts -->
+    <text class="label-small" x="992" y="274" text-anchor="middle">read from memory</text>
+    <text class="label-small" x="992" y="444" text-anchor="middle">read from memory</text>
+  </g>
+</svg>

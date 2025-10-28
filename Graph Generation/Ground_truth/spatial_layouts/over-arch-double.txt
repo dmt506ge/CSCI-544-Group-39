@@ -1,0 +1,38 @@
+Source File: over-arch-double.pdf
+================================================================================
+
+The diagram follows a complex structure with multiple layers and directions:
+
+1. **Top Layer: Temporal Input Module**
+   - **Components**: Two images labeled as "time t" and "time t+1"
+   - **Position**: Left side, arranged vertically
+   - **Flow**: Left-to-right towards the central layer
+
+2. **Middle Layer: Backbone and Task Processing**
+   - **Components**: RGB-D Backbone, Task Head, and Fusion
+   - **Position**: Center of the diagram
+   - **Flow**: 
+     - Horizontal flow from RGB-D Backbone to Task Head (for both time t and t+1)
+     - Vertical flow downward into Fusion (maintaining a temporal relation between time t and t+1)
+
+3. **Right Layer: RGB and Pointcloud Processing**
+   - **Components**: Image Backbone and Pointcloud Backbone
+   - **Position**: Right side, vertically stacked
+   - **Flow**: 
+     - Horizontal flow from "RGB" and "Point Clouds" inputs to respective backbones
+     - Feedback connections between Image Backbone and Task Head, and between Pointcloud Backbone and Task Head
+
+4. **Bottom Layer: Output and Memory Processing**
+   - **Components**: Memory, Adapter
+   - **Position**: Bottom, arranged in a dual parallel structure
+   - **Flow**: Horizontal flow from "memory" to "adapter" with bidirectional arrows, moving towards outputs Y and O
+   
+5. **Connections and Groupings:**
+   - **Hierarchical Grouping**: The middle layer coordinates central processing tasks, with inputs from both top and right layers
+   - **Flow Hierarchy**: Starts with temporal context from the top, processes through the central backbones and task heads, and manages outputs through memory-adapter configurations at the bottom
+
+Overall, the flow network is multi-directional:
+- **Vertical and Horizontal**: Initial processing is horizontal across time frames and vertical within the RGB-D and Task Head structure.
+- **Feedback and Circuits**: Connections loop back from the right to the central components, suggesting iterative processing or refinement.
+
+The architecture demonstrates a sophisticated arrangement combining both vertical and horizontal elements integrated through feedback loops and temporal synchronization.

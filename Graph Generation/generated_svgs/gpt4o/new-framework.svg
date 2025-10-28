@@ -1,0 +1,50 @@
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" 
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black"/>
+    </marker>
+  </defs>
+  
+  <!-- Server Interaction Group -->
+  <rect x="20" y="20" width="300" height="160" fill="none" stroke="green" stroke-dasharray="5,5"/>
+  <text x="170" y="40" font-family="Arial" font-size="16" text-anchor="middle">Server Interaction</text>
+  <ellipse cx="100" cy="100" rx="60" ry="30" fill="#d9e8f5"/>
+  <text x="100" y="105" font-family="Arial" font-size="14" text-anchor="middle">Server Aggregation</text>
+  <rect x="180" y="80" width="140" height="40" fill="#f4f1bb"/>
+  <text x="250" y="105" font-family="Arial" font-size="14" text-anchor="middle">Global item embedding (C)</text>
+  
+  <!-- Personalization Group -->
+  <rect x="340" y="200" width="500" height="250" fill="none" stroke="green" stroke-dasharray="5,5"/>
+  <text x="590" y="220" font-family="Arial" font-size="16" text-anchor="middle">Personalization</text>
+  <rect x="360" y="250" width="140" height="40" fill="#f4f1bb"/>
+  <text x="430" y="275" font-family="Arial" font-size="14" text-anchor="middle">Enforce Difference</text>
+  <rect x="360" y="310" width="140" height="40" fill="#f4f1bb"/>
+  <text x="430" y="335" font-family="Arial" font-size="14" text-anchor="middle">Local item embedding (Di)</text>
+  <rect x="520" y="310" width="140" height="40" fill="#f4f1bb"/>
+  <text x="590" y="335" font-family="Arial" font-size="14" text-anchor="middle">User embedding (ui)</text>
+  
+  <!-- Error Computation Group -->
+  <rect x="860" y="200" width="300" height="250" fill="none" stroke="green" stroke-dasharray="5,5"/>
+  <text x="1010" y="220" font-family="Arial" font-size="16" text-anchor="middle">Reconstruction Error</text>
+  <rect x="880" y="250" width="140" height="40" fill="#f4f1bb"/>
+  <text x="950" y="275" font-family="Arial" font-size="14" text-anchor="middle">User ratings (ri)</text>
+  <rect x="880" y="310" width="140" height="40" fill="#f4f1bb"/>
+  <text x="950" y="335" font-family="Arial" font-size="14" text-anchor="middle">Compute Loss</text>
+  <rect x="880" y="370" width="140" height="40" fill="#f4f1bb"/>
+  <text x="950" y="395" font-family="Arial" font-size="14" text-anchor="middle">Predicted user ratings (ri_hat)</text>
+  
+  <!-- Annotations for clarity -->
+  <text x="100" y="145" font-family="Arial" font-size="12" text-anchor="middle" fill="gray">Server aggregates models</text>
+  <text x="430" y="290" font-family="Arial" font-size="12" text-anchor="middle" fill="gray">Difference enforced to personalize</text>
+  <text x="950" y="415" font-family="Arial" font-size="12" text-anchor="middle" fill="gray">Loss computed for optimization</text>
+
+  <!-- Arrows and Connections -->
+  <line x1="160" y1="100" x2="180" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="430" y1="290" x2="430" y2="310" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="590" y1="290" x2="590" y2="310" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="430" y1="350" x2="880" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="950" y1="290" x2="950" y2="310" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="950" y1="350" x2="950" y2="370" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

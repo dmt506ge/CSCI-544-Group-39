@@ -1,0 +1,93 @@
+<svg width="800" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- CPU Section -->
+  <rect x="0" y="0" width="400" height="1000" fill="none" stroke="black" stroke-dasharray="5,5" />
+  <text x="20" y="30" font-size="16" fill="black">CPU Section</text>
+
+  <!-- GPU Section -->
+  <rect x="400" y="0" width="400" height="1000" fill="none" stroke="black" stroke-dasharray="5,5" />
+  <text x="420" y="30" font-size="16" fill="blue">GPU Section</text>
+
+  <!-- CPU Components -->
+  <rect x="100" y="80" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="105" font-size="14" fill="white">Video Sequences</text>
+
+  <rect x="100" y="150" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="175" font-size="14" fill="white">Patch i Pixel-wide Embeddings Si</text>
+
+  <rect x="100" y="220" width="200" height="60" fill="black" stroke="black" />
+  <!-- Adjusted to prevent overlap -->
+  <text x="110" y="245" font-size="12" fill="white">Evenly random select N vectors:</text>
+  <text x="110" y="265" font-size="12" fill="white">S_seed in S_i</text>
+
+  <rect x="100" y="290" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="315" font-size="14" fill="white">Prune &amp; Cluster, get r and I</text>
+
+  <rect x="100" y="360" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="385" font-size="14" fill="white">Obtain Nmin based on Eq. (19)</text>
+
+  <rect x="100" y="430" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="455" font-size="14" fill="white">Decision: N &amp;le; L × Nmin</text>
+
+  <rect x="100" y="500" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="525" font-size="14" fill="white">Decision: N &amp;ge; H × Nmin</text>
+
+  <rect x="100" y="570" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="595" font-size="14" fill="white">Patch i is last batch</text>
+
+  <rect x="100" y="640" width="200" height="40" fill="black" stroke="black" />
+  <text x="110" y="665" font-size="14" fill="white">End</text>
+
+  <rect x="20" y="500" width="60" height="40" fill="black" stroke="black" />
+  <text x="30" y="525" font-size="14" fill="white">Update N</text>
+
+  <rect x="20" y="700" width="60" height="40" fill="black" stroke="black" />
+  <text x="30" y="725" font-size="14" fill="white">N = N × 2</text>
+
+  <rect x="20" y="770" width="60" height="40" fill="black" stroke="black" />
+  <text x="30" y="795" font-size="14" fill="white">i = i + 1</text>
+
+  <!-- GPU Components -->
+  <rect x="500" y="150" width="200" height="40" fill="blue" stroke="blue" />
+  <text x="510" y="175" font-size="14" fill="white">Parallel Mean-shift</text>
+
+  <rect x="500" y="220" width="200" height="40" fill="blue" stroke="blue" />
+  <text x="510" y="245" font-size="14" fill="white">Converged &gt; Y</text>
+
+  <!-- Arrows and Connections -->
+  <line x1="200" y1="120" x2="200" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="200" y1="190" x2="200" y2="220" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="200" y1="280" x2="200" y2="290" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="200" y1="330" x2="200" y2="360" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="200" y1="400" x2="200" y2="430" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="200" y1="470" x2="200" y2="500" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="200" y1="540" x2="200" y2="570" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="200" y1="610" x2="200" y2="640" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- CPU Decision Point Connections -->
+  <line x1="200" y1="590" x2="70" y2="590" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="70" y1="590" x2="70" y2="540" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="70" y1="540" x2="200" y2="540" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <line x1="200" y1="660" x2="70" y2="660" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="70" y1="660" x2="70" y2="750" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="70" y1="750" x2="200" y2="750" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <line x1="200" y1="690" x2="70" y2="690" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="70" y1="690" x2="70" y2="820" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="70" y1="820" x2="200" y2="820" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- GPU Connections -->
+  <line x1="600" y1="190" x2="600" y2="220" stroke="blue" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="600" y1="260" x2="600" y2="150" stroke="blue" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Additional Detail for Parameter Influence -->
+  <text x="300" y="460" font-size="14" fill="red">$N_{initial}$ and $H$ influence</text>
+  <text x="300" y="480" font-size="12" fill="red">Impact on computational load</text>
+</svg>

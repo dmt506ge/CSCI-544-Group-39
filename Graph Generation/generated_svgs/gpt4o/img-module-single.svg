@@ -1,0 +1,64 @@
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="black"/>
+    </marker>
+  </defs>
+  
+  <!-- Top Layer: Input Components -->
+  <g>
+    <!-- Input Feature -->
+    <rect x="50" y="50" width="120" height="60" fill="#f2f2f2" stroke="#000" />
+    <text x="60" y="85" font-family="Arial" font-size="14" fill="#000">Input Feature</text>
+    
+    <!-- Image Memory -->
+    <rect x="200" y="50" width="180" height="100" fill="#e6f7ff" stroke="#000" />
+    <text x="210" y="75" font-family="Arial" font-size="14" fill="#000">Image Memory</text>
+    <!-- Internal Operations with more detail -->
+    <line x1="220" y1="90" x2="360" y2="90" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="250" y="110" font-family="Arial" font-size="12" fill="#000">Reorganize</text>
+    <text x="250" y="125" font-family="Arial" font-size="12" fill="#000">Add &amp; Shift</text>
+    <text x="250" y="140" font-family="Arial" font-size="12" fill="#000">Temporal Agg.</text>
+    
+    <!-- Image Adapter -->
+    <rect x="400" y="50" width="120" height="60" fill="#f2f2f2" stroke="#000" />
+    <text x="410" y="85" font-family="Arial" font-size="14" fill="#000">Image Adapter</text>
+    <text x="410" y="105" font-family="Arial" font-size="12" fill="#000">Integrate</text>
+    
+    <!-- Horizontal Flow Arrows -->
+    <line x1="170" y1="80" x2="200" y2="80" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="380" y1="80" x2="400" y2="80" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
+  
+  <!-- Bottom Layer: Processing and Output Components -->
+  <g>
+    <!-- 3D Memory -->
+    <rect x="50" y="200" width="120" height="60" fill="#e6f7ff" stroke="#000" />
+    <text x="60" y="235" font-family="Arial" font-size="14" fill="#000">3D Memory</text>
+    <text x="60" y="255" font-family="Arial" font-size="12" fill="#000">Stores Temporal</text>
+    <text x="60" y="270" font-family="Arial" font-size="12" fill="#000">Context</text>
+    
+    <!-- Processing Grid -->
+    <rect x="200" y="200" width="180" height="100" fill="#f9e6ff" stroke="#000" />
+    <text x="210" y="225" font-family="Arial" font-size="14" fill="#000">Processing Grid</text>
+    <!-- Internal Operations with more detail -->
+    <line x1="220" y1="240" x2="360" y2="240" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="250" y="260" font-family="Arial" font-size="12" fill="#000">Project</text>
+    <text x="250" y="275" font-family="Arial" font-size="12" fill="#000">Aggregate</text>
+    <text x="250" y="290" font-family="Arial" font-size="12" fill="#000">Enhance</text>
+    
+    <!-- 3D to 2D Adapter -->
+    <rect x="400" y="200" width="120" height="60" fill="#f2f2f2" stroke="#000" />
+    <text x="410" y="235" font-family="Arial" font-size="14" fill="#000">3D to 2D Adapter</text>
+    <text x="410" y="255" font-family="Arial" font-size="12" fill="#000">Adapt 3D to 2D</text>
+    
+    <!-- Horizontal Flow Arrows -->
+    <line x1="170" y1="230" x2="200" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="380" y1="230" x2="400" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+  </g>
+
+  <!-- Vertical Connections -->
+  <line x1="110" y1="110" x2="110" y2="200" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="460" y1="110" x2="460" y2="200" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+</svg>

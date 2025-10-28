@@ -1,0 +1,36 @@
+Source File: pc-module-single.pdf
+================================================================================
+
+The diagram presents a hierarchical flow with two main sections, structured in a horizontal format:
+
+- **Top Section: "Point cloud adapter"**
+  - **Left:** 
+    - A block of colored squares (teal, yellow, gray) representing initial data processing.
+  - **Center:**
+    - Arrows labeled "sparsify" and "aggregate" leading to a red block of squares, indicating transformation processes.
+  - **Right:** 
+    - A mapping process leading to scattered red dots, suggesting data conversion.
+  - **Arrows:**
+    - A query arrow looping back to the left block.
+    - An "add" arrow pointing downward to the bottom section.
+
+- **Bottom Section: "Point cloud memory"**
+  - **Left:** 
+    - Teal squares labeled "voxelize" indicating initial transformation.
+  - **Center:**
+    - "Previous memory" shown as a tall stack of gray squares, connected by an arrow labeled "merge" from the left, and "update" to the right block.
+  - **Right:** 
+    - A composite block of colored squares (teal, yellow, gray), representing "updated memory."
+  - **Arrows:**
+    - An arrow from the top section input connecting to the left.
+    - A loop from the right block to the top section.
+
+Overall, the diagram follows a horizontal and bidirectional flow between the two main layers (top to bottom and vice versa):
+
+- **Flow Direction:** Mainly horizontal with vertical interactions.
+- **Connections:** 
+  - Top section components are sequentially connected left to right.
+  - Bottom section follows a linear path left to right.
+  - Top and bottom sections are interlinked through query and memory update processes. 
+
+These sections collectively illustrate a systematic approach to transforming and storing point cloud data.

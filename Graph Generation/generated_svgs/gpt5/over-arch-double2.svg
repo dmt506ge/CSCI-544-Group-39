@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="900">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#424242"/>
+    </marker>
+    <style>
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #263238; }
+      .text { font-family: Arial, Helvetica, sans-serif; font-size: 15px; fill: #263238; }
+      .input { fill: #e3f2fd; stroke: #1e88e5; stroke-width: 2; rx: 6; ry: 6; }
+      .rgbd { fill: #e1bee7; stroke: #8e24aa; stroke-width: 2; rx: 8; ry: 8; }
+      .task { fill: #e0f2f1; stroke: #00796b; stroke-width: 2; rx: 8; ry: 8; }
+      .fusion { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2; rx: 10; ry: 10; }
+      .img-bk { fill: #e8eaf6; stroke: #3949ab; stroke-width: 2; rx: 8; ry: 8; }
+      .pc-bk { fill: #fff3e0; stroke: #e65100; stroke-width: 2; rx: 8; ry: 8; }
+      .adapter { fill: #ffe0b2; stroke: #fb8c00; stroke-width: 2; rx: 8; ry: 8; }
+      .memory { fill: #fff9c4; stroke: #f9a825; stroke-width: 2; rx: 8; ry: 8; }
+      .output { fill: #fff8e1; stroke: #f9a825; stroke-width: 2; rx: 10; ry: 10; }
+      .solid { stroke: #424242; stroke-width: 2; fill: none; }
+      .dashed { stroke: #616161; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+
+  <!-- Top layer temporal inputs on the left -->
+  <g id="temporal-inputs">
+    <rect x="40" y="80" width="160" height="60" class="input"/>
+    <text x="120" y="105" text-anchor="middle" class="text">frame image t</text>
+    <text x="120" y="125" text-anchor="middle" class="label">temporal input</text>
+
+    <rect x="40" y="200" width="160" height="60" class="input"/>
+    <text x="120" y="225" text-anchor="middle" class="text">frame image t plus 1</text>
+    <text x="120" y="245" text-anchor="middle" class="label">temporal input</text>
+  </g>
+
+  <!-- Center fusion and multi task head -->
+  <g id="center">
+    <!-- fusion -->
+    <rect x="420" y="340" width="220" height="70" class="fusion"/>
+    <text x="530" y="368" text-anchor="middle" class="text">fusion and aggregation</text>
+    <text x="530" y="392" text-anchor="middle" class="label">inter frame and inter modal</text>
+
+    <!-- multi task head -->
+    <rect x="430" y="440" width="200" height="60" class="task"/>
+    <text x="530" y="465" text-anchor="middle" class="text">multi task head</text>
+    <text x="530" y="485" text-anchor="middle" class="label">seg det inst</text>
+  </g>
+
+  <!-- Right layer image and pointcloud backbones with inputs and 3d to 2d adapter -->
+  <g id="right-modal">
+    <!-- rgb input sequence -->
+    <rect x="860" y="90" width="100" height="40" class="input"/>
+    <text x="910" y="115" text-anchor="middle" class="text">rgb t and t plus 1</text>
+
+    <!-- image backbone -->
+    <rect x="1000" y="80" width="180" height="60" class="img-bk"/>
+    <text x="1090" y="105" text-anchor="middle" class="text">image backbone</text>
+    <text x="1090" y="125" text-anchor="middle" class="label">resnet fpn unet</text>
+
+    <!-- 3d to 2d adapter -->
+    <rect x="1000" y="150" width="180" height="40" class="adapter"/>
+    <text x="1090" y="175" text-anchor="middle" class="text">3d to 2d adapter</text>
+    <text x="1090" y="193" text-anchor="middle" class="label">inter modal temporal</text>
+
+    <!-- point input sequence -->
+    <rect x="860" y="210" width="100" height="40" class="input"/>
+    <text x="910" y="235" text-anchor="middle" class="text">point clouds t and t plus 1</text>
+
+    <!-- pointcloud backbone -->
+    <rect x="1000" y="200" width="180" height="60" class="pc-bk"/>
+    <text x="1090" y="225" text-anchor="middle" class="text">pointcloud backbone</text>
+    <text x="1090" y="245" text-anchor="middle" class="label">mink unet fcaf3d td3d</text>
+  </g>
+
+  <!-- Bottom layer memory and adapters with outputs -->
+  <g id="bottom-memory">
+    <!-- image memory and adapter row -->
+    <rect x="820" y="520" width="180" height="60" class="memory"/>
+    <text x="910" y="545" text-anchor="middle" class="text">image memory</text>
+    <text x="910" y="565" text-anchor="middle" class="label">temporal cache</text>
+
+    <rect x="1020" y="520" width="180" height="60" class="adapter"/>
+    <text x="1110" y="545" text-anchor="middle" class="text">image adapter</text>
+    <text x="1110" y="565" text-anchor="middle" class="label">temporal aggregate</text>
+
+    <rect x="1220" y="540" width="60" height="40" class="output"/>
+    <text x="1250" y="565" text-anchor="middle" class="text">2d predictions y</text>
+
+    <!-- point memory and adapter row -->
+    <rect x="820" y="610" width="180" height="60" class="memory"/>
+    <text x="910" y="635" text-anchor="middle" class="text">point memory</text>
+    <text x="910" y="655" text-anchor="middle" class="label">scene cache roi</text>
+
+    <rect x="1020" y="610" width="180" height="60" class="adapter"/>
+    <text x="1110" y="635" text-anchor="middle" class="text">point adapter</text>
+    <text x="1110" y="655" text-anchor="middle" class="label">temporal aggregate</text>
+
+    <rect x="1220" y="630" width="60" height="40" class="output"/>
+    <text x="1250" y="655" text-anchor="middle" class="text">3d predictions o</text>
+    <text x="1220" y="680" text-anchor="start" class="label">3d nms for instance masks</text>
+  </g>
+
+  <!-- Top inputs to rgb input box using orthogonal routing to avoid overlaps -->
+  <polyline points="200,110 240,110 240,60 860,60 860,100" class="solid" marker-end="url(#arrowhead)"/>
+  <polyline points="200,230 240,230 240,160 860,160 860,120" class="solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Right layer inputs to backbones -->
+  <line x1="960" y1="110" x2="1000" y2="110" class="solid" marker-end="url(#arrowhead)"/>
+  <line x1="960" y1="230" x2="1000" y2="230" class="solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Inter modal adapter connections -->
+  <!-- point backbone to 3d to 2d adapter -->
+  <polyline points="1090,200 1090,170 1180,170" class="solid" marker-end="url(#arrowhead)"/>
+  <!-- 3d to 2d adapter to image adapter -->
+  <polyline points="1090,190 1090,500 1080,500 1080,520" class="solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Backbones to modality adapters -->
+  <polyline points="1090,140 1090,550 1020,550" class="solid" marker-end="url(#arrowhead)"/>
+  <polyline points="1090,260 1090,640 1020,640" class="solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Adapters up to fusion with elbow routing -->
+  <polyline points="1140,520 1140,300 640,300 640,360" class="solid" marker-end="url(#arrowhead)"/>
+  <polyline points="1140,610 1140,320 640,320 640,390" class="solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Fusion to multi task head -->
+  <line x1="530" y1="410" x2="530" y2="440" class="solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Multi task head to outputs -->
+  <polyline points="630,470 1180,470 1180,560 1220,560" class="solid" marker-end="url(#arrowhead)"/>
+  <polyline points="630,500 1160,500 1160,650 1220,650" class="solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Memory read write dashed arrows with clear direction -->
+  <!-- image memory to adapter read -->
+  <line x1="1000" y1="550" x2="1020" y2="550" class="dashed" marker-end="url(#arrowhead)"/>
+  <text x="1010" y="542" text-anchor="middle" class="label">read temporal</text>
+  <!-- image adapter back to memory write -->
+  <line x1="1020" y1="580" x2="1000" y2="580" class="dashed" marker-end="url(#arrowhead)"/>
+  <text x="1010" y="592" text-anchor="middle" class="label">write</text>
+
+  <!-- point memory to adapter read -->
+  <line x1="1000" y1="640" x2="1020" y2="640" class="dashed" marker-end="url(#arrowhead)"/>
+  <text x="1010" y="632" text-anchor="middle" class="label">read temporal</text>
+  <!-- point adapter back to memory write -->
+  <line x1="1020" y1="660" x2="1000" y2="660" class="dashed" marker-end="url(#arrowhead)"/>
+  <text x="1010" y="672" text-anchor="middle" class="label">write</text>
+</svg>

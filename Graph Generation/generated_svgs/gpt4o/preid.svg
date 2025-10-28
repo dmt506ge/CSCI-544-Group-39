@@ -1,0 +1,59 @@
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Multi-camera system block -->
+  <rect x="20" y="250" width="150" height="60" fill="#cfe2f3" stroke="#6c8ebf" stroke-width="2"/>
+  <text x="30" y="285" font-family="Arial" font-size="14" fill="#000">Multi-camera System</text>
+
+  <!-- Arrow from Multi-camera system to Images/videos -->
+  <line x1="170" y1="280" x2="270" y2="280" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Images/videos block -->
+  <rect x="270" y="250" width="150" height="60" fill="#f4cccc" stroke="#cc0000" stroke-width="2"/>
+  <text x="280" y="285" font-family="Arial" font-size="14" fill="#000">Images/Videos</text>
+
+  <!-- Arrow from Images/videos to ReID Model -->
+  <line x1="420" y1="280" x2="520" y2="280" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- ReID Model block -->
+  <rect x="520" y="250" width="150" height="60" fill="#d9ead3" stroke="#6aa84f" stroke-width="2"/>
+  <text x="530" y="285" font-family="Arial" font-size="14" fill="#000">ReID Model</text>
+
+  <!-- Query image/video input -->
+  <rect x="520" y="160" width="150" height="60" fill="#ffe599" stroke="#e69138" stroke-width="2"/>
+  <text x="530" y="195" font-family="Arial" font-size="14" fill="#000">Query Image/Video</text>
+
+  <!-- Arrow from Query image/video to ReID Model -->
+  <line x1="595" y1="220" x2="595" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Arrow from ReID Model to Ranking list -->
+  <line x1="670" y1="280" x2="770" y2="280" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Ranking list block -->
+  <rect x="770" y="250" width="150" height="60" fill="#d0e0e3" stroke="#3d85c6" stroke-width="2"/>
+  <text x="780" y="285" font-family="Arial" font-size="14" fill="#000">Ranking List</text>
+
+  <!-- Clustering Techniques and Camera-Aware Learning additions -->
+  <!-- Unsupervised Clustering -->
+  <rect x="270" y="350" width="150" height="100" fill="#fff2cc" stroke="#d6b656" stroke-width="2"/>
+  <text x="280" y="375" font-family="Arial" font-size="14" fill="#000">Unsupervised Clustering</text>
+  <text x="280" y="395" font-family="Arial" font-size="12" fill="#000">TSSL, OIM, Memory Bank</text>
+  <line x1="345" y1="340" x2="345" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Camera-Aware Invariance -->
+  <rect x="520" y="350" width="150" height="100" fill="#d9d2e9" stroke="#8e7cc3" stroke-width="2"/>
+  <text x="530" y="375" font-family="Arial" font-size="14" fill="#000">Camera-Aware Invariance</text>
+  <text x="530" y="395" font-family="Arial" font-size="12" fill="#000">SCCT, MetaCam, Mixup</text>
+  <line x1="595" y1="340" x2="595" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Temporal Consistency -->
+  <rect x="770" y="350" width="150" height="100" fill="#c9daf8" stroke="#6d9eeb" stroke-width="2"/>
+  <text x="780" y="375" font-family="Arial" font-size="14" fill="#000">Temporal Consistency</text>
+  <text x="780" y="395" font-family="Arial" font-size="12" fill="#000">JVTC, TSSL</text>
+  <line x1="845" y1="340" x2="845" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+</svg>

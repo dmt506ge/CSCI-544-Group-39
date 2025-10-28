@@ -1,0 +1,184 @@
+<svg width="800" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Section A: TD3D -->
+  <g transform="translate(0, 0)">
+    <text x="10" y="20" font-size="16px" font-family="Arial">TD3D</text>
+    <rect x="10" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="15" y="55" font-size="14px" font-family="Arial">Input</text>
+
+    <line x1="110" y1="50" x2="160" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="130" y1="50" x2="130" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="115" y="75" font-size="12px" font-family="Arial">Process</text>
+    
+    <rect x="160" y="30" width="100" height="40" fill="blue" stroke="black"/>
+    <text x="165" y="55" font-size="14px" font-family="Arial">DownConv</text>
+
+    <line x1="260" y1="50" x2="310" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="280" y1="50" x2="280" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="265" y="75" font-size="12px" font-family="Arial">Adapt</text>
+
+    <rect x="310" y="30" width="100" height="40" fill="green" stroke="black"/>
+    <text x="315" y="55" font-size="14px" font-family="Arial">Adapter</text>
+
+    <line x1="410" y1="50" x2="460" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="460" y="30" width="100" height="40" fill="yellow" stroke="black"/>
+    <text x="465" y="55" font-size="14px" font-family="Arial">Seg head</text>
+
+    <line x1="560" y1="50" x2="610" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="610" y="30" width="100" height="40" fill="gray" stroke="black"/>
+    <text x="615" y="55" font-size="14px" font-family="Arial">ROI extractor</text>
+
+    <line x1="710" y1="50" x2="760" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="760" y="30" width="100" height="40" fill="orange" stroke="black"/>
+    <text x="765" y="55" font-size="14px" font-family="Arial">Det head</text>
+    
+    <line x1="860" y1="50" x2="910" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="910" y="30" width="100" height="40" fill="red" stroke="black"/>
+    <text x="915" y="55" font-size="14px" font-family="Arial">Conv</text>
+  </g>
+
+  <!-- Section B: FCAF3D -->
+  <g transform="translate(0, 150)">
+    <text x="10" y="20" font-size="16px" font-family="Arial">FCAF3D</text>
+    <rect x="10" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="15" y="55" font-size="14px" font-family="Arial">Input</text>
+
+    <line x1="110" y1="50" x2="160" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="130" y1="50" x2="130" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="115" y="75" font-size="12px" font-family="Arial">Process</text>
+
+    <rect x="160" y="30" width="100" height="40" fill="blue" stroke="black"/>
+    <text x="165" y="55" font-size="14px" font-family="Arial">DownConv</text>
+
+    <line x1="260" y1="50" x2="310" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="280" y1="50" x2="280" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="265" y="75" font-size="12px" font-family="Arial">Adapt</text>
+
+    <rect x="310" y="30" width="100" height="40" fill="green" stroke="black"/>
+    <text x="315" y="55" font-size="14px" font-family="Arial">Adapter</text>
+
+    <line x1="410" y1="50" x2="460" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="460" y="30" width="100" height="40" fill="orange" stroke="black"/>
+    <text x="465" y="55" font-size="14px" font-family="Arial">Det head</text>
+
+    <line x1="560" y1="50" x2="610" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="610" y="30" width="100" height="40" fill="purple" stroke="black"/>
+    <text x="615" y="55" font-size="14px" font-family="Arial">UpConv</text>
+
+    <line x1="710" y1="50" x2="760" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="760" y="30" width="100" height="40" fill="red" stroke="black"/>
+    <text x="765" y="55" font-size="14px" font-family="Arial">Conv</text>
+
+    <line x1="860" y1="50" x2="910" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="910" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="915" y="55" font-size="14px" font-family="Arial">Output</text>
+  </g>
+
+  <!-- Section C: MinkUnet -->
+  <g transform="translate(0, 300)">
+    <text x="10" y="20" font-size="16px" font-family="Arial">MinkUnet</text>
+    <rect x="10" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="15" y="55" font-size="14px" font-family="Arial">Input</text>
+
+    <line x1="110" y1="50" x2="160" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="130" y1="50" x2="130" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="115" y="75" font-size="12px" font-family="Arial">Process</text>
+
+    <rect x="160" y="30" width="100" height="40" fill="blue" stroke="black"/>
+    <text x="165" y="55" font-size="14px" font-family="Arial">DownConv</text>
+
+    <line x1="260" y1="50" x2="310" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="280" y1="50" x2="280" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="265" y="75" font-size="12px" font-family="Arial">Adapt</text>
+
+    <rect x="310" y="30" width="100" height="40" fill="green" stroke="black"/>
+    <text x="315" y="55" font-size="14px" font-family="Arial">Adapter</text>
+
+    <line x1="410" y1="50" x2="460" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="460" y="30" width="100" height="40" fill="orange" stroke="black"/>
+    <text x="465" y="55" font-size="14px" font-family="Arial">Det head</text>
+
+    <line x1="560" y1="50" x2="610" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="610" y="30" width="100" height="40" fill="yellow" stroke="black"/>
+    <text x="615" y="55" font-size="14px" font-family="Arial">Seg head</text>
+
+    <line x1="710" y1="50" x2="760" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="760" y="30" width="100" height="40" fill="red" stroke="black"/>
+    <text x="765" y="55" font-size="14px" font-family="Arial">Conv</text>
+
+    <line x1="860" y1="50" x2="910" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="910" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="915" y="55" font-size="14px" font-family="Arial">Output</text>
+  </g>
+
+  <!-- Section D: Unet -->
+  <g transform="translate(0, 450)">
+    <text x="10" y="20" font-size="16px" font-family="Arial">Unet</text>
+    <rect x="10" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="15" y="55" font-size="14px" font-family="Arial">Input</text>
+
+    <line x1="110" y1="50" x2="160" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="130" y1="50" x2="130" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="115" y="75" font-size="12px" font-family="Arial">Process</text>
+
+    <rect x="160" y="30" width="100" height="40" fill="blue" stroke="black"/>
+    <text x="165" y="55" font-size="14px" font-family="Arial">DownConv</text>
+
+    <line x1="260" y1="50" x2="310" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="280" y1="50" x2="280" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="265" y="75" font-size="12px" font-family="Arial">Adapt</text>
+
+    <rect x="310" y="30" width="100" height="40" fill="green" stroke="black"/>
+    <text x="315" y="55" font-size="14px" font-family="Arial">Adapter</text>
+
+    <line x1="410" y1="50" x2="460" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="460" y="30" width="100" height="40" fill="purple" stroke="black"/>
+    <text x="465" y="55" font-size="14px" font-family="Arial">UpConv</text>
+
+    <line x1="560" y1="50" x2="610" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="610" y="30" width="100" height="40" fill="blue" stroke="black"/>
+    <text x="615" y="55" font-size="14px" font-family="Arial">Feature</text>
+
+    <line x1="710" y1="50" x2="760" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="760" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="765" y="55" font-size="14px" font-family="Arial">Output</text>
+  </g>
+
+  <!-- Section E: ResNet+FPN -->
+  <g transform="translate(0, 600)">
+    <text x="10" y="20" font-size="16px" font-family="Arial">ResNet+FPN</text>
+    <rect x="10" y="30" width="100" height="40" fill="beige" stroke="black"/>
+    <text x="15" y="55" font-size="14px" font-family="Arial">Input</text>
+
+    <line x1="110" y1="50" x2="160" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="130" y1="50" x2="130" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="115" y="75" font-size="12px" font-family="Arial">Process</text>
+
+    <rect x="160" y="30" width="100" height="40" fill="blue" stroke="black"/>
+    <text x="165" y="55" font-size="14px" font-family="Arial">DownConv</text>
+
+    <line x1="260" y1="50" x2="310" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <line x1="280" y1="50" x2="280" y2="80" stroke="black" marker-end="url(#arrowhead)" />
+    <text x="265" y="75" font-size="12px" font-family="Arial">Adapt</text>
+
+    <rect x="310" y="30" width="100" height="40" fill="green" stroke="black"/>
+    <text x="315" y="55" font-size="14px" font-family="Arial">Adapter</text>
+
+    <line x1="410" y1="50" x2="460" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="460" y="30" width="100" height="40" fill="orange" stroke="black"/>
+    <text x="465" y="55" font-size="14px" font-family="Arial">Det head</text>
+
+    <line x1="560" y1="50" x2="610" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="610" y="30" width="100" height="40" fill="red" stroke="black"/>
+    <text x="615" y="55" font-size="14px" font-family="Arial">Conv</text>
+
+    <line x1="710" y1="50" x2="760" y2="50" stroke="black" marker-end="url(#arrowhead)" />
+    <rect x="760" y="30" width="100" height="40" fill="blue" stroke="black"/>
+    <text x="765" y="55" font-size="14px" font-family="Arial">Feature</text>
+  </g>
+</svg>

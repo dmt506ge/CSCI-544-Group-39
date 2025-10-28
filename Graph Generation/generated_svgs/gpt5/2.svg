@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="700" viewBox="0 0 1160 700">
+  <defs>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#2e8b57"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#555555"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#2274d1"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#ff9900"/>
+    </marker>
+    <style>
+      .title { font-family: Arial; font-size: 16px; fill: #111111; }
+      .label { font-family: Arial; font-size: 12px; fill: #444444; }
+      .boxtext { font-family: Arial; font-size: 15px; fill: #111111; }
+      .box { stroke: #333333; stroke-width: 1.5; }
+      .frame { fill: #f2f2f2; }
+      .rshn { fill: #ffe8b3; }
+      .embed { fill: #eadfff; }
+      .meanshift { fill: #d6ebff; }
+      .idassoc { fill: #fff6d9; }
+      .output { fill: #e1f7e1; }
+      .gpu-badge { fill: #ffffff; stroke: #2274d1; stroke-width: 1; }
+      .gpu-text { font-family: Arial; font-size: 12px; fill: #2274d1; }
+      .gridline { stroke: #8a7fbf; stroke-width: 0.8; opacity: 0.5; }
+      .conn { stroke-linecap: butt; }
+      .inset { fill: #ffffff; stroke: #cccccc; stroke-width: 1; }
+      .insettitle { font-family: Arial; font-size: 12px; fill: #111111; }
+      .pt1 { fill: #6a5acd; }
+      .pt2 { fill: #ff7f50; }
+      .pt3 { fill: #2e8b57; }
+      .kernel { fill: none; stroke: #2274d1; stroke-width: 1.2; stroke-dasharray: 4 3; }
+      .separator { stroke: #dddddd; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <text x="20" y="28" class="title">fig2 holistic instance segmentation and tracking with pixel embeddings and faster mean shift gpu</text>
+
+  <text x="20" y="120" class="label">video frames</text>
+  <text x="20" y="235" class="label">deep recurrent network rshn</text>
+  <text x="20" y="325" class="label">pixel wise embedding</text>
+  <text x="20" y="415" class="label">faster mean shift clustering gpu</text>
+  <text x="20" y="495" class="label">id association linking</text>
+  <text x="20" y="585" class="label">output masks and tracks</text>
+
+  <text x="190" y="60" class="label">t 0</text>
+  <text x="540" y="60" class="label">t 1</text>
+  <text x="890" y="60" class="label">t N</text>
+
+  <rect x="80" y="80" width="220" height="100" rx="8" class="box frame"/>
+  <text x="190" y="130" text-anchor="middle" class="boxtext">video frame</text>
+
+  <rect x="80" y="200" width="220" height="70" rx="8" class="box rshn"/>
+  <text x="190" y="240" text-anchor="middle" class="boxtext">rshn module</text>
+  <text x="190" y="258" text-anchor="middle" class="label">recurrent stacked hourglass network</text>
+
+  <rect x="80" y="290" width="220" height="70" rx="8" class="box embed"/>
+  <text x="190" y="330" text-anchor="middle" class="boxtext">pixel embeddings</text>
+  <g opacity="0.6">
+    <line x1="100" y1="305" x2="280" y2="305" class="gridline"/>
+    <line x1="100" y1="320" x2="280" y2="320" class="gridline"/>
+    <line x1="100" y1="335" x2="280" y2="335" class="gridline"/>
+    <line x1="100" y1="350" x2="280" y2="350" class="gridline"/>
+    <line x1="120" y1="300" x2="120" y2="360" class="gridline"/>
+    <line x1="150" y1="300" x2="150" y2="360" class="gridline"/>
+    <line x1="180" y1="300" x2="180" y2="360" class="gridline"/>
+    <line x1="210" y1="300" x2="210" y2="360" class="gridline"/>
+    <line x1="240" y1="300" x2="240" y2="360" class="gridline"/>
+    <line x1="270" y1="300" x2="270" y2="360" class="gridline"/>
+  </g>
+
+  <rect x="80" y="380" width="220" height="70" rx="8" class="box meanshift"/>
+  <text x="190" y="408" text-anchor="middle" class="boxtext">faster mean shift</text>
+  <text x="190" y="428" text-anchor="middle" class="label">gpu accelerated</text>
+  <rect x="250" y="392" width="40" height="20" rx="10" class="gpu-badge"/>
+  <text x="270" y="406" text-anchor="middle" class="gpu-text">gpu</text>
+
+  <rect x="80" y="470" width="220" height="40" rx="8" class="box idassoc"/>
+  <text x="190" y="494" text-anchor="middle" class="boxtext">id association linking</text>
+  <text x="190" y="510" text-anchor="middle" class="label">embedding matching and temporal cues</text>
+
+  <rect x="80" y="530" width="220" height="100" rx="8" class="box output"/>
+  <text x="190" y="575" text-anchor="middle" class="boxtext">instances and tracks</text>
+
+  <rect x="430" y="80" width="220" height="100" rx="8" class="box frame"/>
+  <text x="540" y="130" text-anchor="middle" class="boxtext">video frame</text>
+
+  <rect x="430" y="200" width="220" height="70" rx="8" class="box rshn"/>
+  <text x="540" y="240" text-anchor="middle" class="boxtext">rshn module</text>
+
+  <rect x="430" y="290" width="220" height="70" rx="8" class="box embed"/>
+  <text x="540" y="330" text-anchor="middle" class="boxtext">pixel embeddings</text>
+  <g opacity="0.6">
+    <line x1="450" y1="305" x2="630" y2="305" class="gridline"/>
+    <line x1="450" y1="320" x2="630" y2="320" class="gridline"/>
+    <line x1="450" y1="335" x2="630" y2="335" class="gridline"/>
+    <line x1="450" y1="350" x2="630" y2="350" class="gridline"/>
+    <line x1="470" y1="300" x2="470" y2="360" class="gridline"/>
+    <line x1="500" y1="300" x2="500" y2="360" class="gridline"/>
+    <line x1="530" y1="300" x2="530" y2="360" class="gridline"/>
+    <line x1="560" y1="300" x2="560" y2="360" class="gridline"/>
+    <line x1="590" y1="300" x2="590" y2="360" class="gridline"/>
+    <line x1="620" y1="300" x2="620" y2="360" class="gridline"/>
+  </g>
+
+  <rect x="430" y="380" width="220" height="70" rx="8" class="box meanshift"/>
+  <text x="540" y="408" text-anchor="middle" class="boxtext">faster mean shift</text>
+  <text x="540" y="428" text-anchor="middle" class="label">gpu accelerated</text>
+  <rect x="600" y="392" width="40" height="20" rx="10" class="gpu-badge"/>
+  <text x="620" y="406" text-anchor="middle" class="gpu-text">gpu</text>
+
+  <rect x="430" y="470" width="220" height="40" rx="8" class="box idassoc"/>
+  <text x="540" y="494" text-anchor="middle" class="boxtext">id association linking</text>
+  <text x="540" y="510" text-anchor="middle" class="label">embedding matching and temporal cues</text>
+
+  <rect x="430" y="530" width="220" height="100" rx="8" class="box output"/>
+  <text x="540" y="575" text-anchor="middle" class="boxtext">instances and tracks</text>
+
+  <rect x="780" y="80" width="220" height="100" rx="8" class="box frame"/>
+  <text x="890" y="130" text-anchor="middle" class="boxtext">video frame</text>
+
+  <rect x="780" y="200" width="220" height="70" rx="8" class="box rshn"/>
+  <text x="890" y="240" text-anchor="middle" class="boxtext">rshn module</text>
+
+  <rect x="780" y="290" width="220" height="70" rx="8" class="box embed"/>
+  <text x="890" y="330" text-anchor="middle" class="boxtext">pixel embeddings</text>
+  <g opacity="0.6">
+    <line x1="800" y1="305" x2="980" y2="305" class="gridline"/>
+    <line x1="800" y1="320" x2="980" y2="320" class="gridline"/>
+    <line x1="800" y1="335" x2="980" y2="335" class="gridline"/>
+    <line x1="800" y1="350" x2="980" y2="350" class="gridline"/>
+    <line x1="820" y1="300" x2="820" y2="360" class="gridline"/>
+    <line x1="850" y1="300" x2="850" y2="360" class="gridline"/>
+    <line x1="880" y1="300" x2="880" y2="360" class="gridline"/>
+    <line x1="910" y1="300" x2="910" y2="360" class="gridline"/>
+    <line x1="940" y1="300" x2="940" y2="360" class="gridline"/>
+    <line x1="970" y1="300" x2="970" y2="360" class="gridline"/>
+  </g>
+
+  <rect x="780" y="380" width="220" height="70" rx="8" class="box meanshift"/>
+  <text x="890" y="408" text-anchor="middle" class="boxtext">faster mean shift</text>
+  <text x="890" y="428" text-anchor="middle" class="label">gpu accelerated</text>
+  <rect x="950" y="392" width="40" height="20" rx="10" class="gpu-badge"/>
+  <text x="970" y="406" text-anchor="middle" class="gpu-text">gpu</text>
+
+  <rect x="780" y="470" width="220" height="40" rx="8" class="box idassoc"/>
+  <text x="890" y="494" text-anchor="middle" class="boxtext">id association linking</text>
+  <text x="890" y="510" text-anchor="middle" class="label">embedding matching and temporal cues</text>
+
+  <rect x="780" y="530" width="220" height="100" rx="8" class="box output"/>
+  <text x="890" y="575" text-anchor="middle" class="boxtext">instances and tracks</text>
+
+  <line x1="190" y1="180" x2="190" y2="200" stroke="#2e8b57" stroke-width="3" class="conn" marker-end="url(#arrow-green)"/>
+  <line x1="190" y1="270" x2="190" y2="290" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <line x1="190" y1="360" x2="190" y2="380" stroke="#2274d1" stroke-width="3" class="conn" marker-end="url(#arrow-blue)"/>
+  <line x1="190" y1="450" x2="190" y2="470" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <line x1="190" y1="510" x2="190" y2="530" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+
+  <line x1="540" y1="180" x2="540" y2="200" stroke="#2e8b57" stroke-width="3" class="conn" marker-end="url(#arrow-green)"/>
+  <line x1="540" y1="270" x2="540" y2="290" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <line x1="540" y1="360" x2="540" y2="380" stroke="#2274d1" stroke-width="3" class="conn" marker-end="url(#arrow-blue)"/>
+  <line x1="540" y1="450" x2="540" y2="470" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <line x1="540" y1="510" x2="540" y2="530" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+
+  <line x1="890" y1="180" x2="890" y2="200" stroke="#2e8b57" stroke-width="3" class="conn" marker-end="url(#arrow-green)"/>
+  <line x1="890" y1="270" x2="890" y2="290" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <line x1="890" y1="360" x2="890" y2="380" stroke="#2274d1" stroke-width="3" class="conn" marker-end="url(#arrow-blue)"/>
+  <line x1="890" y1="450" x2="890" y2="470" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <line x1="890" y1="510" x2="890" y2="530" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+
+  <text x="205" y="188" class="label">input flow</text>
+  <text x="205" y="372" class="label">clustering</text>
+
+  <line x1="300" y1="235" x2="430" y2="235" stroke="#ff9900" stroke-width="2.8" stroke-dasharray="7 5" class="conn" marker-end="url(#arrow-orange)"/>
+  <text x="365" y="210" text-anchor="middle" class="label">temporal propagation</text>
+  <line x1="650" y1="235" x2="780" y2="235" stroke="#ff9900" stroke-width="2.8" stroke-dasharray="7 5" class="conn" marker-end="url(#arrow-orange)"/>
+  <text x="715" y="210" text-anchor="middle" class="label">temporal propagation</text>
+
+  <line x1="300" y1="580" x2="430" y2="580" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <line x1="650" y1="580" x2="780" y2="580" stroke="#555555" stroke-width="2.2" class="conn" marker-end="url(#arrow-gray)"/>
+  <text x="505" y="565" text-anchor="middle" class="label">track id continuity via embedding matching</text>
+
+  <line x1="1000" y1="70" x2="1000" y2="640" class="separator"/>
+
+  <rect x="1020" y="80" width="120" height="170" rx="8" class="inset"/>
+  <text x="1080" y="98" text-anchor="middle" class="insettitle">inset embedding space mean shift</text>
+  <circle cx="1050" cy="135" r="4" class="pt1"/>
+  <circle cx="1070" cy="145" r="4" class="pt1"/>
+  <circle cx="1090" cy="138" r="4" class="pt1"/>
+  <circle cx="1105" cy="150" r="4" class="pt1"/>
+  <circle cx="1060" cy="165" r="4" class="pt1"/>
+  <circle cx="1110" cy="118" r="4" class="pt2"/>
+  <circle cx="1128" cy="126" r="4" class="pt2"/>
+  <circle cx="1120" cy="108" r="4" class="pt2"/>
+  <circle cx="1044" cy="170" r="4" class="pt3"/>
+  <circle cx="1055" cy="185" r="4" class="pt3"/>
+  <circle cx="1035" cy="186" r="4" class="pt3"/>
+  <circle cx="1080" cy="150" r="28" class="kernel"/>
+  <text x="1080" y="151" text-anchor="middle" class="label">h</text>
+  <line x1="1050" y1="135" x2="1068" y2="145" stroke="#2274d1" stroke-width="1.5" class="conn" marker-end="url(#arrow-blue)"/>
+  <line x1="1070" y1="145" x2="1084" y2="148" stroke="#2274d1" stroke-width="1.5" class="conn" marker-end="url(#arrow-blue)"/>
+  <line x1="1090" y1="138" x2="1086" y2="146" stroke="#2274d1" stroke-width="1.5" class="conn" marker-end="url(#arrow-blue)"/>
+  <circle cx="1086" cy="148" r="5" fill="#2274d1"/>
+  <text x="1086" y="168" text-anchor="middle" class="label">mode</text>
+
+  <rect x="1020" y="270" width="120" height="140" rx="8" class="inset"/>
+  <text x="1080" y="288" text-anchor="middle" class="insettitle">inset plug and play replacement</text>
+  <rect x="1030" y="300" width="100" height="28" rx="6" fill="#f2f2f2" stroke="#999999" stroke-width="1"/>
+  <text x="1080" y="318" text-anchor="middle" class="label">cpu mean shift</text>
+  <line x1="1036" y1="304" x2="1126" y2="324" stroke="#cc3333" stroke-width="2"/>
+  <rect x="1030" y="348" width="100" height="28" rx="6" fill="#ffffff" stroke="#2274d1" stroke-width="1.2"/>
+  <text x="1080" y="366" text-anchor="middle" class="label">faster mean shift gpu</text>
+  <line x1="1080" y1="328" x2="1080" y2="348" stroke="#555555" stroke-width="2" class="conn" marker-end="url(#arrow-gray)"/>
+
+  <text x="20" y="665" class="label">overall framework with pixel embeddings and plug and play faster mean shift gpu clustering for real time cell tracking adapted from payer et al and achieving 7 to 10x speedup on gpu</text>
+</svg>

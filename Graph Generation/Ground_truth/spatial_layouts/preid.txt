@@ -1,0 +1,16 @@
+Source File: preid.png
+================================================================================
+
+The diagram follows a left-to-right horizontal architecture with three main stages:
+
+- **Left section:** Multi-camera system (single block located on the far left)
+- **Middle section:** Images/videos (centered horizontal block) leading to the ReID Model (centered block with a downward arrow receiving the query image/video input from above)
+- **Right section:** Ranking list (single block located on the far right)
+
+**Flow and Connections:**
+- The flow starts from the left with arrows indicating the process moving horizontally from the Multi-camera system to Images/videos, and then to the ReID Model.
+- An additional input (Query image/video) enters from above into the ReID Model.
+- The output from the ReID Model proceeds horizontally to the right to produce the Ranking list.
+
+**Overall Structure:**
+- The diagram maintains a straightforward left-to-right flow, with a vertical flow for the query input into the ReID model, suggesting hierarchical input processing within the central ReID Model stage.

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="800" style="font-family: Arial, sans-serif; font-size: 14px;">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+    </marker>
+    <marker id="dashed-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Top Layer: Test-time training -->
+  <rect x="10" y="10" width="280" height="40" fill="lightgrey" stroke="black" />
+  <text x="20" y="35">Prompt</text>
+  <line x1="290" y1="30" x2="340" y2="30" stroke="black" marker-end="url(#arrow)" />
+  <text x="300" y="25" style="font-size:12px;">Sample</text>
+
+  <rect x="340" y="10" width="280" height="40" fill="lightblue" stroke="black" />
+  <text x="350" y="35">LLM</text>
+  <line x1="620" y1="30" x2="680" y2="30" stroke="black" marker-end="url(#arrow)" />
+  <line x1="480" y1="50" x2="480" y2="90" stroke="black" stroke-dasharray="4,2" marker-end="url(#dashed-arrow)" />
+  <text x="490" y="70" style="font-size:12px;">Feedback Loop: Generate New Sample</text>
+
+  <rect x="680" y="10" width="280" height="40" fill="lightgreen" stroke="black" />
+  <text x="690" y="35">Set of Answers</text>
+  <line x1="960" y1="30" x2="1060" y2="30" stroke="black" marker-end="url(#arrow)" />
+
+  <rect x="1060" y="10" width="280" height="40" fill="lightgreen" stroke="black" />
+  <text x="1070" y="35">Compute Empirical Probabilities</text>
+  <line x1="1340" y1="30" x2="1400" y2="30" stroke="black" marker-end="url(#arrow)" />
+
+  <rect x="1400" y="10" width="280" height="40" fill="lightgreen" stroke="black" />
+  <text x="1410" y="35">SNR or Entropy-Based Reward Calc.</text>
+  <line x1="1680" y1="30" x2="1700" y2="30" stroke="black" marker-end="url(#arrow)" />
+
+  <rect x="1700" y="10" width="280" height="40" fill="lightgreen" stroke="black" />
+  <text x="1710" y="35">A Calculations</text>
+  <line x1="1750" y1="50" x2="1750" y2="100" stroke="black" stroke-dasharray="4,2" marker-end="url(#dashed-arrow)" />
+  <line x1="1750" y1="100" x2="10" y2="100" stroke="black" stroke-dasharray="4,2" marker-end="url(#dashed-arrow)" />
+
+  <!-- Bottom Layer: Inference -->
+  <rect x="10" y="200" width="280" height="40" fill="lightgrey" stroke="black" />
+  <text x="20" y="225">Prompt</text>
+  <line x1="290" y1="220" x2="340" y2="220" stroke="black" marker-end="url(#arrow)" />
+  <text x="300" y="215" style="font-size:12px;">Sample</text>
+
+  <rect x="340" y="200" width="280" height="40" fill="lightblue" stroke="black" />
+  <text x="350" y="225">LLM</text>
+  <line x1="620" y1="220" x2="680" y2="220" stroke="black" marker-end="url(#arrow)" />
+  <line x1="480" y1="240" x2="480" y2="290" stroke="black" stroke-dasharray="4,2" marker-end="url(#dashed-arrow)" />
+  <text x="490" y="265" style="font-size:12px;">Feedback Loop</text>
+
+  <rect x="680" y="200" width="280" height="40" fill="lightgreen" stroke="black" />
+  <text x="690" y="225">Set of Answers</text>
+  <line x1="960" y1="220" x2="1060" y2="220" stroke="black" marker-end="url(#arrow)" />
+
+  <rect x="1060" y="200" width="280" height="40" fill="lightgreen" stroke="black" />
+  <text x="1070" y="225">Compute Empirical Probabilities</text>
+  <line x1="1340" y1="220" x2="1400" y2="220" stroke="black" marker-end="url(#arrow)" />
+  <line x1="1220" y1="240" x2="1220" y2="290" stroke="black" marker-end="url(#arrow)" />
+  <text x="1230" y="265" style="font-size:12px;">Compute SNR for Prompt Difficulty</text>
+
+  <rect x="1400" y="200" width="280" height="40" fill="yellow" stroke="black" />
+  <text x="1410" y="225">MMC Stopping Criteria</text>
+  <line x1="1680" y1="220" x2="1750" y2="220" stroke="black" marker-end="url(#arrow)" />
+
+  <rect x="1750" y="200" width="100" height="40" fill="yellow" stroke="black" />
+  <text x="1760" y="225">GO</text>
+  <line x1="1800" y1="240" x2="1800" y2="290" stroke="black" stroke-dasharray="4,2" marker-end="url(#dashed-arrow)" />
+
+  <rect x="1850" y="200" width="100" height="40" fill="yellow" stroke="black" />
+  <text x="1860" y="225">STOP</text>
+  <line x1="1900" y1="240" x2="1900" y2="290" stroke="black" marker-end="url(#arrow)" />
+
+  <rect x="1700" y="300" width="280" height="40" fill="lightgrey" stroke="black" />
+  <text x="1710" y="325">Estimate Probability</text>
+</svg>

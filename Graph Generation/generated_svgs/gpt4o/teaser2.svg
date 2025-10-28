@@ -1,0 +1,88 @@
+<svg width="1200" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+    </marker>
+  </defs>
+  
+  <!-- Left Section: Online Semantic Segmentation -->
+  <g id="semantic-segmentation" transform="translate(50, 50)">
+    <rect x="0" y="0" width="300" height="350" fill="#e0f7fa" stroke="#000" />
+    <text x="150" y="20" font-size="16px" text-anchor="middle" fill="#000">Online Semantic Segmentation</text>
+    
+    <rect x="50" y="50" width="200" height="40" fill="#b2ebf2" stroke="#000" />
+    <text x="150" y="75" font-size="14px" text-anchor="middle" fill="#000">Image Set 1</text>
+    
+    <path d="M150,90 C160,110 160,110 150,130" fill="none" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <rect x="50" y="130" width="200" height="40" fill="#4dd0e1" stroke="#000" />
+    <text x="150" y="155" font-size="14px" text-anchor="middle" fill="#000">Image Set 2</text>
+    
+    <path d="M150,170 C160,190 160,190 150,210" fill="none" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <rect x="50" y="210" width="200" height="40" fill="#26c6da" stroke="#000" />
+    <text x="150" y="235" font-size="14px" text-anchor="middle" fill="#000">Image Set 3</text>
+    
+    <!-- Annotations for additional clarity -->
+    <text x="150" y="265" font-size="12px" text-anchor="middle" fill="#000">Processes dynamic scene data into labeled segments</text>
+
+    <!-- New annotations for memory-based adapters -->
+    <rect x="50" y="290" width="200" height="40" fill="#80deea" stroke="#000" />
+    <text x="150" y="315" font-size="14px" text-anchor="middle" fill="#000">Memory-Based Adapter</text>
+    <text x="150" y="345" font-size="12px" text-anchor="middle" fill="#000">Integrates temporal memory for enhanced accuracy</text>
+  </g>
+
+  <!-- Middle Section: Online Object Detection -->
+  <g id="object-detection" transform="translate(450, 50)">
+    <rect x="0" y="0" width="300" height="350" fill="#f1f8e9" stroke="#000" />
+    <text x="150" y="20" font-size="16px" text-anchor="middle" fill="#000">Online Object Detection</text>
+    
+    <rect x="50" y="50" width="200" height="40" fill="#c5e1a5" stroke="#000" />
+    <text x="150" y="75" font-size="14px" text-anchor="middle" fill="#000">Detected Objects 1</text>
+    
+    <path d="M150,90 C160,110 160,110 150,130" fill="none" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <rect x="50" y="130" width="200" height="40" fill="#aed581" stroke="#000" />
+    <text x="150" y="155" font-size="14px" text-anchor="middle" fill="#000">Detected Objects 2</text>
+    
+    <path d="M150,170 C160,190 160,190 150,210" fill="none" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <rect x="50" y="210" width="200" height="40" fill="#9ccc65" stroke="#000" />
+    <text x="150" y="235" font-size="14px" text-anchor="middle" fill="#000">Detected Objects 3</text>
+    
+    <!-- Annotations for additional clarity -->
+    <text x="150" y="265" font-size="12px" text-anchor="middle" fill="#000">Identifies objects in the scene over time</text>
+
+    <!-- New annotations for memory-based adapters -->
+    <rect x="50" y="290" width="200" height="40" fill="#dce775" stroke="#000" />
+    <text x="150" y="315" font-size="14px" text-anchor="middle" fill="#000">Memory-Based Adapter</text>
+    <text x="150" y="345" font-size="12px" text-anchor="middle" fill="#000">Enhances detection with temporal memory</text>
+  </g>
+
+  <!-- Right Section: Online Instance Segmentation -->
+  <g id="instance-segmentation" transform="translate(850, 50)">
+    <rect x="0" y="0" width="300" height="350" fill="#fff3e0" stroke="#000" />
+    <text x="150" y="20" font-size="16px" text-anchor="middle" fill="#000">Online Instance Segmentation</text>
+    
+    <rect x="50" y="50" width="200" height="40" fill="#ffe0b2" stroke="#000" />
+    <text x="150" y="75" font-size="14px" text-anchor="middle" fill="#000">Segmented Instances 1</text>
+    
+    <path d="M150,90 C160,110 160,110 150,130" fill="none" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <rect x="50" y="130" width="200" height="40" fill="#ffcc80" stroke="#000" />
+    <text x="150" y="155" font-size="14px" text-anchor="middle" fill="#000">Segmented Instances 2</text>
+    
+    <path d="M150,170 C160,190 160,190 150,210" fill="none" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <rect x="50" y="210" width="200" height="40" fill="#ffb74d" stroke="#000" />
+    <text x="150" y="235" font-size="14px" text-anchor="middle" fill="#000">Segmented Instances 3</text>
+    
+    <!-- Annotations for additional clarity -->
+    <text x="150" y="265" font-size="12px" text-anchor="middle" fill="#000">Segments individual object instances in real-time</text>
+
+    <!-- New annotations for memory-based adapters -->
+    <rect x="50" y="290" width="200" height="40" fill="#ffab91" stroke="#000" />
+    <text x="150" y="315" font-size="14px" text-anchor="middle" fill="#000">Memory-Based Adapter</text>
+    <text x="150" y="345" font-size="12px" text-anchor="middle" fill="#000">Utilizes memory for accurate instance segmentation</text>
+  </g>
+</svg>

@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
+    </marker>
+    <style>
+      .cpu-box { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .gpu-box { fill: #eef7ff; stroke: #1e90ff; stroke-width: 2; }
+      .cpu-diamond { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .gpu-diamond { fill: #eef7ff; stroke: #1e90ff; stroke-width: 2; }
+      .end-ellipse { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .arrow { stroke: #111111; stroke-width: 2; fill: none; marker-end: url(#arrow-black); }
+      .section-line { stroke: #aaaaaa; stroke-width: 2; stroke-dasharray: 6 6; }
+      .text { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #111111; }
+      .text-blue { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #1e90ff; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #111111; }
+      .label-blue { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #1e90ff; }
+      .lane-title { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- lane titles -->
+  <text x="300" y="24" text-anchor="middle" class="lane-title text">CPU</text>
+  <text x="900" y="24" text-anchor="middle" class="lane-title text-blue">GPU</text>
+
+  <!-- dashed divider -->
+  <line x1="600" y1="20" x2="600" y2="860" class="section-line"/>
+
+  <!-- Start -->
+  <ellipse cx="300" cy="30" rx="60" ry="16" class="end-ellipse"/>
+  <text x="300" y="34" text-anchor="middle" class="text">Start</text>
+
+  <!-- CPU section shapes -->
+  <rect x="140" y="60" width="320" height="50" rx="6" class="cpu-box"/>
+  <text x="300" y="90" text-anchor="middle" class="text">Video Sequences</text>
+
+  <rect x="140" y="140" width="320" height="50" rx="6" class="cpu-box"/>
+  <text x="300" y="170" text-anchor="middle" class="text">Patch i pixel wide embeddings S i</text>
+
+  <rect x="140" y="220" width="320" height="60" rx="6" class="cpu-box"/>
+  <text x="300" y="245" text-anchor="middle" class="text">Evenly random select N vectors</text>
+  <text x="300" y="265" text-anchor="middle" class="text">S seed in S i</text>
+
+  <rect x="140" y="340" width="320" height="60" rx="6" class="cpu-box"/>
+  <text x="300" y="365" text-anchor="middle" class="text">Prune and cluster to get centers r</text>
+  <text x="300" y="385" text-anchor="middle" class="text">and assignments I</text>
+
+  <rect x="140" y="420" width="320" height="50" rx="6" class="cpu-box"/>
+  <text x="300" y="450" text-anchor="middle" class="text">Obtain N min based on Eq. 19</text>
+
+  <!-- CPU decisions -->
+  <polygon points="300,510 360,540 300,570 240,540" class="cpu-diamond"/>
+  <text x="300" y="538" text-anchor="middle" class="text">N &lt;= L x N min</text>
+
+  <polygon points="300,610 360,640 300,670 240,640" class="cpu-diamond"/>
+  <text x="300" y="638" text-anchor="middle" class="text">N &gt;= H x N min</text>
+
+  <polygon points="300,710 360,740 300,770 240,740" class="cpu-diamond"/>
+  <text x="300" y="738" text-anchor="middle" class="text">Patch i is last batch</text>
+
+  <!-- End -->
+  <ellipse cx="300" cy="820" rx="70" ry="20" class="end-ellipse"/>
+  <text x="300" y="825" text-anchor="middle" class="text">End</text>
+
+  <!-- CPU side helpers moved left for spacing -->
+  <rect x="10" y="500" width="130" height="34" rx="6" class="cpu-box"/>
+  <text x="75" y="522" text-anchor="middle" class="text">N = N x 2</text>
+
+  <rect x="10" y="580" width="130" height="36" rx="6" class="cpu-box"/>
+  <text x="75" y="603" text-anchor="middle" class="text">N = N / 2</text>
+
+  <rect x="10" y="630" width="130" height="36" rx="6" class="cpu-box"/>
+  <text x="75" y="653" text-anchor="middle" class="text">Update N</text>
+
+  <rect x="10" y="700" width="130" height="36" rx="6" class="cpu-box"/>
+  <text x="75" y="723" text-anchor="middle" class="text">i = i + 1</text>
+
+  <!-- GPU section shapes -->
+  <rect x="740" y="120" width="320" height="40" rx="6" class="gpu-box"/>
+  <text x="900" y="145" text-anchor="middle" class="text-blue">Check GPU memory and batch</text>
+
+  <!-- GPU memory decision -->
+  <polygon points="900,180 940,200 900,220 860,200" class="gpu-diamond"/>
+  <text x="900" y="204" text-anchor="middle" class="text-blue">Fits in memory</text>
+
+  <rect x="980" y="188" width="180" height="24" rx="6" class="gpu-box"/>
+  <text x="1070" y="204" text-anchor="middle" class="text-blue">Split batches adjust B</text>
+
+  <rect x="740" y="240" width="320" height="60" rx="6" class="gpu-box"/>
+  <text x="900" y="265" text-anchor="middle" class="text-blue">Parallel mean shift</text>
+
+  <rect x="660" y="252" width="70" height="36" rx="6" class="gpu-box"/>
+  <text x="695" y="274" text-anchor="middle" class="text-blue">Bandwidth H</text>
+
+  <polygon points="900,330 960,360 900,390 840,360" class="gpu-diamond"/>
+  <text x="900" y="356" text-anchor="middle" class="text-blue">Converged</text>
+  <text x="900" y="374" text-anchor="middle" class="text-blue">delta less than eps or max iters</text>
+
+  <!-- CPU vertical arrows -->
+  <path d="M 300 46 L 300 60" class="arrow"/>
+  <path d="M 300 110 L 300 140" class="arrow"/>
+  <path d="M 300 190 L 300 220" class="arrow"/>
+  <path d="M 300 400 L 300 420" class="arrow"/>
+  <path d="M 300 470 L 300 510" class="arrow"/>
+
+  <!-- CPU decision 1 paths -->
+  <path d="M 300 570 L 300 610" class="arrow"/>
+  <text x="315" y="590" class="label">N</text>
+
+  <path d="M 240 540 L 160 540 L 160 517 L 140 517" class="arrow"/>
+  <text x="170" y="532" class="label">Y</text>
+
+  <!-- Nx2 down to Update N -->
+  <path d="M 75 534 L 75 630" class="arrow"/>
+
+  <!-- CPU decision 2 paths -->
+  <path d="M 240 640 L 160 640 L 160 598 L 140 598" class="arrow"/>
+  <text x="170" y="632" class="label">Y</text>
+
+  <path d="M 300 670 L 300 710" class="arrow"/>
+  <text x="315" y="690" class="label">N</text>
+
+  <!-- Update N back to seed selection -->
+  <path d="M 140 648 L 160 648 L 160 250 L 140 250" class="arrow"/>
+  <text x="165" y="270" class="label">Return to seed selection</text>
+
+  <!-- Last batch decision paths -->
+  <path d="M 300 770 L 300 800" class="arrow"/>
+  <text x="315" y="785" class="label">Y</text>
+
+  <path d="M 240 740 L 160 740 L 160 718 L 140 718" class="arrow"/>
+  <text x="205" y="735" class="label">N</text>
+
+  <!-- i increment loop back to embeddings top border -->
+  <path d="M 75 700 L 75 140 L 220 140" class="arrow"/>
+
+  <!-- CPU to GPU handoff via memory check -->
+  <path d="M 460 250 L 700 250 L 700 140 L 740 140" class="arrow"/>
+  <text x="680" y="238" class="label-blue">S seed to GPU</text>
+
+  <!-- GPU internal flow -->
+  <path d="M 900 160 L 900 180" class="arrow"/>
+  <path d="M 900 220 L 900 240" class="arrow"/>
+  <text x="910" y="210" class="label-blue">Y</text>
+
+  <!-- GPU memory no branch -->
+  <path d="M 940 200 L 980 200" class="arrow"/>
+  <text x="955" y="195" class="label-blue">N</text>
+
+  <!-- Split batches loop back to decision -->
+  <path d="M 1070 188 L 1070 170 L 900 170 L 900 180" class="arrow"/>
+
+  <!-- Bandwidth into mean shift -->
+  <path d="M 730 270 L 740 270" class="arrow"/>
+
+  <!-- GPU mean shift to convergence -->
+  <path d="M 900 300 L 900 330" class="arrow"/>
+
+  <!-- GPU convergence logic -->
+  <path d="M 960 360 L 960 240 L 900 240" class="arrow"/>
+  <text x="965" y="300" class="label-blue">No not converged</text>
+
+  <path d="M 840 360 L 620 360 L 620 320 L 300 320 L 300 340" class="arrow"/>
+  <text x="770" y="350" class="label-blue">Yes r and I to CPU</text>
+
+</svg>

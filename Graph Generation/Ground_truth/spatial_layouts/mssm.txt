@@ -1,0 +1,43 @@
+Source File: mssm.pdf
+================================================================================
+
+The diagram follows a left-to-right horizontal flow with multiple layers, showing both observation and prediction processes:
+
+1. **Left Section (Observation):**
+   - **Top Layer:**
+     - `z_θ` (left): Input to the observation process.
+     - Arrows flow downwards to `Statics Propagation` and then horizontally towards `b̂`.
+   - **Middle Layer:**
+     - `Statics Propagation` (left): Receives input from `z_θ` and outputs to `b̂`.
+     - `b̂` (center): Central component connected to `Dynamics Memory` above and interacts with `h₁`.
+   - **Bottom Layer:**
+     - `b₁` (center): Receives input from `Statics Propagation`.
+     - `x₁` (right): Connects to `s₁` and receives input from `b₁`.
+
+2. **Central Section (Dynamics and State):**
+   - **Central Nodes:**
+     - `h₁`, `h_T`, `h_{T+1}` (orange rectangles): Core processing units interacting with multiple modules.
+     - `m_θ` (orange circles): Linked to `h` nodes and `f_θ`.
+   - **Top Components:**
+     - `Dynamics Memory` (above `h` nodes): Interacts bidirectionally with `m_θ`.
+   - **Intermediate Components:**
+     - `s₁`, `s_T`, `s_{T+1}` (green and blue): Process and transfer state information, linked via `μ_θ, σ_θ` with `KL` constraint.
+   - **Lower Nodes:**
+     - `μ_φ, σ_φ` (blue ovals): Located below `s` nodes, interacting bilaterally.
+
+3. **Right Section (Prediction):**
+   - **Top Layer:**
+     - `ŷ₁`, `ŷ_T`, `ŷ_{T+1}` (blue squares): Output prediction components interacting with `l_θ` from `m_θ`.
+     - `â_T`, `â_{T+1}` (green): Output components connected to `π_θ`.
+   - **Middle Layer:**
+     - Arrows flow horizontally from each state to its successor, following the chronological progression from `h₁` to `h_{T+1}`.
+   - **Bottom Layer:**
+     - `s_T`, `s_{T+1}` (green): State modules progressing towards prediction.
+     - MLN nodes: Below main sequence, connected vertically from `s` states.
+
+4. **Connections:**
+   - Primarily bidirectional connections between dynamic memory and `h` nodes.
+   - Left-to-right flow is observed from observation to prediction through middle nodes.
+   - Additional upward and downward flows between states and MN nodes for adjustments.
+
+Overall, the diagram presents a complex but structured left-to-right flow with feedback loops, hierarchically organized around central `h` nodes interacting with inputs above and outputs below.

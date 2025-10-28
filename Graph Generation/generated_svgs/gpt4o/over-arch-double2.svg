@@ -1,0 +1,80 @@
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Top Layer: Temporal Input Module -->
+  <!-- Time t -->
+  <rect x="50" y="50" width="120" height="50" fill="#e0f7fa" stroke="black"/>
+  <text x="60" y="80" font-family="Arial" font-size="14">Image t</text>
+  <!-- Time t+1 -->
+  <rect x="50" y="120" width="120" height="50" fill="#e0f7fa" stroke="black"/>
+  <text x="60" y="150" font-family="Arial" font-size="14">Image t+1</text>
+
+  <!-- Middle Layer: Backbone and Task Processing (RGB-D Backbone and Task Head) -->
+  <!-- RGB-D Backbone -->
+  <rect x="250" y="50" width="150" height="50" fill="#fff3e0" stroke="black"/>
+  <text x="260" y="80" font-family="Arial" font-size="14">RGB-D Backbone</text>
+  <rect x="250" y="120" width="150" height="50" fill="#fff3e0" stroke="black"/>
+  <text x="260" y="150" font-family="Arial" font-size="14">RGB-D Backbone</text>
+  <!-- Task Head -->
+  <rect x="450" y="50" width="150" height="50" fill="#ffe0b2" stroke="black"/>
+  <text x="460" y="80" font-family="Arial" font-size="14">Task Head</text>
+  <rect x="450" y="120" width="150" height="50" fill="#ffe0b2" stroke="black"/>
+  <text x="460" y="150" font-family="Arial" font-size="14">Task Head</text>
+  <!-- Fusion -->
+  <rect x="350" y="200" width="100" height="50" fill="#b2dfdb" stroke="black"/>
+  <text x="360" y="230" font-family="Arial" font-size="14">Fusion</text>
+
+  <!-- Right Layer: RGB and Pointcloud Processing -->
+  <!-- Image Backbone -->
+  <rect x="650" y="50" width="150" height="50" fill="#c8e6c9" stroke="black"/>
+  <text x="660" y="80" font-family="Arial" font-size="14">Image Backbone</text>
+  <!-- Pointcloud Backbone -->
+  <rect x="650" y="120" width="150" height="50" fill="#c8e6c9" stroke="black"/>
+  <text x="660" y="150" font-family="Arial" font-size="14">Pointcloud Backbone</text>
+
+  <!-- Bottom Layer: Output and Memory Processing -->
+  <!-- Memory -->
+  <rect x="300" y="300" width="100" height="50" fill="#d7ccc8" stroke="black"/>
+  <text x="310" y="330" font-family="Arial" font-size="14">Memory</text>
+  <!-- Adapter -->
+  <rect x="450" y="300" width="100" height="50" fill="#d1c4e9" stroke="black"/>
+  <text x="460" y="330" font-family="Arial" font-size="14">Adapter</text>
+  <!-- Outputs -->
+  <rect x="600" y="300" width="50" height="50" fill="#ffccbc" stroke="black"/>
+  <text x="610" y="330" font-family="Arial" font-size="14">Y</text>
+  <rect x="670" y="300" width="50" height="50" fill="#ffccbc" stroke="black"/>
+  <text x="680" y="330" font-family="Arial" font-size="14">O</text>
+
+  <!-- Arrows -->
+  <!-- Top to Middle Layer -->
+  <line x1="170" y1="75" x2="250" y2="75" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="170" y1="145" x2="250" y2="145" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Middle Layer to Task Head -->
+  <line x1="400" y1="75" x2="450" y2="75" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="145" x2="450" y2="145" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Middle Layer to Right Layer -->
+  <line x1="600" y1="75" x2="650" y2="75" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="145" x2="650" y2="145" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Right Layer to Middle Layer Feedback -->
+  <line x1="650" y1="75" x2="600" y2="75" stroke="black" stroke-width="2" marker-start="url(#arrowhead)"/>
+  <line x1="650" y1="145" x2="600" y2="145" stroke="black" stroke-width="2" marker-start="url(#arrowhead)"/>
+  <!-- Middle to Bottom Layer -->
+  <line x1="400" y1="225" x2="400" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="225" x2="500" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Bottom Layer to Outputs -->
+  <line x1="400" y1="325" x2="450" y2="325" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="325" x2="600" y2="325" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="325" x2="670" y2="325" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Bidirectional Communication between Memory and Adapter -->
+  <line x1="400" y1="325" x2="500" y2="325" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <line x1="500" y1="325" x2="400" y2="325" stroke="black" stroke-width="2" marker-start="url(#arrowhead)" stroke-dasharray="5,5"/>
+
+  <!-- Annotations for clarity -->
+  <text x="360" y="260" font-family="Arial" font-size="12" fill="black">Temporal Aggregation</text>
+  <text x="520" y="340" font-family="Arial" font-size="12" fill="black">3D-to-2D Adapter</text>
+</svg>

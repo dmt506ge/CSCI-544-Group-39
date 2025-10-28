@@ -1,0 +1,80 @@
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#333" />
+    </marker>
+    <marker id="arrowDashed" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Left Section -->
+  <!-- Labelled Source Domain -->
+  <g>
+    <rect x="50" y="50" width="140" height="60" fill="#f0f0f0" stroke="#333" stroke-width="1.5" />
+    <text x="70" y="90" font-family="Arial" font-size="14" fill="#333">Labelled Source Domain</text>
+  </g>
+  <!-- Unlabelled Target Domain -->
+  <g>
+    <rect x="50" y="150" width="140" height="60" fill="#f0f0f0" stroke="#333" stroke-width="1.5" />
+    <text x="70" y="190" font-family="Arial" font-size="14" fill="#333">Unlabelled Target Domain</text>
+  </g>
+
+  <!-- CNN Modules -->
+  <g>
+    <rect x="220" y="50" width="100" height="60" fill="#d0e0f0" stroke="#333" stroke-width="1.5" />
+    <text x="250" y="90" font-family="Arial" font-size="14" fill="#333">CNN</text>
+  </g>
+  <g>
+    <rect x="220" y="150" width="100" height="60" fill="#d0e0f0" stroke="#333" stroke-width="1.5" />
+    <text x="250" y="190" font-family="Arial" font-size="14" fill="#333">CNN</text>
+  </g>
+
+  <!-- Arrows from Domains to CNN -->
+  <line x1="190" y1="80" x2="220" y2="80" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="190" y1="180" x2="220" y2="180" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Middle Section -->
+  <!-- Feature Maps -->
+  <g>
+    <rect x="360" y="50" width="120" height="60" fill="#e0d0f0" stroke="#333" stroke-width="1.5" />
+    <text x="380" y="90" font-family="Arial" font-size="14" fill="#333">Feature Map</text>
+  </g>
+  <g>
+    <rect x="360" y="150" width="120" height="60" fill="#e0d0f0" stroke="#333" stroke-width="1.5" />
+    <text x="380" y="190" font-family="Arial" font-size="14" fill="#333">Feature Map</text>
+  </g>
+
+  <!-- Arrows from CNN to Feature Maps -->
+  <line x1="320" y1="80" x2="360" y2="80" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="320" y1="180" x2="360" y2="180" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Bidirectional Dashed Arrow between Feature Maps -->
+  <line x1="420" y1="80" x2="420" y2="180" stroke="#666" stroke-width="1.5" stroke-dasharray="5,5" marker-start="url(#arrowDashed)" marker-end="url(#arrowDashed)" />
+  <text x="430" y="130" font-family="Arial" font-size="12" fill="#666" transform="rotate(90 430,130)">Comparison</text>
+
+  <!-- Right Section -->
+  <!-- ID-FC and Attr-FC Blocks -->
+  <g>
+    <rect x="520" y="30" width="100" height="40" fill="#f0e0d0" stroke="#333" stroke-width="1.5" />
+    <text x="550" y="55" font-family="Arial" font-size="14" fill="#333">ID-FC</text>
+  </g>
+  <g>
+    <rect x="520" y="90" width="100" height="40" fill="#f0e0d0" stroke="#333" stroke-width="1.5" />
+    <text x="550" y="115" font-family="Arial" font-size="14" fill="#333">Attr-FC</text>
+  </g>
+
+  <!-- Connections in Right Section -->
+  <line x1="570" y1="70" x2="570" y2="90" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="620" y1="70" x2="650" y2="70" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="620" y1="110" x2="650" y2="110" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  
+  <!-- Arrow for L_attr -->
+  <line x1="620" y1="90" x2="750" y2="90" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="680" y="85" font-family="Arial" font-size="12" fill="#333">L_attr</text>
+
+  <!-- Person IDs and Attr IDs -->
+  <text x="660" y="65" font-family="Arial" font-size="14" fill="#333">Person IDs</text>
+  <text x="660" y="115" font-family="Arial" font-size="14" fill="#333">Attr IDs</text>
+</svg>

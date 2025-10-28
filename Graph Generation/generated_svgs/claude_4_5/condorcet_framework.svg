@@ -1,0 +1,176 @@
+<svg width="1400" height="1100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowhead-dashed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Background layers -->
+  <rect x="10" y="20" width="1380" height="380" fill="#f8f9fa" stroke="#ddd" stroke-width="2" rx="5"/>
+  <rect x="10" y="430" width="1380" height="650" fill="#f8f9fa" stroke="#ddd" stroke-width="2" rx="5"/>
+  
+  <!-- Layer Labels with descriptions -->
+  <text x="30" y="50" font-size="18" font-weight="bold" fill="#333">Test-time training</text>
+  <text x="30" y="70" font-size="11" fill="#666">Training: Adapt terminal distribution via SNR/entropy rewards</text>
+  <text x="30" y="460" font-size="18" font-weight="bold" fill="#333">Inference</text>
+  <text x="30" y="480" font-size="11" fill="#666">Inference: Sequential sampling with MMC certification</text>
+  
+  <!-- TEST-TIME TRAINING LAYER -->
+  
+  <!-- Prompt (grey) -->
+  <rect x="50" y="110" width="120" height="60" fill="#999" stroke="#666" stroke-width="2" rx="5"/>
+  <text x="110" y="145" font-size="14" fill="white" text-anchor="middle">Prompt</text>
+  
+  <!-- Arrow to LLM -->
+  <line x1="170" y1="140" x2="230" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- LLM (blue) -->
+  <rect x="230" y="110" width="120" height="60" fill="#4a90e2" stroke="#2e5f9a" stroke-width="3" rx="5"/>
+  <text x="290" y="145" font-size="14" fill="white" text-anchor="middle">LLM</text>
+  
+  <!-- Arrow to Set of answers -->
+  <line x1="350" y1="140" x2="420" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Set of answers with majority voting (green) -->
+  <rect x="420" y="110" width="150" height="60" fill="#5cb85c" stroke="#4a934a" stroke-width="2" rx="5"/>
+  <text x="495" y="130" font-size="13" fill="white" text-anchor="middle">Set of answers</text>
+  <text x="495" y="148" font-size="11" fill="white" text-anchor="middle">Majority Voting/</text>
+  <text x="495" y="163" font-size="11" fill="white" text-anchor="middle">Mode Estimation</text>
+  
+  <!-- Arrow to Compute empirical probabilities -->
+  <line x1="570" y1="140" x2="630" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Compute empirical probabilities (green) -->
+  <rect x="630" y="110" width="160" height="60" fill="#5cb85c" stroke="#4a934a" stroke-width="2" rx="5"/>
+  <text x="710" y="130" font-size="12" fill="white" text-anchor="middle">Compute e-values</text>
+  <text x="710" y="146" font-size="11" fill="white" text-anchor="middle">Beta/Plug-in priors</text>
+  <text x="710" y="162" font-size="9" fill="white" text-anchor="middle">(theta*, lambda*)</text>
+  
+  <!-- Arrow to SNR calculation -->
+  <line x1="790" y1="140" x2="850" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- SNR or entropy-based reward calculation (green) -->
+  <rect x="850" y="95" width="180" height="90" fill="#5cb85c" stroke="#4a934a" stroke-width="2" rx="5"/>
+  <text x="940" y="125" font-size="13" fill="white" text-anchor="middle">SNR or entropy-</text>
+  <text x="940" y="142" font-size="13" fill="white" text-anchor="middle">based reward</text>
+  <text x="940" y="159" font-size="13" fill="white" text-anchor="middle">calculation</text>
+  
+  <!-- Arrow to Gradient calculations -->
+  <line x1="1030" y1="140" x2="1100" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Gradient calculations (green) -->
+  <rect x="1100" y="110" width="160" height="60" fill="#5cb85c" stroke="#4a934a" stroke-width="2" rx="5"/>
+  <text x="1180" y="135" font-size="13" fill="white" text-anchor="middle">Gradient</text>
+  <text x="1180" y="155" font-size="13" fill="white" text-anchor="middle">calculations</text>
+  
+  <!-- Dashed feedback arrow (Policy optimisation) - clearer routing -->
+  <path d="M 1180 110 L 1180 75 L 110 75 L 110 110" stroke="#666" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead-dashed)"/>
+  <text x="650" y="65" font-size="12" fill="#666" text-anchor="middle">Policy optimisation / Policy update</text>
+  
+  <!-- Vertical dashed loop from LLM to Prompt -->
+  <path d="M 230 140 L 200 140 L 200 240 L 110 240 L 110 170" stroke="#666" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead-dashed)"/>
+  <text x="130" y="210" font-size="11" fill="#666">Update</text>
+  
+  <!-- INFERENCE LAYER -->
+  
+  <!-- Prompt (grey) -->
+  <rect x="50" y="530" width="120" height="60" fill="#999" stroke="#666" stroke-width="2" rx="5"/>
+  <text x="110" y="565" font-size="14" fill="white" text-anchor="middle">Prompt</text>
+  
+  <!-- Arrow to LLM -->
+  <line x1="170" y1="560" x2="230" y2="560" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Sample counter indicator -->
+  <text x="200" y="545" font-size="10" fill="#666" text-anchor="middle">n=1,2,...</text>
+  
+  <!-- LLM (blue) -->
+  <rect x="230" y="530" width="120" height="60" fill="#4a90e2" stroke="#2e5f9a" stroke-width="2" rx="5"/>
+  <text x="290" y="565" font-size="14" fill="white" text-anchor="middle">LLM</text>
+  
+  <!-- Arrow to Set of answers -->
+  <line x1="350" y1="560" x2="420" y2="560" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Set of answers (green) with tracking labels -->
+  <rect x="420" y="515" width="150" height="90" fill="#5cb85c" stroke="#4a934a" stroke-width="2" rx="5"/>
+  <text x="495" y="540" font-size="13" fill="white" text-anchor="middle">Set of answers</text>
+  <text x="495" y="558" font-size="11" fill="white" text-anchor="middle">Majority Voting/</text>
+  <text x="495" y="573" font-size="11" fill="white" text-anchor="middle">Mode Estimation</text>
+  <text x="495" y="593" font-size="9" fill="#eee" text-anchor="middle">Track: (s_n, f_n, o_n)</text>
+  
+  <!-- Tracking labels for top-2 candidates -->
+  <text x="495" y="625" font-size="10" fill="#333" text-anchor="middle">Top-2: A_n (1st), B_n (2nd), others</text>
+  
+  <!-- Arrow to Compute empirical probabilities -->
+  <line x1="570" y1="560" x2="640" y2="560" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Compute empirical probabilities (green) with prior types -->
+  <rect x="640" y="515" width="170" height="90" fill="#5cb85c" stroke="#4a934a" stroke-width="2" rx="5"/>
+  <text x="725" y="540" font-size="12" fill="white" text-anchor="middle">Compute e-values</text>
+  <text x="725" y="558" font-size="10" fill="white" text-anchor="middle">Truncated Beta Prior</text>
+  <text x="725" y="573" font-size="10" fill="white" text-anchor="middle">OR</text>
+  <text x="725" y="588" font-size="10" fill="white" text-anchor="middle">Updating Plug-in Prior</text>
+  
+  <!-- Arrow to MMC stopping criteria -->
+  <line x1="810" y1="560" x2="870" y2="560" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow from e-values to SNR (split connection) -->
+  <line x1="725" y1="605" x2="725" y2="780" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- MMC stopping criteria (yellow) with expanded details -->
+  <rect x="870" y="500" width="210" height="145" fill="#f0ad4e" stroke="#d98d2e" stroke-width="2" rx="5"/>
+  <text x="975" y="520" font-size="13" font-weight="bold" fill="white" text-anchor="middle">MMC Stopping Criteria</text>
+  
+  <!-- Sub-components for e-processes -->
+  <rect x="880" y="535" width="190" height="35" fill="#e89b3a" stroke="#d98d2e" stroke-width="1" rx="3"/>
+  <text x="975" y="550" font-size="11" fill="white" text-anchor="middle">e^run_n (top-2 test)</text>
+  <text x="975" y="563" font-size="9" fill="white" text-anchor="middle">A_n vs B_n</text>
+  
+  <rect x="880" y="575" width="190" height="35" fill="#e89b3a" stroke="#d98d2e" stroke-width="1" rx="3"/>
+  <text x="975" y="590" font-size="11" fill="white" text-anchor="middle">e^oth_n (others test)</text>
+  <text x="975" y="603" font-size="9" fill="white" text-anchor="middle">Others vs top-2</text>
+  
+  <text x="975" y="625" font-size="10" fill="white" text-anchor="middle">STOP if both</text>
+  <text x="975" y="638" font-size="9" fill="white" text-anchor="middle">e^run_n &gt;= 1/epsilon</text>
+  <text x="975" y="651" font-size="9" fill="white" text-anchor="middle">e^oth_n &gt;= 1/epsilon</text>
+  
+  <!-- Budget check component - integrated with decision flow -->
+  <rect x="870" y="655" width="210" height="55" fill="#d9534f" stroke="#c9302c" stroke-width="2" rx="5"/>
+  <text x="975" y="675" font-size="12" fill="white" text-anchor="middle">Budget Check</text>
+  <text x="975" y="693" font-size="10" fill="white" text-anchor="middle">ABSTAIN if N &gt; N_budget</text>
+  
+  <!-- Compute SNR for prompt difficulty estimation -->
+  <rect x="625" y="780" width="200" height="80" fill="#5cb85c" stroke="#4a934a" stroke-width="2" rx="5"/>
+  <text x="725" y="805" font-size="12" fill="white" text-anchor="middle">Compute SNR for</text>
+  <text x="725" y="822" font-size="12" fill="white" text-anchor="middle">prompt difficulty</text>
+  <text x="725" y="839" font-size="12" fill="white" text-anchor="middle">estimation</text>
+  <text x="725" y="855" font-size="10" fill="white" text-anchor="middle">(monitoring only)</text>
+  
+  <!-- GO path - loop back with clearer labeling and routing -->
+  <path d="M 975 500 L 975 455 L 290 455 L 290 530" stroke="#666" stroke-width="3" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead-dashed)"/>
+  <text x="630" y="445" font-size="12" fill="#666" text-anchor="middle">GO: Generate new sample (iterate n+1)</text>
+  
+  <!-- STOP path -->
+  <line x1="1080" y1="580" x2="1140" y2="580" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="1110" y="565" font-size="12" fill="#666" text-anchor="middle">STOP</text>
+  
+  <!-- Estimate probability -->
+  <rect x="1140" y="550" width="150" height="60" fill="#5bc0de" stroke="#3a9fbf" stroke-width="2" rx="5"/>
+  <text x="1215" y="575" font-size="14" fill="white" text-anchor="middle">Estimate</text>
+  <text x="1215" y="595" font-size="14" fill="white" text-anchor="middle">probability</text>
+  
+  <!-- Vertical self-loop for LLM (Generate rollouts) - repositioned -->
+  <path d="M 350 550 Q 385 550 385 580 Q 385 610 350 610" stroke="#666" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead-dashed)"/>
+  <text x="410" y="575" font-size="10" fill="#666">Rollout</text>
+  <text x="410" y="590" font-size="10" fill="#666">generation</text>
+  
+  <!-- Formulas annotation for e-values -->
+  <text x="725" y="955" font-size="9" fill="#333" text-anchor="middle">e^run_n = 2^M_n * B(a+s_n,b+f_n) / B(a,b)</text>
+  <text x="725" y="970" font-size="9" fill="#333" text-anchor="middle">e^oth_n = 2^T_n * B(a+s_n,b+o_n) / B(a,b)</text>
+  
+  <!-- Annotation showing update cycle -->
+  <text x="725" y="710" font-size="10" fill="#666" text-anchor="middle">Update e-values after each sample</text>
+  
+</svg>

@@ -1,0 +1,47 @@
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for markers -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Left Section: Online Semantic Segmentation -->
+  <g id="semantic-segmentation" transform="translate(20, 50)">
+    <rect x="0" y="0" width="300" height="160" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" />
+    <text x="150" y="20" font-size="16px" text-anchor="middle" fill="#333">Online Semantic Segmentation</text>
+    <!-- Three sets of images -->
+    <rect x="30" y="50" width="240" height="30" fill="#bbdefb" stroke="#64b5f6" stroke-width="1" />
+    <rect x="30" y="100" width="240" height="30" fill="#bbdefb" stroke="#64b5f6" stroke-width="1" />
+    <rect x="30" y="150" width="240" height="30" fill="#bbdefb" stroke="#64b5f6" stroke-width="1" />
+    <!-- Curved arrows -->
+    <path d="M150,80 C150,90 150,90 150,100" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+    <path d="M150,130 C150,140 150,140 150,150" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  </g>
+
+  <!-- Middle Section: Online Object Detection -->
+  <g id="object-detection" transform="translate(350, 50)">
+    <rect x="0" y="0" width="300" height="160" fill="#fff3e0" stroke="#ff9800" stroke-width="2" />
+    <text x="150" y="20" font-size="16px" text-anchor="middle" fill="#333">Online Object Detection</text>
+    <!-- Images with outlined boxes -->
+    <rect x="30" y="50" width="240" height="30" fill="#ffe0b2" stroke="#ffb74d" stroke-width="1" />
+    <rect x="30" y="100" width="240" height="30" fill="#ffe0b2" stroke="#ffb74d" stroke-width="1" />
+    <rect x="30" y="150" width="240" height="30" fill="#ffe0b2" stroke="#ffb74d" stroke-width="1" />
+    <!-- Curved arrows -->
+    <path d="M150,80 C150,90 150,90 150,100" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+    <path d="M150,130 C150,140 150,140 150,150" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  </g>
+
+  <!-- Right Section: Online Instance Segmentation -->
+  <g id="instance-segmentation" transform="translate(680, 50)">
+    <rect x="0" y="0" width="300" height="160" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" />
+    <text x="150" y="20" font-size="16px" text-anchor="middle" fill="#333">Online Instance Segmentation</text>
+    <!-- Multiple colored segments -->
+    <rect x="30" y="50" width="240" height="30" fill="#c8e6c9" stroke="#81c784" stroke-width="1" />
+    <rect x="30" y="100" width="240" height="30" fill="#c8e6c9" stroke="#81c784" stroke-width="1" />
+    <rect x="30" y="150" width="240" height="30" fill="#c8e6c9" stroke="#81c784" stroke-width="1" />
+    <!-- Curved arrows -->
+    <path d="M150,80 C150,90 150,90 150,100" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+    <path d="M150,130 C150,140 150,140 150,150" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" />
+  </g>
+</svg>

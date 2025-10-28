@@ -1,0 +1,114 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" 
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+    </marker>
+    <marker id="dashedArrow" viewBox="0 0 10 10" refX="5" refY="5" 
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#888" />
+    </marker>
+  </defs>
+
+  <!-- Test-time Training Layer -->
+  <g transform="translate(0, 0)">
+    <!-- Prompt Module -->
+    <rect x="50" y="20" width="150" height="50" fill="#ccc" stroke="#000" />
+    <text x="125" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      Prompt
+    </text>
+    <!-- LLM Module -->
+    <rect x="250" y="20" width="150" height="50" fill="#87cefa" stroke="#000" />
+    <text x="325" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      LLM
+    </text>
+    <!-- Set of Answers -->
+    <rect x="450" y="20" width="150" height="50" fill="#98fb98" stroke="#000" />
+    <text x="525" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      Set of Answers
+    </text>
+    <!-- Compute Empirical Probabilities -->
+    <rect x="650" y="20" width="220" height="50" fill="#98fb98" stroke="#000" />
+    <text x="760" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      Compute empirical probabilities
+    </text>
+    <!-- SNR or Entropy-based Reward Calculation -->
+    <rect x="900" y="20" width="270" height="50" fill="#98fb98" stroke="#000" />
+    <text x="1035" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      SNR or entropy-based reward calculation
+    </text>
+    <!-- A Calculations -->
+    <rect x="950" y="100" width="150" height="50" fill="#98fb98" stroke="#000" />
+    <text x="1025" y="130" font-size="14px" fill="#000" text-anchor="middle">
+      A Calculations
+    </text>
+    
+    <!-- Arrows -->
+    <line x1="200" y1="45" x2="250" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="400" y1="45" x2="450" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="600" y1="45" x2="650" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="870" y1="45" x2="900" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="1035" y1="70" x2="1025" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    
+    <!-- Feedback Loop: LLM to Prompt -->
+    <line x1="325" y1="70" x2="325" y2="100" stroke="#888" stroke-width="2" stroke-dasharray="4" marker-end="url(#dashedArrow)" />
+    <line x1="325" y1="100" x2="125" y2="100" stroke="#888" stroke-width="2" stroke-dasharray="4" marker-end="url(#dashedArrow)" />
+    <line x1="125" y1="100" x2="125" y2="70" stroke="#888" stroke-width="2" stroke-dasharray="4" marker-end="url(#dashedArrow)" />
+  </g>
+
+  <!-- Inference Layer -->
+  <g transform="translate(0, 400)">
+    <!-- Prompt Module -->
+    <rect x="50" y="20" width="150" height="50" fill="#ccc" stroke="#000" />
+    <text x="125" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      Prompt
+    </text>
+    <!-- LLM Module -->
+    <rect x="250" y="20" width="150" height="50" fill="#87cefa" stroke="#000" />
+    <text x="325" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      LLM
+    </text>
+    <!-- Set of Answers -->
+    <rect x="450" y="20" width="150" height="50" fill="#98fb98" stroke="#000" />
+    <text x="525" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      Set of Answers
+    </text>
+    <!-- Compute Empirical Probabilities -->
+    <rect x="650" y="20" width="220" height="50" fill="#98fb98" stroke="#000" />
+    <text x="760" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      Compute Empirical Probabilities
+    </text>
+    <!-- Compute SNR for Prompt Difficulty Estimation -->
+    <rect x="650" y="100" width="270" height="50" fill="#98fb98" stroke="#000" />
+    <text x="785" y="130" font-size="14px" fill="#000" text-anchor="middle">
+      Compute SNR for prompt difficulty estimation
+    </text>
+    <!-- MMC Stopping Criteria -->
+    <rect x="900" y="20" width="270" height="50" fill="#ffd700" stroke="#000" />
+    <text x="1035" y="50" font-size="14px" fill="#000" text-anchor="middle">
+      MMC Stopping Criteria
+    </text>
+    <!-- GO and STOP -->
+    <rect x="950" y="100" width="80" height="50" fill="#ff6347" stroke="#000" />
+    <text x="990" y="130" font-size="14px" fill="#000" text-anchor="middle">
+      GO
+    </text>
+    <rect x="1070" y="100" width="80" height="50" fill="#ff6347" stroke="#000" />
+    <text x="1110" y="130" font-size="14px" fill="#000" text-anchor="middle">
+      STOP
+    </text>
+    
+    <!-- Arrows -->
+    <line x1="200" y1="45" x2="250" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="400" y1="45" x2="450" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="600" y1="45" x2="650" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="870" y1="45" x2="900" y2="45" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="760" y1="70" x2="785" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="1035" y1="70" x2="990" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="1035" y1="70" x2="1110" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    
+    <!-- Feedback Loop: LLM to LLM -->
+    <line x1="325" y1="70" x2="325" y2="100" stroke="#888" stroke-width="2" stroke-dasharray="4" marker-end="url(#dashedArrow)" />
+    <line x1="325" y1="100" x2="325" y2="70" stroke="#888" stroke-width="2" stroke-dasharray="4" marker-end="url(#dashedArrow)" />
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define arrow marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Observation Section -->
+  <rect x="50" y="50" width="100" height="50" fill="#f0f0f0" stroke="black"/>
+  <text x="75" y="80" font-size="14">z_θ</text>
+  
+  <rect x="50" y="150" width="150" height="50" fill="#e0e0e0" stroke="black"/>
+  <text x="60" y="180" font-size="14">Statics Propagation</text>
+  
+  <rect x="250" y="150" width="100" height="50" fill="#d0d0d0" stroke="black"/>
+  <text x="275" y="180" font-size="14">b̂</text>
+  
+  <line x1="100" y1="100" x2="125" y2="150" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="125" y1="200" x2="250" y2="175" stroke="black" marker-end="url(#arrow)"/>
+  
+  <rect x="250" y="250" width="100" height="50" fill="#c0c0c0" stroke="black"/>
+  <text x="275" y="280" font-size="14">b₁</text>
+  
+  <rect x="400" y="250" width="100" height="50" fill="#c0c0c0" stroke="black"/>
+  <text x="425" y="280" font-size="14">x₁</text>
+  
+  <line x1="300" y1="300" x2="400" y2="275" stroke="black" marker-end="url(#arrow)"/>
+
+  <!-- Central Section -->
+  <rect x="550" y="50" width="100" height="50" fill="#ffa500" stroke="black"/>
+  <text x="575" y="80" font-size="14">h₁</text>
+  
+  <rect x="700" y="50" width="100" height="50" fill="#ffa500" stroke="black"/>
+  <text x="725" y="80" font-size="14">h_T</text>
+  
+  <rect x="850" y="50" width="100" height="50" fill="#ffa500" stroke="black"/>
+  <text x="875" y="80" font-size="14">h_{T+1}</text>
+  
+  <line x1="600" y1="100" x2="725" y2="75" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="750" y1="100" x2="850" y2="75" stroke="black" marker-end="url(#arrow)"/>
+  
+  <circle cx="650" cy="150" r="25" fill="#ffa500" stroke="black"/>
+  <text x="640" y="155" font-size="12">m_θ</text>
+  
+  <line x1="650" y1="175" x2="650" y2="200" stroke="black" marker-end="url(#arrow)"/>
+  
+  <rect x="550" y="250" width="100" height="50" fill="#c0c0c0" stroke="black"/>
+  <text x="575" y="280" font-size="14">s₁</text>
+  
+  <rect x="700" y="250" width="100" height="50" fill="#c0c0c0" stroke="black"/>
+  <text x="725" y="280" font-size="14">s_T</text>
+  
+  <rect x="850" y="250" width="100" height="50" fill="#c0c0c0" stroke="black"/>
+  <text x="875" y="280" font-size="14">s_{T+1}</text>
+  
+  <line x1="600" y1="300" x2="725" y2="275" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="750" y1="300" x2="850" y2="275" stroke="black" marker-end="url(#arrow)"/>
+  
+  <ellipse cx="550" cy="350" rx="40" ry="20" fill="#a0a0ff" stroke="black"/>
+  <text x="530" y="355" font-size="12">μ_φ, σ_φ</text>
+  
+  <line x1="550" y1="370" x2="550" y2="400" stroke="black" marker-end="url(#arrow)"/>
+  
+  <!-- Prediction Section -->
+  <rect x="1000" y="50" width="100" height="50" fill="#a0a0ff" stroke="black"/>
+  <text x="1025" y="80" font-size="14">ŷ₁</text>
+  
+  <rect x="1000" y="150" width="100" height="50" fill="#90ee90" stroke="black"/>
+  <text x="1025" y="180" font-size="14">â_T</text>
+  
+  <rect x="1000" y="250" width="100" height="50" fill="#a0a0ff" stroke="black"/>
+  <text x="1025" y="280" font-size="14">ŷ_T</text>
+  
+  <rect x="1000" y="350" width="100" height="50" fill="#90ee90" stroke="black"/>
+  <text x="1025" y="380" font-size="14">â_{T+1}</text>
+  
+  <line x1="900" y1="75" x2="1000" y2="75" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="900" y1="275" x2="1000" y2="275" stroke="black" marker-end="url(#arrow)"/>
+
+  <!-- Additional connections for MLN nodes -->
+  <rect x="550" y="450" width="100" height="50" fill="#f0e68c" stroke="black"/>
+  <text x="575" y="480" font-size="12">MLN</text>
+  
+  <line x1="600" y1="420" x2="600" y2="450" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="600" y1="500" x2="600" y2="530" stroke="black" marker-end="url(#arrow)"/>
+</svg>

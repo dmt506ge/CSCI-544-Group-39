@@ -1,0 +1,28 @@
+Source File: new-framework.pdf
+================================================================================
+
+The diagram follows a left-to-right horizontal architecture with interconnected processing elements:
+
+1. **Left section - Server Interaction:**
+   - Top left: "Server Aggregation" (cloud symbol). 
+   - Actions: Upload and Download arrows connect to "Global item embedding (C)" below.
+
+2. **Middle-left section - Personalization:**
+   - Centered vertically: "Global item embedding (C)" at the top, followed by "Enforce Difference."
+   - Below "Enforce Difference": "Local item embedding (D(i))" and "User embedding (u_i)" horizontally aligned.
+   - There are additive operations connecting these blocks, with arrows leading to subsequent processes.
+
+3. **Right section - Error Computation:**
+   - Top right: "User ratings (r_i)" leading downward to "Compute Loss."
+   - Below "Compute Loss": "Predicted user ratings (r̂_i)".
+
+4. **Connections and Flow:**
+   - Data flows from "C" and "D(i)" into a combination process and then to the multiplication symbol before connecting to "Predicted user ratings (r̂_i)."
+   - Flow direction is primarily left-to-right and top-to-bottom with feedback loops.
+
+5. **Groupings and Relationships:**
+   - Two main blocks delineated by dashed borders: 
+     - Left green dashed block contains personalization processes.
+     - Right green dashed block involves error computation processes, labeled as "Reconstruction Error."
+
+Overall, the layout is a left-to-right flow with internal top-to-bottom processing within the personalization and error computation groups, reflecting a pipeline of operations from server aggregation through personalization to error computation.

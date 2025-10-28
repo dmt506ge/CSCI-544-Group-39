@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0,0 12,4 0,8" fill="#333"></polygon>
+    </marker>
+    <style>
+      .main-text { font-family: Arial, sans-serif; font-size: 15px; fill: #222; }
+      .label-text { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+      .group-border { fill: none; stroke: #76c893; stroke-width: 2; stroke-dasharray: 6 6; }
+      .cloud-stroke { stroke: #888; stroke-width: 2; fill: #f2f2f2; }
+      .rect-embed { fill: #e8dff5; stroke: #6a4c93; stroke-width: 2; }
+      .rect-proc { fill: #fff4e6; stroke: #e07a5f; stroke-width: 2; }
+      .rect-io { fill: #e0f2ff; stroke: #2389da; stroke-width: 2; }
+      .op-circle { fill: #ffffff; stroke: #333333; stroke-width: 2; }
+      .flow { stroke: #333333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .flow-dashed { stroke: #555555; stroke-width: 2; fill: none; stroke-dasharray: 5 5; marker-end: url(#arrowhead); }
+      .rect-badge { fill: #f9f1ff; stroke: #6a4c93; stroke-width: 1.5; }
+      .tiny-curve { stroke: #c06c2b; stroke-width: 1.5; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Server aggregation cloud -->
+  <path id="server-cloud" class="cloud-stroke" d="M120 120 L360 120 Q350 90 310 90 Q300 60 260 70 Q240 50 210 70 Q180 60 170 90 Q140 90 120 120 Z"></path>
+  <text x="240" y="70" text-anchor="middle" class="main-text">Server Aggregation</text>
+  <text x="240" y="95" text-anchor="middle" class="label-text">Aggregation across clients</text>
+  <text x="150" y="112" class="label-text">Only C exchanged</text>
+
+  <!-- Left group: personalization and training -->
+  <rect id="group-left" class="group-border" x="60" y="140" width="520" height="420"></rect>
+  <text x="70" y="155" class="label-text">Personalization and training</text>
+
+  <!-- Right group: reconstruction error -->
+  <rect id="group-right" class="group-border" x="640" y="160" width="500" height="380"></rect>
+  <text x="650" y="175" class="label-text">Reconstruction error</text>
+
+  <!-- Global item embedding C -->
+  <rect id="rect-c" class="rect-embed" x="140" y="170" width="260" height="60" rx="8"></rect>
+  <text x="270" y="203" text-anchor="middle" class="main-text">Global item embedding C</text>
+  <!-- L1 sparsity badge inside C -->
+  <rect id="badge-c-l1" class="rect-badge" x="330" y="178" width="60" height="22" rx="10"></rect>
+  <text x="360" y="193" text-anchor="middle" class="label-text">L1 sparsity</text>
+
+  <!-- Enforce difference -->
+  <rect id="rect-diff" class="rect-proc" x="190" y="240" width="160" height="40" rx="6"></rect>
+  <text x="270" y="265" text-anchor="middle" class="main-text">Enforce difference</text>
+
+  <!-- Local item embedding D i -->
+  <rect id="rect-di" class="rect-embed" x="100" y="300" width="200" height="60" rx="8"></rect>
+  <text x="200" y="335" text-anchor="middle" class="main-text">Local item embedding D i</text>
+
+  <!-- User embedding ui -->
+  <rect id="rect-ui" class="rect-embed" x="340" y="300" width="180" height="60" rx="8"></rect>
+  <text x="430" y="335" text-anchor="middle" class="main-text">User embedding ui</text>
+
+  <!-- Weight schedule alpha t -->
+  <rect id="rect-weight" class="rect-proc" x="260" y="440" width="140" height="48" rx="6"></rect>
+  <text x="330" y="458" text-anchor="middle" class="main-text">alpha t schedule</text>
+  <text x="330" y="474" text-anchor="middle" class="label-text">tanh shaped</text>
+  <!-- tiny tanh curve icon inside alpha -->
+  <path class="tiny-curve" d="M275 468 C285 450 315 450 325 468 S355 486 365 468"></path>
+
+  <!-- Multiply for alpha times D -->
+  <circle id="op-times-alpha" class="op-circle" cx="200" cy="385" r="12"></circle>
+  <line x1="192" y1="377" x2="208" y2="393" stroke="#333" stroke-width="2"></line>
+  <line x1="208" y1="377" x2="192" y2="393" stroke="#333" stroke-width="2"></line>
+
+  <!-- Plus and Times operators -->
+  <circle id="op-plus" class="op-circle" cx="200" cy="410" r="18"></circle>
+  <line x1="190" y1="410" x2="210" y2="410" stroke="#333" stroke-width="2"></line>
+  <line x1="200" y1="400" x2="200" y2="420" stroke="#333" stroke-width="2"></line>
+
+  <circle id="op-times" class="op-circle" cx="430" cy="410" r="18"></circle>
+  <line x1="418" y1="398" x2="442" y2="422" stroke="#333" stroke-width="2"></line>
+  <line x1="442" y1="398" x2="418" y2="422" stroke="#333" stroke-width="2"></line>
+
+  <!-- Right side: ratings, loss, prediction -->
+  <rect id="rect-ratings" class="rect-io" x="860" y="180" width="240" height="60" rx="8"></rect>
+  <text x="980" y="215" text-anchor="middle" class="main-text">User ratings ri</text>
+
+  <rect id="rect-loss" class="rect-proc" x="860" y="260" width="240" height="60" rx="8"></rect>
+  <text x="980" y="295" text-anchor="middle" class="main-text">Compute loss</text>
+
+  <rect id="rect-pred" class="rect-io" x="860" y="340" width="240" height="60" rx="8"></rect>
+  <text x="980" y="375" text-anchor="middle" class="main-text">Predicted user ratings rhat i</text>
+
+  <!-- Gradient update with DP noise -->
+  <rect id="rect-grad" class="rect-proc" x="420" y="430" width="140" height="60" rx="6"></rect>
+  <text x="490" y="448" text-anchor="middle" class="main-text">Gradient update</text>
+  <text x="490" y="464" text-anchor="middle" class="label-text">DP Gaussian noise</text>
+  <text x="490" y="480" text-anchor="middle" class="label-text">eps delta</text>
+  <!-- noise plus icon inside grad node -->
+  <circle class="op-circle" cx="545" cy="446" r="8"></circle>
+  <line x1="545" y1="441" x2="545" y2="451" stroke="#333" stroke-width="2"></line>
+  <line x1="540" y1="446" x2="550" y2="446" stroke="#333" stroke-width="2"></line>
+
+  <!-- Server upload and download arrows for C -->
+  <line class="flow" x1="220" y1="120" x2="220" y2="170"></line>
+  <text x="206" y="148" text-anchor="end" class="label-text">download C</text>
+
+  <line class="flow" x1="320" y1="170" x2="320" y2="120"></line>
+  <text x="334" y="148" class="label-text">upload C</text>
+
+  <!-- C to Enforce difference -->
+  <line class="flow" x1="270" y1="230" x2="270" y2="240"></line>
+
+  <!-- Enforce difference to Di top -->
+  <polyline class="flow" points="270,280 270,290 200,290 200,300"></polyline>
+
+  <!-- Enforce difference to Ui top -->
+  <polyline class="flow" points="270,280 270,290 430,290 430,300"></polyline>
+
+  <!-- Enforce difference to Loss as regularizer routed above and anchored on top edge -->
+  <polyline class="flow-dashed" points="350,260 500,252 940,252 940,260"></polyline>
+  <text x="720" y="240" text-anchor="middle" class="label-text">difference regularizer</text>
+
+  <!-- D to multiply top -->
+  <line class="flow" x1="200" y1="360" x2="200" y2="373"></line>
+
+  <!-- alpha schedule to multiply left -->
+  <polyline class="flow" points="260,464 240,464 240,385 188,385"></polyline>
+
+  <!-- multiply to plus -->
+  <polyline class="flow" points="200,397 200,392 182,392 182,410"></polyline>
+
+  <!-- C to plus top -->
+  <line class="flow" x1="270" y1="230" x2="270" y2="392"></line>
+  <polyline class="flow" points="270,392 218,392 218,410"></polyline>
+
+  <!-- Label the fusion output -->
+  <text x="300" y="398" class="label-text">C plus alpha times D i</text>
+
+  <!-- Ui to Times top -->
+  <line class="flow" x1="430" y1="360" x2="430" y2="392"></line>
+
+  <!-- Plus to Times -->
+  <line class="flow" x1="218" y1="410" x2="412" y2="410"></line>
+
+  <!-- Times to Predicted ratings -->
+  <polyline class="flow" points="448,410 820,410 820,370 860,370"></polyline>
+
+  <!-- Predicted to Loss upward -->
+  <line class="flow" x1="980" y1="340" x2="980" y2="320"></line>
+
+  <!-- Ratings to Loss downward -->
+  <line class="flow" x1="980" y1="240" x2="980" y2="260"></line>
+
+  <!-- Loss to Gradient update -->
+  <polyline class="flow" points="860,290 600,290 600,460 560,460"></polyline>
+
+  <!-- Gradient update to C bottom border -->
+  <polyline class="flow" points="420,460 270,460 270,230"></polyline>
+
+  <!-- Gradient update to Di top border -->
+  <polyline class="flow" points="420,460 200,460 200,300"></polyline>
+
+  <!-- Gradient update to Ui top border -->
+  <polyline class="flow" points="420,460 430,460 430,300"></polyline>
+
+  <!-- Small labels inside left group for clarity -->
+  <text x="200" y="452" text-anchor="middle" class="label-text">addition</text>
+  <text x="430" y="452" text-anchor="middle" class="label-text">dot product</text>
+</svg>

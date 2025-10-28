@@ -1,0 +1,280 @@
+<svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4A90E2" />
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#FF9933" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#228B22" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#CC0000" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="700" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Memory State-Space Model (MSSM) Architecture</text>
+  
+  <!-- Section dividers with subtle background shading -->
+  <rect x="10" y="50" width="380" height="600" fill="#F9F9F9" stroke="#DDD" stroke-width="1" rx="5" opacity="0.5"/>
+  <rect x="400" y="50" width="560" height="600" fill="#F5F5F5" stroke="#DDD" stroke-width="1" rx="5" opacity="0.5"/>
+  <rect x="970" y="50" width="420" height="600" fill="#F9F9F9" stroke="#DDD" stroke-width="1" rx="5" opacity="0.5"/>
+  
+  <!-- Left Section - Observation Process -->
+  
+  <!-- z_theta input (top-left corner) -->
+  <circle cx="80" cy="80" r="25" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+  <text x="80" y="85" font-size="14" text-anchor="middle" fill="#333">z_theta</text>
+  <text x="80" y="120" font-size="9" fill="#666">(Observation Input)</text>
+  
+  <!-- Statics Propagation (expanded with internal structure) -->
+  <rect x="20" y="150" width="160" height="120" fill="#FFE6CC" stroke="#FF9933" stroke-width="2" rx="5"/>
+  <text x="100" y="170" font-size="13" font-weight="bold" text-anchor="middle" fill="#333">Statics Propagation</text>
+  <rect x="35" y="185" width="130" height="30" fill="#FFF" stroke="#FF9933" stroke-width="1" rx="3"/>
+  <text x="100" y="205" font-size="10" text-anchor="middle" fill="#333">BEV Feature Extract</text>
+  <rect x="35" y="225" width="130" height="30" fill="#FFF" stroke="#FF9933" stroke-width="1" rx="3"/>
+  <text x="100" y="245" font-size="10" text-anchor="middle" fill="#333">Spatial Encoding</text>
+  
+  <!-- b_hat (centralized) -->
+  <rect x="230" y="180" width="80" height="60" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2" rx="5"/>
+  <text x="270" y="215" font-size="14" text-anchor="middle" fill="#333">b-hat</text>
+  
+  <!-- Observation input o_1 -->
+  <rect x="200" y="310" width="70" height="40" fill="#D0E8FF" stroke="#4A90E2" stroke-width="2" rx="5"/>
+  <text x="235" y="335" font-size="13" text-anchor="middle" fill="#333">o_1</text>
+  
+  <!-- b_1 -->
+  <rect x="200" y="400" width="70" height="50" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2" rx="5"/>
+  <text x="235" y="430" font-size="14" text-anchor="middle" fill="#333">b_1</text>
+  
+  <!-- x_1 (repositioned to right side of observation section) -->
+  <rect x="300" y="400" width="70" height="50" fill="#F0F0F0" stroke="#666" stroke-width="2" rx="5"/>
+  <text x="335" y="430" font-size="14" text-anchor="middle" fill="#333">x_1</text>
+  
+  <!-- Task Prompt Mechanism -->
+  <rect x="30" y="520" width="100" height="50" fill="#FFFACD" stroke="#DAA520" stroke-width="2" rx="5"/>
+  <text x="80" y="540" font-size="11" text-anchor="middle" fill="#333">Task Prompt</text>
+  <text x="80" y="555" font-size="10" text-anchor="middle" fill="#666">(task-specific)</text>
+  
+  <!-- Arrows from z_theta to Statics Propagation -->
+  <line x1="80" y1="105" x2="80" y2="145" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrows from Statics Propagation to b_hat -->
+  <line x1="180" y1="210" x2="225" y2="210" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrows from Statics Propagation to b_1 -->
+  <line x1="100" y1="270" x2="100" y2="380" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="380" x2="195" y2="425" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow from o_1 to b_1 -->
+  <line x1="235" y1="350" x2="235" y2="395" stroke="#4A90E2" stroke-width="2" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Arrows from b_1 to x_1 -->
+  <line x1="270" y1="425" x2="295" y2="425" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Central Section - Dynamics Memory and h nodes -->
+  
+  <!-- Temporal flow indicators at top -->
+  <text x="475" y="75" font-size="12" font-weight="bold" fill="#666">t=1</text>
+  <text x="640" y="75" font-size="12" font-weight="bold" fill="#666">t=T</text>
+  <text x="825" y="75" font-size="12" font-weight="bold" fill="#666">t=T+1</text>
+  
+  <!-- Dynamics Memory (expanded with internal structure) -->
+  <rect x="420" y="100" width="500" height="90" fill="#FFCCCC" stroke="#CC0000" stroke-width="2" rx="5"/>
+  <text x="670" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Dynamics Memory Bank Module</text>
+  <rect x="440" y="135" width="220" height="25" fill="#FFF" stroke="#CC0000" stroke-width="1" rx="2"/>
+  <text x="550" y="152" font-size="9" text-anchor="middle" fill="#333">Temporal-Aware Encoding</text>
+  <rect x="680" y="135" width="220" height="25" fill="#FFF" stroke="#CC0000" stroke-width="1" rx="2"/>
+  <text x="790" y="152" font-size="9" text-anchor="middle" fill="#333">Memory Interaction and Update</text>
+  <rect x="440" y="165" width="220" height="20" fill="#FFF" stroke="#CC0000" stroke-width="1" rx="2"/>
+  <text x="550" y="179" font-size="9" text-anchor="middle" fill="#333">MLN Integration</text>
+  
+  <!-- h nodes (orange rectangles) - aligned horizontally at same vertical level -->
+  <rect x="435" y="250" width="80" height="55" fill="#FFB366" stroke="#FF8000" stroke-width="3" rx="5"/>
+  <text x="475" y="282" font-size="15" font-weight="bold" text-anchor="middle" fill="#333">h_1</text>
+  
+  <!-- Ellipsis indicator -->
+  <text x="555" y="282" font-size="20" font-weight="bold" text-anchor="middle" fill="#666">...</text>
+  
+  <rect x="600" y="250" width="80" height="55" fill="#FFB366" stroke="#FF8000" stroke-width="3" rx="5"/>
+  <text x="640" y="282" font-size="15" font-weight="bold" text-anchor="middle" fill="#333">h_T</text>
+  
+  <rect x="785" y="250" width="90" height="55" fill="#FFB366" stroke="#FF8000" stroke-width="3" rx="5"/>
+  <text x="830" y="282" font-size="15" font-weight="bold" text-anchor="middle" fill="#333">h_T+1</text>
+  
+  <!-- m_theta nodes (orange circles) -->
+  <circle cx="515" cy="210" r="22" fill="#FFB366" stroke="#FF8000" stroke-width="2"/>
+  <text x="515" y="215" font-size="11" text-anchor="middle" fill="#333">m_theta</text>
+  
+  <circle cx="700" cy="210" r="22" fill="#FFB366" stroke="#FF8000" stroke-width="2"/>
+  <text x="700" y="215" font-size="11" text-anchor="middle" fill="#333">m_theta</text>
+  
+  <!-- f_theta nodes (small) -->
+  <circle cx="515" cy="277" r="12" fill="#FFF" stroke="#FF8000" stroke-width="1.5"/>
+  <text x="515" y="281" font-size="9" text-anchor="middle" fill="#333">f_theta</text>
+  
+  <circle cx="700" cy="277" r="12" fill="#FFF" stroke="#FF8000" stroke-width="1.5"/>
+  <text x="700" y="281" font-size="9" text-anchor="middle" fill="#333">f_theta</text>
+  
+  <!-- Previous action inputs a_0 and a_T-1 -->
+  <rect x="395" y="205" width="50" height="30" fill="#C8E6C9" stroke="#4CAF50" stroke-width="1.5" rx="3"/>
+  <text x="420" y="225" font-size="11" text-anchor="middle" fill="#333">a_0</text>
+  
+  <rect x="565" y="205" width="50" height="30" fill="#C8E6C9" stroke="#4CAF50" stroke-width="1.5" rx="3"/>
+  <text x="590" y="225" font-size="11" text-anchor="middle" fill="#333">a_T-1</text>
+  
+  <!-- s nodes (state nodes) -->
+  <ellipse cx="475" cy="380" rx="40" ry="28" fill="#90EE90" stroke="#228B22" stroke-width="2"/>
+  <text x="475" y="385" font-size="14" text-anchor="middle" fill="#333">s_1</text>
+  
+  <ellipse cx="640" cy="380" rx="40" ry="28" fill="#90EE90" stroke="#228B22" stroke-width="2"/>
+  <text x="640" y="385" font-size="14" text-anchor="middle" fill="#333">s_T</text>
+  
+  <ellipse cx="830" cy="380" rx="45" ry="28" fill="#ADD8E6" stroke="#4A90E2" stroke-width="2"/>
+  <text x="830" y="385" font-size="14" text-anchor="middle" fill="#333">s_T+1</text>
+  
+  <!-- mu_phi, sigma_phi nodes (stochastic model q_phi) - repositioned below and to the left -->
+  <ellipse cx="420" cy="480" rx="55" ry="25" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+  <text x="420" y="480" font-size="10" text-anchor="middle" fill="#333">mu_phi, sigma_phi</text>
+  <text x="420" y="495" font-size="9" font-style="italic" text-anchor="middle" fill="#666">(q_phi)</text>
+  
+  <ellipse cx="590" cy="480" rx="55" ry="25" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+  <text x="590" y="480" font-size="10" text-anchor="middle" fill="#333">mu_phi, sigma_phi</text>
+  <text x="590" y="495" font-size="9" font-style="italic" text-anchor="middle" fill="#666">(q_phi)</text>
+  
+  <!-- mu_theta, sigma_theta nodes (dynamic model p_theta) - repositioned above states -->
+  <ellipse cx="640" cy="320" rx="60" ry="22" fill="#FFE6CC" stroke="#FF9933" stroke-width="2"/>
+  <text x="640" y="320" font-size="10" text-anchor="middle" fill="#333">mu_theta, sigma_theta</text>
+  <text x="640" y="333" font-size="9" font-style="italic" text-anchor="middle" fill="#666">(p_theta)</text>
+  
+  <ellipse cx="830" cy="320" rx="60" ry="22" fill="#FFE6CC" stroke="#FF9933" stroke-width="2"/>
+  <text x="830" y="320" font-size="10" text-anchor="middle" fill="#333">mu_theta, sigma_theta</text>
+  <text x="830" y="333" font-size="9" font-style="italic" text-anchor="middle" fill="#666">(p_theta)</text>
+  
+  <!-- KL divergence labels - repositioned below the connections -->
+  <text x="640" y="360" font-size="10" font-weight="bold" fill="#CC0000" text-anchor="middle">KL(q_phi || p_theta)</text>
+  <text x="830" y="360" font-size="10" font-weight="bold" fill="#CC0000" text-anchor="middle">KL(q_phi || p_theta)</text>
+  
+  <!-- MLN nodes (Motion-aware Layer Normalization) - with distinctive border -->
+  <rect x="450" y="540" width="50" height="40" fill="#FFE6E6" stroke="#CC6666" stroke-width="2" stroke-dasharray="3,3" rx="3"/>
+  <text x="475" y="565" font-size="11" text-anchor="middle" fill="#333">MLN</text>
+  
+  <rect x="615" y="540" width="50" height="40" fill="#FFE6E6" stroke="#CC6666" stroke-width="2" stroke-dasharray="3,3" rx="3"/>
+  <text x="640" y="565" font-size="11" text-anchor="middle" fill="#333">MLN</text>
+  
+  <rect x="805" y="540" width="50" height="40" fill="#FFE6E6" stroke="#CC6666" stroke-width="2" stroke-dasharray="3,3" rx="3"/>
+  <text x="830" y="565" font-size="11" text-anchor="middle" fill="#333">MLN</text>
+  
+  <!-- Right Section - Prediction Outputs -->
+  
+  <!-- y_hat outputs (3D occupancy decoder) -->
+  <rect x="1025" y="90" width="75" height="55" fill="#B3D9FF" stroke="#4A90E2" stroke-width="2" rx="3"/>
+  <text x="1062" y="115" font-size="13" text-anchor="middle" fill="#333">y-hat_1</text>
+  <text x="1062" y="130" font-size="8" text-anchor="middle" fill="#666">(3D occupancy)</text>
+  
+  <rect x="1165" y="90" width="75" height="55" fill="#B3D9FF" stroke="#4A90E2" stroke-width="2" rx="3"/>
+  <text x="1202" y="115" font-size="13" text-anchor="middle" fill="#333">y-hat_T</text>
+  <text x="1202" y="130" font-size="8" text-anchor="middle" fill="#666">(3D occupancy)</text>
+  
+  <rect x="1280" y="90" width="80" height="55" fill="#B3D9FF" stroke="#4A90E2" stroke-width="2" rx="3"/>
+  <text x="1320" y="115" font-size="13" text-anchor="middle" fill="#333">y-hat_T+1</text>
+  <text x="1320" y="130" font-size="8" text-anchor="middle" fill="#666">(3D occupancy)</text>
+  
+  <!-- l_theta labels -->
+  <text x="1062" y="170" font-size="10" fill="#666">l_theta</text>
+  <text x="1202" y="170" font-size="10" fill="#666">l_theta</text>
+  <text x="1320" y="170" font-size="10" fill="#666">l_theta</text>
+  
+  <!-- a_hat outputs (action decoder) -->
+  <rect x="1240" y="260" width="70" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" rx="3"/>
+  <text x="1275" y="283" font-size="13" text-anchor="middle" fill="#333">a-hat_T</text>
+  <text x="1275" y="298" font-size="8" text-anchor="middle" fill="#666">(action)</text>
+  
+  <rect x="1240" y="350" width="70" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" rx="3"/>
+  <text x="1275" y="373" font-size="13" text-anchor="middle" fill="#333">a-hat_T+1</text>
+  <text x="1275" y="388" font-size="8" text-anchor="middle" fill="#666">(action)</text>
+  
+  <!-- pi_theta labels -->
+  <text x="1180" y="283" font-size="10" fill="#666">pi_theta</text>
+  <text x="1180" y="373" font-size="10" fill="#666">pi_theta</text>
+  
+  <!-- Connections from b_hat to h_1 -->
+  <line x1="310" y1="210" x2="430" y2="277" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Connections from x_1 to s_1 -->
+  <line x1="370" y1="425" x2="440" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Connection from o_1 to s_1 -->
+  <line x1="270" y1="330" x2="440" y2="365" stroke="#4A90E2" stroke-width="1.5" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Connections from previous actions to h nodes -->
+  <line x1="420" y1="235" x2="435" y2="265" stroke="#4CAF50" stroke-width="1.5" marker-end="url(#arrowhead-green)"/>
+  <line x1="590" y1="235" x2="600" y2="265" stroke="#4CAF50" stroke-width="1.5" marker-end="url(#arrowhead-green)"/>
+  
+  <!-- Connections between h nodes -->
+  <line x1="515" y1="277" x2="595" y2="277" stroke="#FF8000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="277" x2="780" y2="277" stroke="#FF8000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Connections from h to s nodes -->
+  <line x1="475" y1="305" x2="475" y2="352" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="640" y1="305" x2="640" y2="352" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="830" y1="305" x2="830" y2="352" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Connections from s to mu_phi nodes -->
+  <line x1="450" y1="400" x2="440" y2="455" stroke="#4A90E2" stroke-width="1.5" marker-end="url(#arrowhead-blue)"/>
+  <line x1="615" y1="400" x2="600" y2="455" stroke="#4A90E2" stroke-width="1.5" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Connections from mu_theta to s nodes -->
+  <line x1="640" y1="342" x2="640" y2="352" stroke="#FF9933" stroke-width="1.5" marker-end="url(#arrowhead-orange)"/>
+  <line x1="830" y1="342" x2="830" y2="352" stroke="#FF9933" stroke-width="1.5" marker-end="url(#arrowhead-orange)"/>
+  
+  <!-- Connections from s to MLN -->
+  <line x1="475" y1="408" x2="475" y2="535" stroke="#CC6666" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="640" y1="408" x2="640" y2="535" stroke="#CC6666" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="830" y1="408" x2="830" y2="535" stroke="#CC6666" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  
+  <!-- Connections between s nodes (state progression) -->
+  <line x1="515" y1="380" x2="600" y2="380" stroke="#228B22" stroke-width="2" marker-end="url(#arrowhead-green)"/>
+  <line x1="680" y1="380" x2="785" y2="380" stroke="#228B22" stroke-width="2" marker-end="url(#arrowhead-green)"/>
+  
+  <!-- Ellipsis for state progression -->
+  <text x="557" y="385" font-size="18" font-weight="bold" text-anchor="middle" fill="#666">...</text>
+  
+  <!-- Dynamics Memory connections (bidirectional with offset) -->
+  <line x1="515" y1="190" x2="515" y2="205" stroke="#CC0000" stroke-width="2" marker-end="url(#arrowhead-red)"/>
+  <line x1="505" y1="205" x2="505" y2="190" stroke="#CC0000" stroke-width="1.5" marker-end="url(#arrowhead-red)"/>
+  
+  <line x1="700" y1="190" x2="700" y2="205" stroke="#CC0000" stroke-width="2" marker-end="url(#arrowhead-red)"/>
+  <line x1="690" y1="205" x2="690" y2="190" stroke="#CC0000" stroke-width="1.5" marker-end="url(#arrowhead-red)"/>
+  
+  <!-- Memory to h connections -->
+  <line x1="475" y1="250" x2="500" y2="190" stroke="#CC0000" stroke-width="1.5"/>
+  <line x1="640" y1="250" x2="680" y2="190" stroke="#CC0000" stroke-width="1.5"/>
+  
+  <!-- Memory bank update flow -->
+  <line x1="660" y1="145" x2="680" y2="145" stroke="#CC0000" stroke-width="2" marker-end="url(#arrowhead-red)"/>
+  
+  <!-- Connections from m_theta to y_hat -->
+  <line x1="530" y1="195" x2="1025" y2="117" stroke="#4A90E2" stroke-width="1.5" marker-end="url(#arrowhead-blue)"/>
+  <line x1="710" y1="195" x2="1165" y2="117" stroke="#4A90E2" stroke-width="1.5" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Connections from h_T+1 to y_hat and a_hat -->
+  <line x1="875" y1="260" x2="1280" y2="117" stroke="#4A90E2" stroke-width="1.5" marker-end="url(#arrowhead-blue)"/>
+  <line x1="920" y1="277" x2="1235" y2="285" stroke="#4CAF50" stroke-width="1.5" marker-end="url(#arrowhead-green)"/>
+  <line x1="920" y1="285" x2="1235" y2="375" stroke="#4CAF50" stroke-width="1.5" marker-end="url(#arrowhead-green)"/>
+  
+  <!-- Connection from task prompt to h_1 -->
+  <line x1="130" y1="545" x2="435" y2="300" stroke="#DAA520" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Labels for sections -->
+  <text x="180" y="635" font-size="14" font-weight="bold" fill="#4A90E2">Observation Process</text>
+  <text x="620" y="635" font-size="14" font-weight="bold" fill="#FF8000">State Processing (MSSM Core)</text>
+  <text x="1150" y="635" font-size="14" font-weight="bold" fill="#228B22">Prediction Outputs</text>
+  
+</svg>

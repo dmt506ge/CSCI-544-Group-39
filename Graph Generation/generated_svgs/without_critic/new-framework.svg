@@ -1,0 +1,59 @@
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Server Aggregation -->
+  <rect x="20" y="20" width="160" height="60" fill="#CCCCFF" stroke="black" />
+  <text x="30" y="55" font-size="14" font-family="Arial">Server Aggregation</text>
+  
+  <!-- Global Item Embedding (C) -->
+  <rect x="220" y="20" width="180" height="40" fill="#FFDDC1" stroke="black" />
+  <text x="230" y="45" font-size="14" font-family="Arial">Global item embedding (C)</text>
+
+  <!-- Enforce Difference -->
+  <rect x="220" y="80" width="180" height="40" fill="#FFCCCB" stroke="black" />
+  <text x="230" y="105" font-size="14" font-family="Arial">Enforce Difference</text>
+
+  <!-- Local Item Embedding (D(i)) -->
+  <rect x="220" y="140" width="180" height="40" fill="#FFFACD" stroke="black" />
+  <text x="230" y="165" font-size="14" font-family="Arial">Local item embedding (D(i))</text>
+
+  <!-- User Embedding (u_i) -->
+  <rect x="220" y="200" width="180" height="40" fill="#E0FFFF" stroke="black" />
+  <text x="230" y="225" font-size="14" font-family="Arial">User embedding (u_i)</text>
+
+  <!-- User Ratings (r_i) -->
+  <rect x="440" y="20" width="160" height="40" fill="#E6E6FA" stroke="black" />
+  <text x="450" y="45" font-size="14" font-family="Arial">User ratings (r_i)</text>
+
+  <!-- Compute Loss -->
+  <rect x="440" y="80" width="160" height="40" fill="#F0E68C" stroke="black" />
+  <text x="450" y="105" font-size="14" font-family="Arial">Compute Loss</text>
+
+  <!-- Predicted User Ratings (r̂_i) -->
+  <rect x="440" y="140" width="160" height="40" fill="#ADD8E6" stroke="black" />
+  <text x="450" y="165" font-size="14" font-family="Arial">Predicted user ratings (r̂_i)</text>
+
+  <!-- Grouping Blocks -->
+  <rect x="210" y="5" width="200" height="250" fill="none" stroke="green" stroke-dasharray="5,5" />
+  <text x="215" y="20" font-size="12" font-family="Arial" fill="green">Personalization</text>
+  
+  <rect x="430" y="5" width="180" height="190" fill="none" stroke="green" stroke-dasharray="5,5" />
+  <text x="435" y="20" font-size="12" font-family="Arial" fill="green">Reconstruction Error</text>
+
+  <!-- Arrows and Lines -->
+  <line x1="180" y1="50" x2="220" y2="40" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="310" y1="60" x2="310" y2="80" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="310" y1="120" x2="310" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="310" y1="180" x2="310" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <line x1="400" y1="40" x2="440" y2="40" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="520" y1="60" x2="520" y2="80" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="520" y1="120" x2="520" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Additional Links -->
+  <line x1="310" y1="220" x2="520" y2="180" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+</svg>

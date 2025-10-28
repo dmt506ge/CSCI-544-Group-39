@@ -1,0 +1,43 @@
+Source File: 3.pdf
+================================================================================
+
+The diagram follows a vertical hierarchical architecture with two main sections divided by a dashed vertical line, distinguishing CPU and GPU components:
+
+### CPU Section (Left Side):
+- **Top Component**: 
+  - "Video Sequences" is at the top center.
+- **Middle Components**:
+  - Below, "Patch i Pixel-wide Embeddings \(S_i\)" is centered.
+  - Directly under, "Evenly random select N vectors: \(S_{seed} ∈ S_i\)" is centered.
+- **Lower Middle Components**:
+  - "Prune & Cluster, get \(r\) and \(I\)" is centered.
+  - "Obtain \(N_{min}\) based on Eq. (19)" is centered.
+  - Decision point: \(N ≤ L × N_{min}\) with Y (Yes) and N (No) paths.
+  - Decision point: \(N ≥ H × N_{min}\) with Y (Yes) and N (No) paths.
+  - "Patch \(i\) is last batch" decision point leads to "End".
+- **Left-side Components**:
+  - "Update N" is on the left, with flows from decision points and looping back.
+  - \(N = N \times 2\) near decision points.
+  - \(i = i + 1\) looping back to "Patch \(i\) Pixel-wide Embeddings \(S_i\)".
+
+### GPU Section (Right Side):
+- **Top Component**:
+  - "Parallel Mean-shift" in the center-right.
+- **Middle Component**:
+  - "Converged >Y" decision diamond on the right with looping arrows for yes.
+
+### Flow and Connections:
+- The flow primarily moves from top to bottom in both CPU and GPU sections.
+- Arrows indicate decision points and iterations, with loops between components.
+- GPU section interacts with the CPU via directed arrows for parallel processing.
+
+### Structural Layout:
+- **Hierarchical Layout**: CPU and GPU functions are aligned in a two-column format.
+- **Vertical Flow**: Predominantly top-to-bottom with decision-based loops.
+- **Bidirectional Flow**: Includes backward loops for iterations and updates.
+
+### Groupings or Layers:
+- **CPU Layer**: Sequential processing with decision-based updates.
+- **GPU Layer**: Parallel processing with convergence checks.
+
+The diagram represents a structured interaction between CPU and GPU tasks, separated clearly by the vertical dividing line, with interconnected decision points driving the flow.

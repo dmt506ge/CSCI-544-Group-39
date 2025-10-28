@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="820" viewBox="0 0 1100 820">
+  <defs>
+    <marker id="arrow-head" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="arrow-small" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#888888"/>
+    </marker>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 16px; fill: #333333; }
+      .label { font-family: Arial, sans-serif; font-size: 13px; fill: #111111; }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #222222; }
+      .io { fill: #d9f0ff; stroke: #5aa7d8; stroke-width: 1.5; }
+      .process { fill: #ffd8a8; stroke: #cc9a4a; stroke-width: 1.5; }
+      .decoder { fill: #d7b9ff; stroke: #9a7bd6; stroke-width: 1.5; }
+      .recon { fill: #d9fdd3; stroke: #6fbf69; stroke-width: 1.5; }
+      .tokens { fill: #f5f5f5; stroke: #bfbfbf; stroke-width: 1.2; }
+      .mim { fill: #fff0b3; stroke: #e0b800; stroke-width: 1.5; }
+      .encoder { fill: #e2d9ff; stroke: #9a7bd6; stroke-width: 1.5; }
+      .embed-a { fill: #e0ffe0; stroke: #65b565; stroke-width: 1.2; }
+      .embed-b { fill: #e0f0ff; stroke: #5aa7d8; stroke-width: 1.2; }
+      .gridcell { fill: #ececec; stroke: #bfbfbf; stroke-width: 1; }
+      .maskcell { fill: #cfcfcf; stroke: #9f9f9f; stroke-width: 1; }
+      .masktok { fill: #ffe6e6; stroke: #d66a6a; stroke-width: 1; }
+      .arrow { stroke: #333333; stroke-width: 2; fill: none; marker-end: url(#arrow-head); }
+      .arrow-dash { stroke: #333333; stroke-width: 2; fill: none; stroke-dasharray: 6 4; marker-end: url(#arrow-head); }
+      .arrow-thin { stroke: #888888; stroke-width: 1.5; fill: none; stroke-dasharray: 4 3; marker-end: url(#arrow-small); }
+      .stage-box { fill: none; stroke: #cccccc; stroke-width: 1.5; stroke-dasharray: 6 6; }
+      .highlight { fill: #fff4b0; stroke: #d8b400; stroke-width: 1; }
+      .inset { fill: none; stroke: #cccccc; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Stage 1 container -->
+  <rect x="30" y="30" width="920" height="170" class="stage-box"/>
+  <text x="40" y="50" class="title">Stage 1</text>
+
+  <!-- Stage 1: Original Image -->
+  <rect x="60" y="60" width="120" height="90" rx="6" class="io"/>
+  <text x="120" y="155" class="text" text-anchor="middle">Original Image</text>
+  <g stroke="#b3d7f0" stroke-width="1">
+    <line x1="100" y1="60" x2="100" y2="150"/>
+    <line x1="140" y1="60" x2="140" y2="150"/>
+    <line x1="60" y1="90" x2="180" y2="90"/>
+    <line x1="60" y1="120" x2="180" y2="120"/>
+  </g>
+
+  <!-- Stage 1: dVAE Tokenizer -->
+  <rect x="220" y="70" width="140" height="70" rx="8" class="process"/>
+  <text x="290" y="96" class="text" text-anchor="middle">dVAE Tokenizer</text>
+
+  <!-- Stage 1: Discrete token representation -->
+  <rect x="400" y="65" width="200" height="80" rx="8" class="tokens"/>
+  <text x="500" y="60" class="label" text-anchor="middle">discrete tokens</text>
+  <rect x="410" y="90" width="30" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <rect x="450" y="90" width="30" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <rect x="490" y="90" width="30" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <rect x="530" y="90" width="30" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <rect x="570" y="90" width="30" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <text x="425" y="115" class="label" text-anchor="middle">11</text>
+  <text x="465" y="115" class="label" text-anchor="middle">45</text>
+  <text x="505" y="115" class="label" text-anchor="middle">87</text>
+  <text x="545" y="115" class="label" text-anchor="middle">23</text>
+  <text x="585" y="115" class="label" text-anchor="middle">64</text>
+
+  <!-- Stage 1: dVAE Decoder -->
+  <rect x="630" y="70" width="140" height="70" rx="8" class="decoder"/>
+  <text x="700" y="96" class="text" text-anchor="middle">dVAE Decoder</text>
+
+  <!-- Stage 1: Reconstructed Image -->
+  <rect x="800" y="60" width="120" height="90" rx="6" class="recon"/>
+  <text x="860" y="155" class="text" text-anchor="middle">Reconstructed Image</text>
+  <g stroke="#9dd49a" stroke-width="1">
+    <line x1="800" y1="90" x2="920" y2="90"/>
+    <line x1="830" y1="60" x2="830" y2="150"/>
+    <line x1="870" y1="60" x2="870" y2="150"/>
+  </g>
+
+  <!-- Stage 1 arrows -->
+  <line x1="180" y1="105" x2="220" y2="105" class="arrow"/>
+  <line x1="360" y1="105" x2="400" y2="105" class="arrow"/>
+  <line x1="600" y1="105" x2="630" y2="105" class="arrow"/>
+  <line x1="770" y1="105" x2="800" y2="105" class="arrow"/>
+
+  <!-- Stage 2 container -->
+  <rect x="30" y="280" width="920" height="470" class="stage-box"/>
+  <text x="40" y="300" class="title">Stage 2</text>
+
+  <!-- Stage 2: Image input -->
+  <rect x="60" y="320" width="120" height="90" rx="6" class="io"/>
+  <text x="120" y="415" class="text" text-anchor="middle">Image</text>
+  <g stroke="#b3d7f0" stroke-width="1">
+    <line x1="100" y1="320" x2="100" y2="410"/>
+    <line x1="140" y1="320" x2="140" y2="410"/>
+    <line x1="60" y1="350" x2="180" y2="350"/>
+    <line x1="60" y1="380" x2="180" y2="380"/>
+  </g>
+
+  <!-- Stage 2: dVAE Tokenizer with lock frozen -->
+  <rect x="220" y="330" width="160" height="70" rx="8" class="process"/>
+  <text x="300" y="372" class="text" text-anchor="middle">dVAE Tokenizer</text>
+  <text x="300" y="348" class="label" text-anchor="middle">frozen</text>
+  <g transform="translate(362,336)">
+    <rect x="0" y="14" width="18" height="16" rx="3" fill="#ffd05e" stroke="#cc9a4a" stroke-width="1"/>
+    <path d="M 4 14 C 4 8 14 8 14 14" fill="none" stroke="#cc9a4a" stroke-width="1.5"/>
+    <circle cx="9" cy="21" r="2" fill="#cc9a4a"/>
+  </g>
+
+  <!-- Stage 2: Token output targets -->
+  <rect x="420" y="325" width="220" height="80" rx="8" class="tokens"/>
+  <text x="530" y="320" class="label" text-anchor="middle">token targets discrete codes</text>
+  <text x="530" y="315" class="label" text-anchor="middle">targets</text>
+  <rect x="430" y="350" width="28" height="40" rx="4" class="highlight"/>
+  <rect x="466" y="350" width="28" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <rect x="502" y="350" width="28" height="40" rx="4" class="highlight"/>
+  <rect x="538" y="350" width="28" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <rect x="574" y="350" width="28" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <rect x="610" y="350" width="28" height="40" rx="4" fill="#ffffff" stroke="#bfbfbf" stroke-width="1"/>
+  <text x="444" y="375" class="label" text-anchor="middle">12</text>
+  <text x="480" y="375" class="label" text-anchor="middle">58</text>
+  <text x="516" y="375" class="label" text-anchor="middle">91</text>
+  <text x="552" y="375" class="label" text-anchor="middle">37</text>
+  <text x="588" y="375" class="label" text-anchor="middle">49</text>
+  <text x="624" y="375" class="label" text-anchor="middle">75</text>
+
+  <!-- Stage 2: Masked Image Modeling Head -->
+  <rect x="160" y="430" width="620" height="40" rx="10" class="mim"/>
+  <text x="470" y="455" class="text" text-anchor="middle">Masked Image Modeling Head</text>
+
+  <!-- Explicit loss annotation -->
+  <line x1="780" y1="450" x2="845" y2="450" class="arrow"/>
+  <text x="860" y="455" class="label" text-anchor="start">CE loss over tokenizer codes</text>
+
+  <!-- Stage 2: BEiT Encoder -->
+  <rect x="240" y="490" width="460" height="120" rx="12" class="encoder"/>
+  <text x="470" y="555" class="text" text-anchor="middle">BEiT Encoder</text>
+  <g stroke="#b9a7ef" stroke-width="1">
+    <line x1="260" y1="510" x2="680" y2="510"/>
+    <line x1="260" y1="540" x2="680" y2="540"/>
+    <line x1="260" y1="570" x2="680" y2="570"/>
+  </g>
+
+  <!-- self attention inset moved outside with pointer -->
+  <g transform="translate(720,500)">
+    <rect x="0" y="0" width="70" height="50" class="inset"/>
+    <rect x="5" y="5" width="18" height="18" fill="#ffd5b0" stroke="#e0a070" stroke-width="0.5"/>
+    <rect x="27" y="5" width="18" height="18" fill="#ffb980" stroke="#e08a50" stroke-width="0.5"/>
+    <rect x="49" y="5" width="18" height="18" fill="#ffe6cc" stroke="#e0b090" stroke-width="0.5"/>
+    <rect x="5" y="27" width="18" height="18" fill="#ffb980" stroke="#e08a50" stroke-width="0.5"/>
+    <rect x="27" y="27" width="18" height="18" fill="#ff9966" stroke="#cc6a3a" stroke-width="0.5"/>
+    <rect x="49" y="27" width="18" height="18" fill="#ffd5b0" stroke="#e0a070" stroke-width="0.5"/>
+  </g>
+  <line x1="700" y1="525" x2="720" y2="525" class="inset"/>
+  <text x="755" y="495" class="label" text-anchor="middle">self attention map</text>
+
+  <!-- Stage 2: Bottom left image patches 4x4 grid with masking -->
+  <g>
+    <text x="110" y="630" class="label" text-anchor="middle">image patches</text>
+    <text x="110" y="646" class="label" text-anchor="middle">mask ratio about 40 percent</text>
+    <g>
+      <rect x="60" y="640" width="100" height="100" fill="none" stroke="#bfbfbf" stroke-width="1"/>
+      <!-- row 1 -->
+      <rect x="60" y="640" width="22" height="22" class="maskcell"/>
+      <rect x="86" y="640" width="22" height="22" class="maskcell"/>
+      <rect x="112" y="640" width="22" height="22" class="maskcell"/>
+      <rect x="138" y="640" width="22" height="22" class="gridcell"/>
+      <!-- row 2 -->
+      <rect x="60" y="666" width="22" height="22" class="maskcell"/>
+      <rect x="86" y="666" width="22" height="22" class="gridcell"/>
+      <rect x="112" y="666" width="22" height="22" class="maskcell"/>
+      <rect x="138" y="666" width="22" height="22" class="maskcell"/>
+      <!-- row 3 -->
+      <rect x="60" y="692" width="22" height="22" class="maskcell"/>
+      <rect x="86" y="692" width="22" height="22" class="maskcell"/>
+      <rect x="112" y="692" width="22" height="22" class="maskcell"/>
+      <rect x="138" y="692" width="22" height="22" class="gridcell"/>
+      <!-- row 4 -->
+      <rect x="60" y="718" width="22" height="22" class="maskcell"/>
+      <rect x="86" y="718" width="22" height="22" class="maskcell"/>
+      <rect x="112" y="718" width="22" height="22" class="maskcell"/>
+      <rect x="138" y="718" width="22" height="22" class="gridcell"/>
+    </g>
+  </g>
+
+  <!-- Stage 2: Patch Embedding sequence with masked tokens -->
+  <rect x="240" y="640" width="300" height="70" rx="10" class="embed-a"/>
+  <text x="390" y="635" class="label" text-anchor="middle">patch embedding</text>
+  <text x="390" y="625" class="label" text-anchor="middle">masked tokens use MASK placeholder unmasked use patch embeddings</text>
+  <!-- tokens p0..p7 with masking -->
+  <rect x="250" y="660" width="28" height="34" rx="5" class="masktok"/>
+  <rect x="288" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#65b565" stroke-width="1"/>
+  <rect x="326" y="660" width="28" height="34" rx="5" class="masktok"/>
+  <rect x="364" y="660" width="28" height="34" rx="5" class="masktok"/>
+  <rect x="402" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#65b565" stroke-width="1"/>
+  <rect x="440" y="660" width="28" height="34" rx="5" class="masktok"/>
+  <rect x="478" y="660" width="28" height="34" rx="5" class="masktok"/>
+  <rect x="516" y="660" width="28" height="34" rx="5" class="masktok"/>
+  <text x="264" y="681" class="label" text-anchor="middle">MASK</text>
+  <text x="302" y="682" class="label" text-anchor="middle">p1</text>
+  <text x="340" y="681" class="label" text-anchor="middle">MASK</text>
+  <text x="378" y="681" class="label" text-anchor="middle">MASK</text>
+  <text x="416" y="682" class="label" text-anchor="middle">p4</text>
+  <text x="454" y="681" class="label" text-anchor="middle">MASK</text>
+  <text x="492" y="681" class="label" text-anchor="middle">MASK</text>
+  <text x="530" y="681" class="label" text-anchor="middle">MASK</text>
+
+  <!-- Stage 2: Position Embedding sequence -->
+  <rect x="560" y="640" width="300" height="70" rx="10" class="embed-b"/>
+  <text x="710" y="635" class="label" text-anchor="middle">position embedding</text>
+  <text x="550" y="625" class="label" text-anchor="middle">inputs</text>
+  <rect x="570" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <rect x="608" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <rect x="646" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <rect x="684" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <rect x="722" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <rect x="760" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <rect x="798" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <rect x="836" y="660" width="28" height="34" rx="5" fill="#ffffff" stroke="#5aa7d8" stroke-width="1"/>
+  <text x="584" y="682" class="label" text-anchor="middle">pos0</text>
+  <text x="622" y="682" class="label" text-anchor="middle">pos1</text>
+  <text x="660" y="682" class="label" text-anchor="middle">pos2</text>
+  <text x="698" y="682" class="label" text-anchor="middle">pos3</text>
+  <text x="736" y="682" class="label" text-anchor="middle">pos4</text>
+  <text x="774" y="682" class="label" text-anchor="middle">pos5</text>
+  <text x="812" y="682" class="label" text-anchor="middle">pos6</text>
+  <text x="850" y="682" class="label" text-anchor="middle">pos7</text>
+
+  <!-- Stage 2 arrows precise -->
+  <line x1="180" y1="365" x2="220" y2="365" class="arrow"/>
+  <line x1="380" y1="365" x2="420" y2="365" class="arrow"/>
+  <!-- token targets to MIM head supervision -->
+  <line x1="530" y1="405" x2="530" y2="430" class="arrow-dash"/>
+  <text x="540" y="420" class="label">targets</text>
+  <!-- encoder up to MIM head -->
+  <line x1="470" y1="490" x2="470" y2="470" class="arrow"/>
+  <!-- patch embedding to encoder bottom -->
+  <line x1="390" y1="640" x2="390" y2="610" class="arrow"/>
+  <!-- position embedding to encoder bottom -->
+  <line x1="710" y1="640" x2="710" y2="610" class="arrow"/>
+  <!-- Grid to Patch Embedding left border -->
+  <line x1="160" y1="690" x2="240" y2="690" class="arrow"/>
+
+  <!-- Thin connector indicating same input image to patch grid -->
+  <line x1="120" y1="410" x2="120" y2="640" class="arrow-thin"/>
+  <text x="126" y="530" class="label">same image</text>
+
+  <!-- Reuse indication from Stage 1 Tokenizer to Stage 2 Tokenizer anchored to borders -->
+  <path d="M 290 140 L 290 310 L 300 310 L 300 330" class="arrow-dash"/>
+  <text x="306" y="318" class="label">reuse</text>
+
+  <!-- Caption -->
+  <text x="490" y="770" class="text" text-anchor="middle">Figure fig beit Overview of BEIT pre training</text>
+</svg>

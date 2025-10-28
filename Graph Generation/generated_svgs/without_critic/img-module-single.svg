@@ -1,0 +1,49 @@
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Top Layer -->
+  <!-- Input Features -->
+  <rect x="20" y="50" width="100" height="60" fill="#e0f7fa" stroke="#00796b" stroke-width="2"/>
+  <text x="30" y="85" font-family="Arial" font-size="14" fill="#00796b">Input Feature</text>
+
+  <!-- Image Memory -->
+  <rect x="160" y="30" width="200" height="100" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="180" y="55" font-family="Arial" font-size="14" fill="#ef6c00">Image Memory</text>
+  <text x="180" y="75" font-family="Arial" font-size="12" fill="#ef6c00">Reorganize</text>
+  <text x="180" y="95" font-family="Arial" font-size="12" fill="#ef6c00">Add &amp; Shift</text>
+
+  <!-- Image Adapter -->
+  <rect x="400" y="50" width="100" height="60" fill="#e1bee7" stroke="#8e24aa" stroke-width="2"/>
+  <text x="410" y="85" font-family="Arial" font-size="14" fill="#8e24aa">Image Adapter</text>
+
+  <!-- Top Layer Arrows -->
+  <line x1="120" y1="80" x2="160" y2="80" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="360" y1="80" x2="400" y2="80" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Bottom Layer -->
+  <!-- 3D Memory -->
+  <rect x="20" y="200" width="100" height="60" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+  <text x="30" y="235" font-family="Arial" font-size="14" fill="#7b1fa2">3D Memory</text>
+
+  <!-- Processing Grid -->
+  <rect x="160" y="180" width="200" height="100" fill="#fffde7" stroke="#f57f17" stroke-width="2"/>
+  <text x="180" y="205" font-family="Arial" font-size="14" fill="#f57f17">Project</text>
+  <text x="180" y="225" font-family="Arial" font-size="12" fill="#f57f17">Aggregate/Densify</text>
+
+  <!-- 3D to 2D Adapter -->
+  <rect x="400" y="200" width="100" height="60" fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+  <text x="410" y="235" font-family="Arial" font-size="14" fill="#388e3c">3D to 2D Adapter</text>
+
+  <!-- Bottom Layer Arrows -->
+  <line x1="120" y1="230" x2="160" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="360" y1="230" x2="400" y2="230" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Vertical Connections -->
+  <line x1="250" y1="130" x2="250" y2="180" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="110" x2="450" y2="200" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

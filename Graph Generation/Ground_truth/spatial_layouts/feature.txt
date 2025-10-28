@@ -1,0 +1,29 @@
+Source File: feature.png
+================================================================================
+
+The diagram follows a left-to-right horizontal architecture with parallel streams and includes a hierarchical structure on the right:
+
+- **Left section:**
+  - Two parallel input modules:
+    - Top: "Labelled source domain" (image stack on the left)
+    - Bottom: "Unlabelled target domain" (image stack below the top input)
+  - Both feed into separate "CNN" modules positioned slightly to the right of each input (one for each input stream).
+
+- **Middle section:**
+  - From each "CNN" module, arrows point rightward to "Feature map" blocks, aligned vertically.
+
+- **Right section:**
+  - A vertical hierarchical block consisting of:
+    - "ID-FC" (at the top), connected with a dense matrix of links to "Person IDs" and "Attr IDs" (right aligned).
+    - Below is an "Attr-FC" block, vertically connected to "ID-FC" with a downward arrow.
+    - There is a horizontal arrow extending from the connection between the "ID-FC" and "Attr-FC" blocks to the right, labeled "\( L_{attr} \)".
+
+- **Connections and Flow:**
+  - Arrows flow from left to right, starting from each input stream (source and target domains), through the "CNN" blocks, to the "Feature map."
+  - There is a bidirectional dashed arrow between the top and bottom "Feature map" blocks, indicating interaction or comparison.
+  - Further flow is from the "Feature map" to the hierarchical section on the right.
+
+- **Hierarchical Structure:**
+  - The right section featuring "ID-FC" and "Attr-FC" indicates a hierarchical arrangement with processed attributes leading to respective identifiers.
+
+Overall, the layout uses a left-to-right flow with parallel processing paths, converging into a hierarchical decision or identifier generation on the right. The use of bidirectional connections and layered structures emphasizes interaction and multi-stage processing.

@@ -1,0 +1,212 @@
+<svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowhead-dashed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="700" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#000">Memory-Based Adapter Architecture for Online 3D Perception</text>
+  
+  <!-- Background grouping for Image Processing Pathway -->
+  <rect x="40" y="70" width="670" height="260" fill="#e3f2fd" fill-opacity="0.15" stroke="#1976d2" stroke-width="1" stroke-dasharray="3,3" rx="8"/>
+  <text x="375" y="62" font-size="11" font-weight="bold" text-anchor="middle" fill="#1976d2">Image Processing Pathway</text>
+  
+  <!-- Background grouping for Point Cloud Processing Pathway -->
+  <rect x="40" y="350" width="670" height="260" fill="#e8f5e9" fill-opacity="0.15" stroke="#388e3c" stroke-width="1" stroke-dasharray="3,3" rx="8"/>
+  <text x="375" y="342" font-size="11" font-weight="bold" text-anchor="middle" fill="#388e3c">Point Cloud Processing Pathway</text>
+  
+  <!-- Top Layer: Temporal Inputs -->
+  <g id="temporal-inputs">
+    <!-- Time t RGB -->
+    <rect x="50" y="80" width="140" height="100" fill="#e3f2fd" stroke="#1976d2" stroke-width="2.5" rx="5"/>
+    <text x="120" y="110" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">RGB Image</text>
+    <text x="120" y="130" font-size="14" font-weight="bold" text-anchor="middle" fill="#1976d2">Time t</text>
+    <text x="120" y="148" font-size="10" text-anchor="middle" fill="#555">(Current Frame)</text>
+    <text x="165" y="95" font-size="10" font-weight="bold" text-anchor="end" fill="#1976d2">t</text>
+    
+    <!-- Time t+1 RGB -->
+    <rect x="50" y="220" width="140" height="100" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2.5" rx="5"/>
+    <text x="120" y="250" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">RGB Image</text>
+    <text x="120" y="270" font-size="14" font-weight="bold" text-anchor="middle" fill="#7b1fa2">Time t+1</text>
+    <text x="120" y="288" font-size="10" text-anchor="middle" fill="#555">(Next Frame)</text>
+    <text x="165" y="235" font-size="10" font-weight="bold" text-anchor="end" fill="#7b1fa2">t+1</text>
+    
+    <!-- Point Cloud t -->
+    <rect x="50" y="360" width="140" height="100" fill="#e8f5e9" stroke="#388e3c" stroke-width="2.5" rx="5"/>
+    <text x="120" y="390" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">Point Cloud</text>
+    <text x="120" y="410" font-size="14" font-weight="bold" text-anchor="middle" fill="#388e3c">Time t</text>
+    <text x="120" y="428" font-size="10" text-anchor="middle" fill="#555">(Current Frame)</text>
+    <text x="165" y="375" font-size="10" font-weight="bold" text-anchor="end" fill="#388e3c">t</text>
+    
+    <!-- Point Cloud t+1 -->
+    <rect x="50" y="500" width="140" height="100" fill="#fff3e0" stroke="#f57c00" stroke-width="2.5" rx="5"/>
+    <text x="120" y="530" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">Point Cloud</text>
+    <text x="120" y="550" font-size="14" font-weight="bold" text-anchor="middle" fill="#f57c00">Time t+1</text>
+    <text x="120" y="568" font-size="10" text-anchor="middle" fill="#555">(Next Frame)</text>
+    <text x="165" y="515" font-size="10" font-weight="bold" text-anchor="end" fill="#f57c00">t+1</text>
+  </g>
+  
+  <!-- Middle-Left Layer: Image and Point Cloud Backbones -->
+  <g id="backbones">
+    <!-- Image Backbone t -->
+    <rect x="270" y="80" width="160" height="100" fill="#bbdefb" stroke="#1565c0" stroke-width="2" rx="5"/>
+    <text x="350" y="110" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Image Backbone</text>
+    <text x="350" y="130" font-size="11" text-anchor="middle" fill="#333">ResNet/U-Net</text>
+    <text x="350" y="150" font-size="10" text-anchor="middle" fill="#1565c0">(Time t)</text>
+    <text x="405" y="95" font-size="10" font-weight="bold" text-anchor="end" fill="#1565c0">t</text>
+    
+    <!-- Image Backbone t+1 -->
+    <rect x="270" y="220" width="160" height="100" fill="#ce93d8" stroke="#6a1b9a" stroke-width="2" rx="5"/>
+    <text x="350" y="250" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Image Backbone</text>
+    <text x="350" y="270" font-size="11" text-anchor="middle" fill="#333">ResNet/U-Net</text>
+    <text x="350" y="290" font-size="10" text-anchor="middle" fill="#6a1b9a">(Time t+1)</text>
+    <text x="405" y="235" font-size="10" font-weight="bold" text-anchor="end" fill="#6a1b9a">t+1</text>
+    
+    <!-- Point Cloud Backbone t -->
+    <rect x="270" y="360" width="160" height="100" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2" rx="5"/>
+    <text x="350" y="388" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Point Cloud</text>
+    <text x="350" y="406" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Backbone</text>
+    <text x="350" y="425" font-size="11" text-anchor="middle" fill="#333">Minkowski-UNet</text>
+    <text x="350" y="442" font-size="10" text-anchor="middle" fill="#2e7d32">(Time t)</text>
+    <text x="405" y="375" font-size="10" font-weight="bold" text-anchor="end" fill="#2e7d32">t</text>
+    
+    <!-- Point Cloud Backbone t+1 -->
+    <rect x="270" y="500" width="160" height="100" fill="#ffe0b2" stroke="#e65100" stroke-width="2" rx="5"/>
+    <text x="350" y="528" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Point Cloud</text>
+    <text x="350" y="546" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Backbone</text>
+    <text x="350" y="565" font-size="11" text-anchor="middle" fill="#333">Minkowski-UNet</text>
+    <text x="350" y="582" font-size="10" text-anchor="middle" fill="#e65100">(Time t+1)</text>
+    <text x="405" y="515" font-size="10" font-weight="bold" text-anchor="end" fill="#e65100">t+1</text>
+  </g>
+  
+  <!-- Middle-Center Layer: Memory-Based Adapters -->
+  <g id="adapters">
+    <!-- Image Memory Adapter -->
+    <rect x="510" y="80" width="180" height="100" fill="#ffecb3" stroke="#f57f17" stroke-width="2" rx="5"/>
+    <text x="600" y="110" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Image Memory</text>
+    <text x="600" y="128" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Adapter</text>
+    <text x="600" y="146" font-size="10" text-anchor="middle" fill="#555">Temporal Feature</text>
+    <text x="600" y="161" font-size="10" text-anchor="middle" fill="#555">Aggregation</text>
+    
+    <!-- Point Cloud Memory Adapter -->
+    <rect x="510" y="360" width="180" height="100" fill="#c5cae9" stroke="#303f9f" stroke-width="2" rx="5"/>
+    <text x="600" y="388" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Point Cloud</text>
+    <text x="600" y="406" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Memory Adapter</text>
+    <text x="600" y="424" font-size="10" text-anchor="middle" fill="#555">Temporal Feature</text>
+    <text x="600" y="439" font-size="10" text-anchor="middle" fill="#555">Aggregation</text>
+  </g>
+  
+  <!-- Middle-Right Layer: 3D-to-2D Adapter and Fusion -->
+  <g id="cross-modal">
+    <!-- 3D-to-2D Adapter -->
+    <rect x="770" y="200" width="180" height="120" fill="#f8bbd0" stroke="#c2185b" stroke-width="2" rx="5"/>
+    <text x="860" y="232" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">3D-to-2D Adapter</text>
+    <text x="860" y="253" font-size="11" text-anchor="middle" fill="#333">Inter-Modal</text>
+    <text x="860" y="270" font-size="11" text-anchor="middle" fill="#333">Temporal Learning</text>
+    <text x="860" y="290" font-size="10" text-anchor="middle" fill="#555">(Cross-Modal Fusion)</text>
+    <text x="860" y="305" font-size="9" text-anchor="middle" fill="#888">Image + Point Cloud</text>
+    
+    <!-- Fusion Module -->
+    <rect x="1030" y="200" width="160" height="120" fill="#b2dfdb" stroke="#00695c" stroke-width="2" rx="5"/>
+    <text x="1110" y="238" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Multi-Modal</text>
+    <text x="1110" y="256" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Fusion</text>
+    <text x="1110" y="277" font-size="10" text-anchor="middle" fill="#555">Combined Image +</text>
+    <text x="1110" y="292" font-size="10" text-anchor="middle" fill="#555">Point Cloud Features</text>
+    <text x="1110" y="307" font-size="9" text-anchor="middle" fill="#00695c">with Temporal Context</text>
+  </g>
+  
+  <!-- Bottom Layer: Task Heads -->
+  <g id="task-heads">
+    <!-- Task Head -->
+    <rect x="1030" y="400" width="160" height="100" fill="#dcedc8" stroke="#558b2f" stroke-width="2" rx="5"/>
+    <text x="1110" y="435" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Task Head</text>
+    <text x="1110" y="456" font-size="10" text-anchor="middle" fill="#555">3D Semantic Segmentation</text>
+    <text x="1110" y="471" font-size="10" text-anchor="middle" fill="#555">3D Object Detection</text>
+    <text x="1110" y="486" font-size="10" text-anchor="middle" fill="#555">3D Instance Segmentation</text>
+  </g>
+  
+  <!-- Output -->
+  <g id="output">
+    <rect x="1270" y="400" width="100" height="100" fill="#fff9c4" stroke="#f9a825" stroke-width="2" rx="5"/>
+    <text x="1320" y="440" font-size="14" font-weight="bold" text-anchor="middle" fill="#000">Output</text>
+    <text x="1320" y="461" font-size="11" text-anchor="middle" fill="#333">3D Scene</text>
+    <text x="1320" y="481" font-size="11" text-anchor="middle" fill="#333">Understanding</text>
+  </g>
+  
+  <!-- Memory Banks (Bottom) -->
+  <g id="memory-banks">
+    <!-- Image Memory Bank -->
+    <rect x="510" y="700" width="180" height="80" fill="#ffe082" stroke="#ff6f00" stroke-width="2" rx="5"/>
+    <text x="600" y="725" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">Image Feature</text>
+    <text x="600" y="743" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">Memory Bank</text>
+    <text x="600" y="762" font-size="10" text-anchor="middle" fill="#555">(Cached Image Features)</text>
+    
+    <!-- Point Cloud Memory Bank -->
+    <rect x="770" y="700" width="180" height="80" fill="#b39ddb" stroke="#512da8" stroke-width="2" rx="5"/>
+    <text x="860" y="725" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">Point Cloud</text>
+    <text x="860" y="743" font-size="13" font-weight="bold" text-anchor="middle" fill="#000">Memory Bank</text>
+    <text x="860" y="762" font-size="10" text-anchor="middle" fill="#555">(Cached 3D Features)</text>
+  </g>
+  
+  <!-- Solid Lines: Single Frame Operations -->
+  <!-- Input to Backbones -->
+  <line x1="190" y1="130" x2="270" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="190" y1="270" x2="270" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="190" y1="410" x2="270" y2="410" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="190" y1="550" x2="270" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Backbones to Adapters -->
+  <line x1="430" y1="130" x2="510" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="430" y1="410" x2="510" y2="410" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Adapters to 3D-to-2D -->
+  <line x1="690" y1="130" x2="770" y2="230" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="690" y1="410" x2="770" y2="290" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 3D-to-2D to Fusion -->
+  <line x1="950" y1="260" x2="1030" y2="260" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Fusion to Task Head -->
+  <line x1="1110" y1="320" x2="1110" y2="400" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Task Head to Output -->
+  <line x1="1190" y1="450" x2="1270" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Dashed Lines: Temporal Operations -->
+  <!-- Backbones to Memory Banks with annotations -->
+  <line x1="350" y1="180" x2="600" y2="700" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  <text x="450" y="420" font-size="9" fill="#666" transform="rotate(-50 450 420)">cached features</text>
+  
+  <line x1="350" y1="320" x2="600" y2="700" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  
+  <line x1="350" y1="460" x2="860" y2="700" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  <text x="580" y="570" font-size="9" fill="#666" transform="rotate(-30 580 570)">cached features</text>
+  
+  <line x1="350" y1="600" x2="860" y2="700" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  
+  <!-- Memory Banks to Adapters (Temporal feedback) - improved arrow placement -->
+  <line x1="600" y1="700" x2="600" y2="180" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  <text x="612" y="450" font-size="9" fill="#666">temporal context</text>
+  
+  <line x1="860" y1="700" x2="600" y2="460" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  <text x="710" y="600" font-size="9" fill="#666" transform="rotate(-35 710 600)">temporal context</text>
+  
+  <!-- Temporal connections between t and t+1 with annotations - thicker for emphasis -->
+  <line x1="350" y1="180" x2="350" y2="220" stroke="#666" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  <text x="362" y="200" font-size="9" font-weight="bold" fill="#666">temporal exchange</text>
+  
+  <line x1="350" y1="460" x2="350" y2="500" stroke="#666" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  <text x="362" y="480" font-size="9" font-weight="bold" fill="#666">temporal exchange</text>
+  
+  <!-- Direct alignment from Point Cloud Memory Adapter to 3D-to-2D Adapter -->
+  <line x1="690" y1="410" x2="770" y2="260" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-dashed)"/>
+  <text x="720" y="330" font-size="9" fill="#666" transform="rotate(-50 720 330)">point cloud alignment</text>
+  
+  <!-- Annotation Text at Bottom -->
+  <text x="50" y="840" font-size="12" fill="#333">Solid lines: Single-frame operations</text>
+  <text x="50" y="860" font-size="12" fill="#666">Dashed lines: Temporal operations across frames (feature caching and temporal context sharing)</text>
+</svg>

@@ -1,0 +1,99 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Left Section (Observation) -->
+  <!-- Top Layer -->
+  <rect x="50" y="50" width="100" height="40" fill="#f0f0f0" stroke="#333" />
+  <text x="75" y="75" font-size="16px" text-anchor="middle" fill="#333">z_theta</text>
+
+  <line x1="100" y1="90" x2="100" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Middle Layer -->
+  <rect x="50" y="150" width="130" height="40" fill="#d0e0f0" stroke="#333" />
+  <text x="115" y="175" font-size="16px" text-anchor="middle" fill="#333">Statics Propagation</text>
+
+  <line x1="115" y1="190" x2="115" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Bottom Layer -->
+  <rect x="50" y="250" width="100" height="40" fill="#e0f0d0" stroke="#333" />
+  <text x="75" y="275" font-size="16px" text-anchor="middle" fill="#333">b_hat</text>
+
+  <line x1="100" y1="290" x2="100" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="50" y="350" width="100" height="40" fill="#e0f0f0" stroke="#333" />
+  <text x="75" y="375" font-size="16px" text-anchor="middle" fill="#333">b1</text>
+
+  <line x1="100" y1="390" x2="180" y2="390" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="180" y="350" width="100" height="40" fill="#f0e0d0" stroke="#333" />
+  <text x="230" y="375" font-size="16px" text-anchor="middle" fill="#333">x1</text>
+
+  <!-- Central Section (Dynamics and State) -->
+  <!-- Central Nodes -->
+  <rect x="300" y="250" width="100" height="40" fill="#f4c2c2" stroke="#333" />
+  <text x="350" y="275" font-size="16px" text-anchor="middle" fill="#333">h1</text>
+
+  <rect x="450" y="250" width="100" height="40" fill="#f4c2c2" stroke="#333" />
+  <text x="500" y="275" font-size="16px" text-anchor="middle" fill="#333">h_T</text>
+
+  <rect x="600" y="250" width="100" height="40" fill="#f4c2c2" stroke="#333" />
+  <text x="650" y="275" font-size="16px" text-anchor="middle" fill="#333">h_T+1</text>
+
+  <!-- Top Components -->
+  <rect x="300" y="150" width="100" height="40" fill="#f4c2c2" stroke="#333" />
+  <text x="350" y="175" font-size="14px" text-anchor="middle" fill="#333">Dynamics Memory</text>
+
+  <line x1="350" y1="190" x2="350" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="350" y1="150" x2="350" y2="130" stroke="#333" stroke-width="2" marker-start="url(#arrow)" />
+
+  <!-- Intermediate Components -->
+  <rect x="300" y="350" width="100" height="40" fill="#d0f4c2" stroke="#333" />
+  <text x="350" y="375" font-size="16px" text-anchor="middle" fill="#333">s1</text>
+
+  <rect x="450" y="350" width="100" height="40" fill="#d0f4c2" stroke="#333" />
+  <text x="500" y="375" font-size="16px" text-anchor="middle" fill="#333">s_T</text>
+
+  <rect x="600" y="350" width="100" height="40" fill="#d0f4c2" stroke="#333" />
+  <text x="650" y="375" font-size="16px" text-anchor="middle" fill="#333">s_T+1</text>
+
+  <!-- Lower Nodes -->
+  <rect x="300" y="450" width="100" height="40" fill="#c2d0f4" stroke="#333" />
+  <text x="350" y="475" font-size="14px" text-anchor="middle" fill="#333">mu_phi, sigma_phi</text>
+
+  <rect x="450" y="450" width="100" height="40" fill="#c2d0f4" stroke="#333" />
+  <text x="500" y="475" font-size="14px" text-anchor="middle" fill="#333">mu_theta, sigma_theta</text>
+
+  <!-- Right Section (Prediction) -->
+  <!-- Top Layer -->
+  <rect x="750" y="250" width="100" height="40" fill="#a0c4ff" stroke="#333" />
+  <text x="800" y="275" font-size="16px" text-anchor="middle" fill="#333">y_hat1</text>
+
+  <rect x="850" y="250" width="100" height="40" fill="#a0c4ff" stroke="#333" />
+  <text x="900" y="275" font-size="16px" text-anchor="middle" fill="#333">y_hatT</text>
+
+  <rect x="950" y="250" width="100" height="40" fill="#a0c4ff" stroke="#333" />
+  <text x="1000" y="275" font-size="16px" text-anchor="middle" fill="#333">y_hatT+1</text>
+
+  <!-- Middle Layer -->
+  <rect x="750" y="350" width="100" height="40" fill="#b0e0e6" stroke="#333" />
+  <text x="800" y="375" font-size="16px" text-anchor="middle" fill="#333">a_hatT</text>
+
+  <rect x="950" y="350" width="100" height="40" fill="#b0e0e6" stroke="#333" />
+  <text x="1000" y="375" font-size="16px" text-anchor="middle" fill="#333">a_hatT+1</text>
+
+  <!-- Connections -->
+  <line x1="400" y1="270" x2="450" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="550" y1="270" x2="600" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="700" y1="270" x2="750" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <line x1="500" y1="370" x2="550" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="650" y1="370" x2="700" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <line x1="350" y1="390" x2="350" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="500" y1="390" x2="500" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+</svg>

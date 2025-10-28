@@ -1,0 +1,20 @@
+Source File: MAE.png
+================================================================================
+
+The diagram follows a left-to-right horizontal architecture with three main components:
+
+- **Left**: Input module (represented by an image broken into a grid), located as the first component on the left.
+- **Center**: Two main processing blocks:
+  - Encoder module (vertically oriented block labeled "encoder") positioned to the right of the input.
+  - Decoder module (vertically oriented block labeled "decoder") positioned further right of the encoder.
+- **Right**: Target module (represented by another image in a grid), located as the final component on the right.
+
+**Layout Structure:**
+
+- **Flow Direction**: The flow is unidirectional, moving from left to right across the diagram.
+- **Connections**: Arrows indicate the flow of data from the input module to the encoder, then to the decoder, and finally to the target module.
+- **Grouping**: The encoder and decoder are highlighted as separate processing steps in the center, visually distinct from the input and target on either side.
+
+**Overall Description:**
+
+The diagram is a horizontal sequence of processing steps, illustrating the transformation of an input image through encoding and decoding processes to produce a target image. Each main component is aligned along a central horizontal axis, emphasizing the linear progression of data flow from left to right.

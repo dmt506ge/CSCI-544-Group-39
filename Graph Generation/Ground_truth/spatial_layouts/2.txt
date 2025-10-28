@@ -1,0 +1,36 @@
+Source File: 2.pdf
+================================================================================
+
+The diagram follows a top-to-bottom vertical architecture with multiple stages, repeated horizontally for different time steps (t=0 to t=N):
+
+- **Top Layer: Video Frames**
+  - Position: Top, vertically aligned in columns (t=0, t=1, t=N).
+  - Description: Each frame is visually represented.
+
+- **Second Layer: Deep Recurrent Network**
+  - Position: Below each video frame, aligned per column.
+  - Components: RSHN modules (one per column).
+  - Connection: Green arrows indicate input flow from the Video Frames to the RSHN modules.
+
+- **Third Layer: Pixel-wise Embedding**
+  - Position: Below each RSHN module.
+  - Description: Represents matrix outputs from each RSHN.
+
+- **Fourth Layer: Mean-shift Clustering**
+  - Position: Below the Pixel-wise Embedding.
+  - Components: Faster Mean-shift modules (one per column).
+  - Connection: Blue arrows direct flow from Pixel-wise Embedding to Faster Mean-shift modules.
+
+- **Bottom Layer: Output**
+  - Position: Bottom, below each Faster Mean-shift module.
+  - Description: Visual output representation for each time step.
+
+- **Flow Directions:**
+  - Vertical flow from top to bottom within each column.
+  - Horizontal continuity indicated by arrows between RSHN modules (t=0 to t=N).
+
+- **Groupings and Layers:**
+  - Repeated columnar structure for time steps (t=0, t=1, t=N), showing parallel processing.
+  - Hierarchical flow with distinct processing layers from data input to output.
+
+This layout illustrates a sequential data processing pipeline with clear divisions by processing stage, repeated across time steps.

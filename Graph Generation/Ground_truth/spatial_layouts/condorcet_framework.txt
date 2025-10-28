@@ -1,0 +1,57 @@
+Source File: condorcet_framework.pdf
+================================================================================
+
+The diagram follows a horizontal architecture with two main layers: "Test-time training" and "Inference."
+
+**Top Layer: Test-time training**
+
+- **Left:** 
+  - "Prompt" module (grey block)
+  - Arrow pointing right to "LLM"
+
+- **Center:** 
+  - "LLM" module (blue block)
+  - Arrows:
+    - Rightward to "Set of answers"
+    - Vertical dashed arrow looping back to "Prompt"
+
+- **Right:** 
+  - "Set of answers" (green block)
+  - Arrow pointing right to "Compute empirical probabilities"
+  - "Compute empirical probabilities" (green block)
+  - Arrow pointing right to "SNR or entropy-based reward calculation"
+  - "SNR or entropy-based reward calculation" block pointing further to:
+    - "A" calculations (green block)
+    - Dashed arrow looping back to "Prompt" (Policy optimisation)
+
+**Bottom Layer: Inference**
+
+- **Left:**
+  - "Prompt" module (grey block)
+  - Arrow pointing right to "LLM"
+
+- **Center:** 
+  - "LLM" module (blue block)
+  - Arrow pointing right to "Set of answers"
+  - Vertical dashed arrow looping back to itself for generating new samples
+
+- **Right:** 
+  - "Set of answers" (green block)
+  - Arrow pointing right to "Compute empirical probabilities"
+  - From "Compute empirical probabilities":
+    - Downward arrow to "Compute SNR for prompt difficulty estimation"
+    - Rightward arrow to "MMC stopping criteria" (yellow block)
+    - From "MMC stopping criteria" to:
+      - "GO" (flow continues/repeats)
+      - "STOP" leading to "Estimate probability"
+
+**Flow and Connections:**
+- The overall flow is left-to-right within each layer.
+- There are looping connections indicating iterative processes in each layer.
+- "Policy optimisation" and "Generate new sample" involve feedback loops to the initial modules ("Prompt" or "LLM").
+
+**Groupings and Layers:**
+- Two main layers aligned horizontally.
+- Each layer contains a sequence of interconnected modules, with distinct feedback loops and calculation blocks.
+
+This description emphasizes the spatial organization and process flow within the architecture.

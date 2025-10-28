@@ -1,0 +1,29 @@
+Source File: img-module-single.pdf
+================================================================================
+
+The diagram follows a multi-layered structure with both horizontal and vertical arrangements:
+
+1. **Top Layer:**
+   - **Input Components**: 
+     - Left: "Input feature" (stack of layers)
+     - Centered within a box: "Image memory" (with internal elements showing a flow of reorganizing, adding, and shifting operations)
+     - Right: "Image adapter" (stack of layers within the same box as "Image memory")
+     - Flow: Primarily horizontal from "Input feature" to "Image memory" and then to "Image adapter" with connections indicating adding and shifting between elements.
+
+2. **Bottom Layer:**
+   - **Processing and Output Components**:
+     - Left: "3D memory" (visualized as a 3D cube structure)
+     - Centered within a box: A computational grid where "project" directs flow from "3D memory," and "aggregate/densify" indicates processing.
+     - Right within the same box: "3D to 2D adapter" (2D grid representation)
+     - Flow: Horizontal from "3D memory" to the grid representation and then to the "3D to 2D adapter."
+
+3. **Flow and Connections:**
+   - The overall flow exhibits a combination of horizontal (left-to-right) and internal vertical movements (within the "Image memory" and processing grids).
+   - The flow is structured into distinct pathways showing input, transformation, projection, and final adaptation processes.
+
+4. **Groupings and Layers:**
+   - Two main groupings:
+     - **Top grouping** combines "Input feature," "Image memory," and "Image adapter."
+     - **Bottom grouping** combines "3D memory," processing grid, and "3D to 2D adapter."
+
+The diagram effectively presents components in a coherent spatial layout with clear process flows and organized modular groupings for logical operation transitions.

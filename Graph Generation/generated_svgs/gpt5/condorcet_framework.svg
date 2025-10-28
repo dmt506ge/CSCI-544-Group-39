@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#333"/>
+    </marker>
+    <style>
+      .main { font-family: Arial, sans-serif; font-size: 15px; fill: #222; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; }
+      .dashed { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+
+  <!-- Layer backgrounds -->
+  <rect x="20" y="60" width="1360" height="120" fill="#f5f5f5" rx="6"/>
+  <rect x="20" y="340" width="1360" height="310" fill="#f5f5f5" rx="6"/>
+
+  <!-- Layer titles -->
+  <text x="40" y="50" class="main" font-weight="bold">Test time training</text>
+  <text x="40" y="330" class="main" font-weight="bold">Inference</text>
+
+  <!-- Top layer: modules -->
+  <rect x="60" y="80" width="140" height="60" fill="#bfbfbf" stroke="#666" rx="6"/>
+  <text x="130" y="115" class="main" text-anchor="middle">Prompt</text>
+
+  <rect x="260" y="80" width="160" height="60" fill="#4f83ff" stroke="#2d5bd1" rx="6"/>
+  <text x="340" y="115" class="main" text-anchor="middle">LLM</text>
+
+  <rect x="460" y="80" width="180" height="60" fill="#5cb85c" stroke="#3d8f3d" rx="6"/>
+  <text x="550" y="115" class="main" text-anchor="middle">Set of answers</text>
+
+  <rect x="680" y="80" width="230" height="60" fill="#5cb85c" stroke="#3d8f3d" rx="6"/>
+  <text x="795" y="115" class="main" text-anchor="middle">Compute empirical probabilities</text>
+
+  <rect x="940" y="80" width="230" height="60" fill="#5cb85c" stroke="#3d8f3d" rx="6"/>
+  <text x="1055" y="103" class="main" text-anchor="middle">SNR or entropy based</text>
+  <text x="1055" y="123" class="main" text-anchor="middle">reward calculation</text>
+
+  <!-- A calculations sub block below reward -->
+  <rect x="940" y="150" width="230" height="60" fill="#5cb85c" stroke="#3d8f3d" rx="6"/>
+  <text x="1055" y="185" class="main" text-anchor="middle">A calculations</text>
+
+  <!-- Policy update moved to align with A calculations -->
+  <rect x="1220" y="150" width="160" height="60" fill="#5cb85c" stroke="#3d8f3d" rx="6"/>
+  <text x="1300" y="185" class="main" text-anchor="middle">Policy update</text>
+
+  <!-- Top layer: horizontal flow arrows -->
+  <line x1="200" y1="110" x2="260" y2="110" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="420" y1="110" x2="460" y2="110" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="640" y1="110" x2="680" y2="110" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Top layer: vertical and horizontal arrows to A calculations and policy update -->
+  <line x1="870" y1="110" x2="940" y2="110" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="1055" y1="140" x2="1055" y2="150" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="1170" y1="180" x2="1220" y2="180" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Top layer: majority vote label -->
+  <text x="660" y="96" class="label" text-anchor="middle">Majority vote mode</text>
+
+  <!-- Top layer: dashed feedback loops routed above headings -->
+  <!-- LLM to Prompt dashed loop with arrowheads at both ends -->
+  <path d="M340,80 L340,24 L130,24 L130,80" class="dashed" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+  <!-- Policy update back to Prompt dashed loop with arrowheads at both ends and clear anchoring -->
+  <path d="M1220,180 L1220,24 L130,24 L130,80" class="dashed" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+  <text x="720" y="22" class="label" text-anchor="middle">policy optimisation</text>
+
+  <!-- Bottom layer: modules -->
+  <rect x="60" y="360" width="140" height="60" fill="#bfbfbf" stroke="#666" rx="6"/>
+  <text x="130" y="395" class="main" text-anchor="middle">Prompt</text>
+
+  <rect x="260" y="360" width="160" height="60" fill="#4f83ff" stroke="#2d5bd1" rx="6"/>
+  <text x="340" y="395" class="main" text-anchor="middle">LLM</text>
+
+  <rect x="460" y="360" width="180" height="60" fill="#5cb85c" stroke="#3d8f3d" rx="6"/>
+  <text x="550" y="395" class="main" text-anchor="middle">Set of answers</text>
+
+  <rect x="680" y="360" width="230" height="60" fill="#5cb85c" stroke="#3d8f3d" rx="6"/>
+  <text x="795" y="395" class="main" text-anchor="middle">Compute empirical probabilities</text>
+
+  <rect x="680" y="450" width="230" height="60" fill="#f0ad4e" stroke="#c37f1e" rx="6"/>
+  <text x="795" y="475" class="main" text-anchor="middle">Compute SNR for prompt</text>
+  <text x="795" y="495" class="main" text-anchor="middle">difficulty estimation</text>
+
+  <!-- Bottom layer: majority vote label -->
+  <text x="660" y="380" class="label" text-anchor="middle">Majority vote mode</text>
+
+  <!-- MMC container with internals -->
+  <rect x="940" y="340" width="400" height="270" fill="#ffd966" stroke="#c7a23d" rx="10"/>
+  <text x="1140" y="362" class="main" text-anchor="middle" font-weight="bold">MMC stopping criteria</text>
+
+  <!-- MMC prior options -->
+  <rect x="960" y="370" width="180" height="36" fill="#fff2b3" stroke="#c7a23d" rx="6"/>
+  <text x="1050" y="392" class="label" text-anchor="middle">Truncated Beta prior</text>
+
+  <rect x="1150" y="370" width="180" height="36" fill="#fff2b3" stroke="#c7a23d" rx="6"/>
+  <text x="1240" y="392" class="label" text-anchor="middle">Updating plug in prior</text>
+
+  <!-- MMC distinct input node -->
+  <rect x="940" y="462" width="190" height="34" fill="#fff2b3" stroke="#c7a23d" rx="6"/>
+  <text x="1035" y="483" class="label" text-anchor="middle">inputs s f o mode</text>
+
+  <!-- MMC internal modules with split labels -->
+  <rect x="960" y="412" width="180" height="44" fill="#fff2b3" stroke="#c7a23d" rx="6"/>
+  <text x="1050" y="430" class="main" text-anchor="middle">Counts tracker</text>
+  <text x="1050" y="445" class="label" text-anchor="middle">s_n f_n o_n</text>
+
+  <rect x="1150" y="412" width="180" height="44" fill="#fff2b3" stroke="#c7a23d" rx="6"/>
+  <text x="1240" y="430" class="main" text-anchor="middle">rho_run and rho_oth</text>
+  <text x="1240" y="445" class="label" text-anchor="middle">ratio updates</text>
+
+  <rect x="960" y="504" width="180" height="36" fill="#fff2b3" stroke="#c7a23d" rx="6"/>
+  <text x="1050" y="526" class="main" text-anchor="middle">E process run</text>
+
+  <rect x="1150" y="504" width="180" height="36" fill="#fff2b3" stroke="#c7a23d" rx="6"/>
+  <text x="1240" y="526" class="main" text-anchor="middle">E process oth</text>
+
+  <rect x="960" y="546" width="370" height="48" fill="#ffe699" stroke="#c7a23d" rx="6"/>
+  <text x="1145" y="565" class="main" text-anchor="middle">Stopping rule and budget check</text>
+  <text x="1145" y="583" class="label" text-anchor="middle">Certify when e_run &gt;= 1/eps and e_oth &gt;= 1/eps</text>
+
+  <!-- Bottom layer: horizontal flow arrows -->
+  <line x1="200" y1="390" x2="260" y2="390" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="420" y1="390" x2="460" y2="390" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="640" y1="390" x2="680" y2="390" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Bottom layer: LLM self loop for new samples -->
+  <path d="M340,360 L340,330 L420,330 L420,360" class="dashed" marker-end="url(#arrowhead)"/>
+  <text x="405" y="322" class="label" text-anchor="end">generate new sample</text>
+
+  <!-- Bottom layer: down arrow to SNR difficulty -->
+  <line x1="795" y1="420" x2="795" y2="450" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- From compute empirical probabilities to MMC input node with orthogonal entry -->
+  <path d="M910,390 L930,390 L930,479 L940,479" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- MMC internal arrows -->
+  <!-- Priors to ratio updates -->
+  <path d="M1050,406 L1050,434 L1150,434" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M1240,406 L1240,412" class="arrow" marker-end="url(#arrowhead)"/>
+  <!-- Counts to ratio updates -->
+  <path d="M1140,434 L1150,434" class="arrow" marker-end="url(#arrowhead)"/>
+  <!-- Input node to counts tracker -->
+  <path d="M1130,479 L1130,434 L1140,434" class="arrow" marker-end="url(#arrowhead)"/>
+  <!-- Ratio updates to E processes -->
+  <path d="M1240,456 L1240,504" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M1240,456 L1050,456 L1050,504" class="arrow" marker-end="url(#arrowhead)"/>
+  <!-- E processes to stopping rule -->
+  <path d="M1050,540 L1050,546" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M1240,540 L1240,546" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- GO loop back to LLM routed above SNR box, anchored to stopping rule left border -->
+  <path d="M960,570 L930,570 L930,420 L340,420 L340,360" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="910" y="562" class="label">GO</text>
+
+  <!-- STOP to report certified majority -->
+  <rect x="1040" y="604" width="220" height="50" fill="#b97aff" stroke="#7d52b3" rx="6"/>
+  <text x="1150" y="635" class="main" text-anchor="middle">Report certified majority</text>
+  <path d="M1145,594 L1145,604" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="1160" y="600" class="label">STOP</text>
+
+  <!-- ABSTAIN path on budget reached -->
+  <rect x="1260" y="604" width="120" height="54" fill="#d6d6d6" stroke="#8c8c8c" rx="6"/>
+  <text x="1320" y="626" class="main" text-anchor="middle">Abstain</text>
+  <text x="1320" y="644" class="label" text-anchor="middle">budget reached N_budget</text>
+  <path d="M1330,570 L1330,604 L1260,604" class="arrow" marker-end="url(#arrowhead)"/>
+</svg>

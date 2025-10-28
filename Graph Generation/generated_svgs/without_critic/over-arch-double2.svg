@@ -1,0 +1,73 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Top Layer: Temporal Input Module -->
+  <g>
+    <rect x="50" y="50" width="100" height="40" fill="#8FBC8F" />
+    <text x="100" y="75" font-size="14" text-anchor="middle" fill="black">time t</text>
+    <line x1="150" y1="70" x2="200" y2="70" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="50" y="120" width="100" height="40" fill="#8FBC8F" />
+    <text x="100" y="145" font-size="14" text-anchor="middle" fill="black">time t+1</text>
+    <line x1="150" y1="140" x2="200" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  </g>
+
+  <!-- Middle Layer: Backbone and Task Processing -->
+  <g>
+    <rect x="200" y="50" width="150" height="40" fill="#ADD8E6" />
+    <text x="275" y="75" font-size="14" text-anchor="middle" fill="black">RGB-D Backbone</text>
+    <line x1="350" y1="70" x2="400" y2="70" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="400" y="50" width="150" height="40" fill="#F08080" />
+    <text x="475" y="75" font-size="14" text-anchor="middle" fill="black">Task Head</text>
+    <line x1="475" y1="90" x2="475" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="200" y="120" width="150" height="40" fill="#ADD8E6" />
+    <text x="275" y="145" font-size="14" text-anchor="middle" fill="black">RGB-D Backbone</text>
+    <line x1="350" y1="140" x2="400" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="400" y="120" width="150" height="40" fill="#F08080" />
+    <text x="475" y="145" font-size="14" text-anchor="middle" fill="black">Task Head</text>
+    <line x1="475" y1="160" x2="475" y2="210" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  </g>
+
+  <!-- Bottom Layer: Output and Memory Processing -->
+  <g>
+    <rect x="425" y="200" width="100" height="40" fill="#FFD700" />
+    <text x="475" y="225" font-size="14" text-anchor="middle" fill="black">Fusion</text>
+    <line x1="475" y1="240" x2="475" y2="290" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="400" y="290" width="100" height="40" fill="#D8BFD8" />
+    <text x="450" y="315" font-size="14" text-anchor="middle" fill="black">Memory</text>
+    <line x1="500" y1="310" x2="550" y2="310" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="550" y="290" width="100" height="40" fill="#D8BFD8" />
+    <text x="600" y="315" font-size="14" text-anchor="middle" fill="black">Adapter</text>
+    <line x1="600" y1="330" x2="600" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="575" y="380" width="50" height="40" fill="#90EE90" />
+    <text x="600" y="405" font-size="14" text-anchor="middle" fill="black">Output Y</text>
+
+    <rect x="650" y="380" width="50" height="40" fill="#90EE90" />
+    <text x="675" y="405" font-size="14" text-anchor="middle" fill="black">Output O</text>
+  </g>
+
+  <!-- Right Layer: RGB and Pointcloud Processing -->
+  <g>
+    <rect x="500" y="50" width="150" height="40" fill="#FFB6C1" />
+    <text x="575" y="75" font-size="14" text-anchor="middle" fill="black">Image Backbone</text>
+    <line x1="625" y1="70" x2="700" y2="70" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <rect x="500" y="120" width="150" height="40" fill="#FFB6C1" />
+    <text x="575" y="145" font-size="14" text-anchor="middle" fill="black">Pointcloud Backbone</text>
+    <line x1="625" y1="140" x2="700" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <line x1="650" y1="70" x2="650" y2="200" stroke="black" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+    <line x1="650" y1="140" x2="650" y2="200" stroke="black" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  </g>
+</svg>

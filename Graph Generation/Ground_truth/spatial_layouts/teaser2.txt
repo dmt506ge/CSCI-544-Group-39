@@ -1,0 +1,28 @@
+Source File: teaser2.pdf
+================================================================================
+
+The diagram follows a left-to-right horizontal architecture with three main sections:
+
+- **Left Section: Online Semantic Segmentation**
+  - **Position**: Left side of the diagram
+  - **Components**: Multiple colored segments within three sets of images
+  - **Flow**: Top to bottom within the section, indicated by curved arrows between images
+
+- **Middle Section: Online Object Detection**
+  - **Position**: Center of the diagram
+  - **Components**: Images with outlined boxes identifying different objects
+  - **Flow**: Top to bottom within the section, with curved arrows indicating progression between images
+
+- **Right Section: Online Instance Segmentation**
+  - **Position**: Right side of the diagram
+  - **Components**: Multiple colored segments within three sets of images, similar to the semantic segmentation
+  - **Flow**: Top to bottom within the section, with curved arrows between images
+
+**Overall Structure**:
+- The diagram has a horizontal arrangement, dividing the visualization into three main conceptual modules.
+- Each section operates independently with its own vertical flow from top to bottom.
+- Arrows within each section indicate the progression or transformation of data/images.
+- There is no direct connection or flow of information between the three main sections, suggesting parallel processing paths.
+
+**Grouping**:
+- Each section represents a distinct stage or method of image processing, grouped by their function (Semantic Segmentation, Object Detection, Instance Segmentation).
