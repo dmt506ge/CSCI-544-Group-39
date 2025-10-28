@@ -201,7 +201,7 @@ results = agent.batch_run(
 )
 ```
 
-## ⚖️ Comparison: OpenAI vs Anthropic
+##  Comparison: OpenAI vs Anthropic
 
 | Feature | OpenAI Version | Anthropic Version |
 |---------|----------------|-------------------|
@@ -267,7 +267,7 @@ Check current pricing:
 - [OpenAI Pricing](https://openai.com/pricing)
 - [Anthropic Pricing](https://www.anthropic.com/pricing)
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 ### API Key Errors
 ```
@@ -318,10 +318,10 @@ pip install -r requirements.txt
 
 ## Security
 
-- ✅ API keys in `.env` (gitignored)
-- ✅ Never commit `.env` file
-- ✅ Use `.env.example` as template
-- ✅ Environment variables in production
+-  API keys in `.env` (gitignored)
+-  Never commit `.env` file
+-  Use `.env.example` as template
+-  Environment variables in production
 
 ## Acknowledgments
 
