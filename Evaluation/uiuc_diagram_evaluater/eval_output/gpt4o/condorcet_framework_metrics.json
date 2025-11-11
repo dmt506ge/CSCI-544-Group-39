@@ -1,0 +1,319 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Prompt"
+      },
+      {
+        "id": "node2",
+        "text": "Sample"
+      },
+      {
+        "id": "node3",
+        "text": "LLM"
+      },
+      {
+        "id": "node4",
+        "text": "Set of Answers"
+      },
+      {
+        "id": "node5",
+        "text": "Compute Empirical Probabilities"
+      },
+      {
+        "id": "node6",
+        "text": "SNR or Entropy-Based Reward Calc."
+      },
+      {
+        "id": "node7",
+        "text": "A Calculations"
+      },
+      {
+        "id": "node8",
+        "text": "Feedback Loop: Generate New Sample"
+      },
+      {
+        "id": "node9",
+        "text": "Compute SNR for Prompt Difficulty"
+      },
+      {
+        "id": "node10",
+        "text": "MMC Stopping Criteria"
+      },
+      {
+        "id": "node11",
+        "text": "GO"
+      },
+      {
+        "id": "node12",
+        "text": "STOP"
+      },
+      {
+        "id": "node13",
+        "text": "Estimate Probability"
+      },
+      {
+        "id": "node14",
+        "text": "Feedback Loop"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node1",
+        "target": "node8"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node9",
+        "target": "node13"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node10",
+        "target": "node12"
+      },
+      {
+        "source": "node1",
+        "target": "node6"
+      },
+      {
+        "source": "node1",
+        "target": "node7"
+      },
+      {
+        "source": "node1",
+        "target": "node12"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node1",
+        "target": "node4"
+      },
+      {
+        "source": "node4",
+        "target": "node11"
+      },
+      {
+        "source": "node3",
+        "target": "node10"
+      },
+      {
+        "source": "node5",
+        "target": "node8"
+      },
+      {
+        "source": "node3",
+        "target": "node8"
+      },
+      {
+        "source": "node4",
+        "target": "node8"
+      },
+      {
+        "source": "node1",
+        "target": "node11"
+      },
+      {
+        "source": "node6",
+        "target": "node7"
+      },
+      {
+        "source": "node10",
+        "target": "node11"
+      },
+      {
+        "source": "node1",
+        "target": "node10"
+      },
+      {
+        "source": "node5",
+        "target": "node10"
+      },
+      {
+        "source": "node1",
+        "target": "node5"
+      },
+      {
+        "source": "node5",
+        "target": "node6"
+      },
+      {
+        "source": "node5",
+        "target": "node7"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node6"
+      },
+      {
+        "source": "node5",
+        "target": "node12"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node3",
+        "target": "node12"
+      },
+      {
+        "source": "node4",
+        "target": "node12"
+      },
+      {
+        "source": "node3",
+        "target": "node7"
+      },
+      {
+        "source": "node4",
+        "target": "node7"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node5",
+        "target": "node11"
+      },
+      {
+        "source": "node3",
+        "target": "node11"
+      },
+      {
+        "source": "node4",
+        "target": "node10"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Start"
+      },
+      {
+        "id": "node2",
+        "text": "Data Collection"
+      },
+      {
+        "id": "node3",
+        "text": "Data Processing"
+      },
+      {
+        "id": "node4",
+        "text": "Analysis"
+      },
+      {
+        "id": "node5",
+        "text": "Results"
+      },
+      {
+        "id": "node6",
+        "text": "Conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node1",
+        "target": "node4"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node1",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node5",
+        "target": "node6"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node6"
+      },
+      {
+        "source": "node1",
+        "target": "node6"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node1": "node1",
+      "node2": "node2"
+    },
+    "scores": {
+      "precision": 0.14285714285714285,
+      "recall": 0.3333333333333333,
+      "f1": 0.2
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [],
+    "scores": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "generated_path": "..\\evaluate_png\\gpt4o\\condorcet_framework.png",
+  "reference_path": "..\\ground_png\\condorcet_framework.png"
+}

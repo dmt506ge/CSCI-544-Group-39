@@ -1,0 +1,762 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Memory-Based Adapter Architecture for Online 3D Perception"
+      },
+      {
+        "id": "node2",
+        "text": "RGB Image\nTime t\n(Current Frame)"
+      },
+      {
+        "id": "node3",
+        "text": "RGB Image\nTime t+1\n(Next Frame)"
+      },
+      {
+        "id": "node4",
+        "text": "Image Backbone\nResNet/U-Net\n(Time t)"
+      },
+      {
+        "id": "node5",
+        "text": "Image Backbone\nResNet/U-Net\n(Time t+1)"
+      },
+      {
+        "id": "node6",
+        "text": "Image Memory Adapter\nTemporal Feature Aggregation"
+      },
+      {
+        "id": "node7",
+        "text": "Point Cloud\nTime t\n(Current Frame)"
+      },
+      {
+        "id": "node8",
+        "text": "Point Cloud\nTime t+1\n(Next Frame)"
+      },
+      {
+        "id": "node9",
+        "text": "Point Cloud Backbone\nMinkowski-UNet\n(Time t)"
+      },
+      {
+        "id": "node10",
+        "text": "Point Cloud Backbone\nMinkowski-UNet\n(Time t+1)"
+      },
+      {
+        "id": "node11",
+        "text": "Point Cloud Memory/Adapter\nTemporal Feature Aggregation\nTemporal context"
+      },
+      {
+        "id": "node12",
+        "text": "3D-to-2D Adapter\nInter-Modal Temporal Learning\n(Cross-Modal Fusion)\nImage + Point Cloud"
+      },
+      {
+        "id": "node13",
+        "text": "Multi-Modal Fusion\nCombined Image +\nPoint Cloud Features\nwith Temporal Context"
+      },
+      {
+        "id": "node14",
+        "text": "Task Head\n3D Semantic Segmentation\n3D Object Detection\n3D Instance Segmentation"
+      },
+      {
+        "id": "node15",
+        "text": "Output\n3D Scene Understanding"
+      },
+      {
+        "id": "node16",
+        "text": "Image Feature Memory Bank\n(Cached Image Features)"
+      },
+      {
+        "id": "node17",
+        "text": "Point Cloud Memory Bank\n(Cached 3D Features)"
+      },
+      {
+        "id": "node18",
+        "text": "Image Processing Pathway"
+      },
+      {
+        "id": "node19",
+        "text": "Point Cloud Processing Pathway"
+      },
+      {
+        "id": "node20",
+        "text": "Solid lines: Single-frame operations\nDashed lines: Temporal operations across frames (feature caching and temporal context sharing)"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node9",
+        "target": "node14"
+      },
+      {
+        "source": "node3",
+        "target": "node14"
+      },
+      {
+        "source": "node8",
+        "target": "node13"
+      },
+      {
+        "source": "node5",
+        "target": "node13"
+      },
+      {
+        "source": "node6",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node12"
+      },
+      {
+        "source": "node9",
+        "target": "node12"
+      },
+      {
+        "source": "node10",
+        "target": "node15"
+      },
+      {
+        "source": "node2",
+        "target": "node13"
+      },
+      {
+        "source": "node7",
+        "target": "node11"
+      },
+      {
+        "source": "node11",
+        "target": "node13"
+      },
+      {
+        "source": "node4",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node7",
+        "target": "node15"
+      },
+      {
+        "source": "node4",
+        "target": "node6"
+      },
+      {
+        "source": "node10",
+        "target": "node13"
+      },
+      {
+        "source": "node6",
+        "target": "node13"
+      },
+      {
+        "source": "node13",
+        "target": "node15"
+      },
+      {
+        "source": "node8",
+        "target": "node14"
+      },
+      {
+        "source": "node8",
+        "target": "node12"
+      },
+      {
+        "source": "node5",
+        "target": "node12"
+      },
+      {
+        "source": "node12",
+        "target": "node15"
+      },
+      {
+        "source": "node5",
+        "target": "node14"
+      },
+      {
+        "source": "node2",
+        "target": "node12"
+      },
+      {
+        "source": "node4",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node14"
+      },
+      {
+        "source": "node11",
+        "target": "node12"
+      },
+      {
+        "source": "node11",
+        "target": "node14"
+      },
+      {
+        "source": "node8",
+        "target": "node10"
+      },
+      {
+        "source": "node9",
+        "target": "node11"
+      },
+      {
+        "source": "node7",
+        "target": "node13"
+      },
+      {
+        "source": "node10",
+        "target": "node12"
+      },
+      {
+        "source": "node9",
+        "target": "node15"
+      },
+      {
+        "source": "node6",
+        "target": "node12"
+      },
+      {
+        "source": "node10",
+        "target": "node14"
+      },
+      {
+        "source": "node12",
+        "target": "node13"
+      },
+      {
+        "source": "node3",
+        "target": "node15"
+      },
+      {
+        "source": "node6",
+        "target": "node14"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node14"
+      },
+      {
+        "source": "node4",
+        "target": "node12"
+      },
+      {
+        "source": "node7",
+        "target": "node14"
+      },
+      {
+        "source": "node8",
+        "target": "node11"
+      },
+      {
+        "source": "node7",
+        "target": "node12"
+      },
+      {
+        "source": "node3",
+        "target": "node13"
+      },
+      {
+        "source": "node13",
+        "target": "node14"
+      },
+      {
+        "source": "node9",
+        "target": "node13"
+      },
+      {
+        "source": "node8",
+        "target": "node15"
+      },
+      {
+        "source": "node12",
+        "target": "node14"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node5",
+        "target": "node15"
+      },
+      {
+        "source": "node2",
+        "target": "node15"
+      },
+      {
+        "source": "node10",
+        "target": "node11"
+      },
+      {
+        "source": "node11",
+        "target": "node15"
+      },
+      {
+        "source": "node5",
+        "target": "node6"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node14",
+        "target": "node15"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "input t-1"
+      },
+      {
+        "id": "node2",
+        "text": "Image Backbone"
+      },
+      {
+        "id": "node3",
+        "text": "Detailed"
+      },
+      {
+        "id": "node4",
+        "text": "3D-2D-adapter"
+      },
+      {
+        "id": "node5",
+        "text": "I-memory"
+      },
+      {
+        "id": "node6",
+        "text": "I-adapter"
+      },
+      {
+        "id": "node7",
+        "text": "Task Head"
+      },
+      {
+        "id": "node8",
+        "text": "Fusion"
+      },
+      {
+        "id": "node9",
+        "text": "result t-1"
+      },
+      {
+        "id": "node10",
+        "text": "input t"
+      },
+      {
+        "id": "node11",
+        "text": "Pointcloud Backbone"
+      },
+      {
+        "id": "node12",
+        "text": "Detailed"
+      },
+      {
+        "id": "node13",
+        "text": "P-memory"
+      },
+      {
+        "id": "node14",
+        "text": "P-adapter"
+      },
+      {
+        "id": "node15",
+        "text": "3D-2D-adapter"
+      },
+      {
+        "id": "node16",
+        "text": "result t"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node8",
+        "target": "node16"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node3",
+        "target": "node14"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node13",
+        "target": "node7"
+      },
+      {
+        "source": "node5",
+        "target": "node16"
+      },
+      {
+        "source": "node13",
+        "target": "node8"
+      },
+      {
+        "source": "node13",
+        "target": "node9"
+      },
+      {
+        "source": "node2",
+        "target": "node16"
+      },
+      {
+        "source": "node11",
+        "target": "node13"
+      },
+      {
+        "source": "node1",
+        "target": "node7"
+      },
+      {
+        "source": "node1",
+        "target": "node8"
+      },
+      {
+        "source": "node1",
+        "target": "node9"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node11",
+        "target": "node16"
+      },
+      {
+        "source": "node12",
+        "target": "node7"
+      },
+      {
+        "source": "node12",
+        "target": "node8"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node12",
+        "target": "node9"
+      },
+      {
+        "source": "node14",
+        "target": "node16"
+      },
+      {
+        "source": "node4",
+        "target": "node6"
+      },
+      {
+        "source": "node10",
+        "target": "node13"
+      },
+      {
+        "source": "node10",
+        "target": "node16"
+      },
+      {
+        "source": "node6",
+        "target": "node16"
+      },
+      {
+        "source": "node12",
+        "target": "node4"
+      },
+      {
+        "source": "node3",
+        "target": "node7"
+      },
+      {
+        "source": "node4",
+        "target": "node16"
+      },
+      {
+        "source": "node3",
+        "target": "node9"
+      },
+      {
+        "source": "node4",
+        "target": "node13"
+      },
+      {
+        "source": "node3",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node16"
+      },
+      {
+        "source": "node1",
+        "target": "node6"
+      },
+      {
+        "source": "node11",
+        "target": "node14"
+      },
+      {
+        "source": "node12",
+        "target": "node5"
+      },
+      {
+        "source": "node12",
+        "target": "node6"
+      },
+      {
+        "source": "node13",
+        "target": "node16"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node12",
+        "target": "node13"
+      },
+      {
+        "source": "node10",
+        "target": "node14"
+      },
+      {
+        "source": "node1",
+        "target": "node16"
+      },
+      {
+        "source": "node12",
+        "target": "node16"
+      },
+      {
+        "source": "node8",
+        "target": "node9"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node14"
+      },
+      {
+        "source": "node5",
+        "target": "node7"
+      },
+      {
+        "source": "node4",
+        "target": "node9"
+      },
+      {
+        "source": "node5",
+        "target": "node8"
+      },
+      {
+        "source": "node5",
+        "target": "node9"
+      },
+      {
+        "source": "node2",
+        "target": "node7"
+      },
+      {
+        "source": "node2",
+        "target": "node9"
+      },
+      {
+        "source": "node11",
+        "target": "node7"
+      },
+      {
+        "source": "node11",
+        "target": "node8"
+      },
+      {
+        "source": "node11",
+        "target": "node9"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node8"
+      },
+      {
+        "source": "node3",
+        "target": "node13"
+      },
+      {
+        "source": "node3",
+        "target": "node16"
+      },
+      {
+        "source": "node13",
+        "target": "node14"
+      },
+      {
+        "source": "node14",
+        "target": "node7"
+      },
+      {
+        "source": "node14",
+        "target": "node9"
+      },
+      {
+        "source": "node12",
+        "target": "node14"
+      },
+      {
+        "source": "node10",
+        "target": "node7"
+      },
+      {
+        "source": "node14",
+        "target": "node8"
+      },
+      {
+        "source": "node6",
+        "target": "node7"
+      },
+      {
+        "source": "node10",
+        "target": "node9"
+      },
+      {
+        "source": "node6",
+        "target": "node9"
+      },
+      {
+        "source": "node10",
+        "target": "node8"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node10",
+        "target": "node11"
+      },
+      {
+        "source": "node4",
+        "target": "node7"
+      },
+      {
+        "source": "node5",
+        "target": "node6"
+      },
+      {
+        "source": "node1",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node8"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node4": "node2",
+      "node9": "node11",
+      "node12": "node4",
+      "node14": "node7",
+      "node13": "node8",
+      "node16": "node5",
+      "node17": "node13",
+      "node15": "node16"
+    },
+    "scores": {
+      "precision": 0.4,
+      "recall": 0.5,
+      "f1": 0.4444444444444445
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [
+      [
+        "node11",
+        "node16"
+      ],
+      [
+        "node11",
+        "node7"
+      ],
+      [
+        "node11",
+        "node8"
+      ],
+      [
+        "node2",
+        "node16"
+      ],
+      [
+        "node2",
+        "node7"
+      ],
+      [
+        "node2",
+        "node8"
+      ],
+      [
+        "node4",
+        "node16"
+      ],
+      [
+        "node4",
+        "node7"
+      ],
+      [
+        "node4",
+        "node8"
+      ],
+      [
+        "node7",
+        "node16"
+      ],
+      [
+        "node8",
+        "node16"
+      ]
+    ],
+    "scores": {
+      "precision": 0.7857142857142857,
+      "recall": 0.14666666666666667,
+      "f1": 0.24719101123595508
+    }
+  },
+  "generated_path": "..\\evaluate_png\\claude\\over-arch-double2.png",
+  "reference_path": "..\\ground_png\\over-arch-double2.png"
+}

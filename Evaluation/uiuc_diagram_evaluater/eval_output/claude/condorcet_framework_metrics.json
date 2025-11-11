@@ -1,0 +1,650 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Test-time training"
+      },
+      {
+        "id": "node2",
+        "text": "Training: Adapt terminal distribution via SNR/entropy rewards"
+      },
+      {
+        "id": "node3",
+        "text": "Inference"
+      },
+      {
+        "id": "node4",
+        "text": "Inference: Sequential sampling with MMC certification"
+      },
+      {
+        "id": "node5",
+        "text": "Prompt"
+      },
+      {
+        "id": "node6",
+        "text": "LLM"
+      },
+      {
+        "id": "node7",
+        "text": "Set of answers Majority Voting/Mode Estimation"
+      },
+      {
+        "id": "node8",
+        "text": "Compute e-values Beta/Plug-in priors (theta^*, lambda^*)"
+      },
+      {
+        "id": "node9",
+        "text": "SNR or entropy-based reward calculation"
+      },
+      {
+        "id": "node10",
+        "text": "Gradient calculations"
+      },
+      {
+        "id": "node11",
+        "text": "Prompt"
+      },
+      {
+        "id": "node12",
+        "text": "LLM n=1,2,..."
+      },
+      {
+        "id": "node13",
+        "text": "Set of answers Majority Voting/Mode Estimation"
+      },
+      {
+        "id": "node14",
+        "text": "Compute e-values Truncated Beta Prior OR Updating Plug-in Prior"
+      },
+      {
+        "id": "node15",
+        "text": "MMC Stopping Criteria e^run_n (top-2 test) A_n vs. B_n o^oth_n (others test) others vs. top-2 STOP if both e^run_n < \u03f5/run"
+      },
+      {
+        "id": "node16",
+        "text": "Budget Check ABSTAIN if N > N_budget"
+      },
+      {
+        "id": "node17",
+        "text": "Estimate probability"
+      },
+      {
+        "id": "node18",
+        "text": "Compute SNR for prompt difficulty estimation (monitoring only)"
+      },
+      {
+        "id": "node19",
+        "text": "Roll-out (inference) Go/No-Go (partial steps i.o.a, i.o.a, t.o.g.) Top-2: A_n (1st), B_n (2nd), others"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node14",
+        "target": "node16"
+      },
+      {
+        "source": "node8",
+        "target": "node13"
+      },
+      {
+        "source": "node8",
+        "target": "node11"
+      },
+      {
+        "source": "node6",
+        "target": "node14"
+      },
+      {
+        "source": "node8",
+        "target": "node14"
+      },
+      {
+        "source": "node5",
+        "target": "node19"
+      },
+      {
+        "source": "node5",
+        "target": "node15"
+      },
+      {
+        "source": "node11",
+        "target": "node13"
+      },
+      {
+        "source": "node5",
+        "target": "node11"
+      },
+      {
+        "source": "node5",
+        "target": "node12"
+      },
+      {
+        "source": "node5",
+        "target": "node18"
+      },
+      {
+        "source": "node11",
+        "target": "node14"
+      },
+      {
+        "source": "node12",
+        "target": "node19"
+      },
+      {
+        "source": "node5",
+        "target": "node6"
+      },
+      {
+        "source": "node5",
+        "target": "node10"
+      },
+      {
+        "source": "node12",
+        "target": "node15"
+      },
+      {
+        "source": "node12",
+        "target": "node18"
+      },
+      {
+        "source": "node6",
+        "target": "node7"
+      },
+      {
+        "source": "node12",
+        "target": "node17"
+      },
+      {
+        "source": "node13",
+        "target": "node19"
+      },
+      {
+        "source": "node5",
+        "target": "node13"
+      },
+      {
+        "source": "node12",
+        "target": "node16"
+      },
+      {
+        "source": "node13",
+        "target": "node15"
+      },
+      {
+        "source": "node6",
+        "target": "node9"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node7",
+        "target": "node19"
+      },
+      {
+        "source": "node5",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node15"
+      },
+      {
+        "source": "node13",
+        "target": "node18"
+      },
+      {
+        "source": "node5",
+        "target": "node14"
+      },
+      {
+        "source": "node13",
+        "target": "node17"
+      },
+      {
+        "source": "node7",
+        "target": "node18"
+      },
+      {
+        "source": "node13",
+        "target": "node16"
+      },
+      {
+        "source": "node12",
+        "target": "node13"
+      },
+      {
+        "source": "node6",
+        "target": "node17"
+      },
+      {
+        "source": "node7",
+        "target": "node17"
+      },
+      {
+        "source": "node6",
+        "target": "node16"
+      },
+      {
+        "source": "node7",
+        "target": "node16"
+      },
+      {
+        "source": "node7",
+        "target": "node10"
+      },
+      {
+        "source": "node12",
+        "target": "node14"
+      },
+      {
+        "source": "node9",
+        "target": "node10"
+      },
+      {
+        "source": "node6",
+        "target": "node19"
+      },
+      {
+        "source": "node6",
+        "target": "node15"
+      },
+      {
+        "source": "node7",
+        "target": "node13"
+      },
+      {
+        "source": "node11",
+        "target": "node17"
+      },
+      {
+        "source": "node11",
+        "target": "node16"
+      },
+      {
+        "source": "node8",
+        "target": "node9"
+      },
+      {
+        "source": "node8",
+        "target": "node19"
+      },
+      {
+        "source": "node6",
+        "target": "node11"
+      },
+      {
+        "source": "node13",
+        "target": "node14"
+      },
+      {
+        "source": "node7",
+        "target": "node11"
+      },
+      {
+        "source": "node5",
+        "target": "node7"
+      },
+      {
+        "source": "node6",
+        "target": "node12"
+      },
+      {
+        "source": "node8",
+        "target": "node15"
+      },
+      {
+        "source": "node7",
+        "target": "node12"
+      },
+      {
+        "source": "node15",
+        "target": "node17"
+      },
+      {
+        "source": "node15",
+        "target": "node16"
+      },
+      {
+        "source": "node6",
+        "target": "node18"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node14"
+      },
+      {
+        "source": "node8",
+        "target": "node12"
+      },
+      {
+        "source": "node8",
+        "target": "node18"
+      },
+      {
+        "source": "node5",
+        "target": "node9"
+      },
+      {
+        "source": "node8",
+        "target": "node17"
+      },
+      {
+        "source": "node11",
+        "target": "node19"
+      },
+      {
+        "source": "node14",
+        "target": "node19"
+      },
+      {
+        "source": "node6",
+        "target": "node10"
+      },
+      {
+        "source": "node8",
+        "target": "node16"
+      },
+      {
+        "source": "node11",
+        "target": "node15"
+      },
+      {
+        "source": "node14",
+        "target": "node15"
+      },
+      {
+        "source": "node15",
+        "target": "node19"
+      },
+      {
+        "source": "node8",
+        "target": "node10"
+      },
+      {
+        "source": "node11",
+        "target": "node12"
+      },
+      {
+        "source": "node11",
+        "target": "node18"
+      },
+      {
+        "source": "node14",
+        "target": "node18"
+      },
+      {
+        "source": "node5",
+        "target": "node17"
+      },
+      {
+        "source": "node6",
+        "target": "node13"
+      },
+      {
+        "source": "node5",
+        "target": "node16"
+      },
+      {
+        "source": "node14",
+        "target": "node17"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Problem Observation"
+      },
+      {
+        "id": "node2",
+        "text": "Research Question"
+      },
+      {
+        "id": "node3",
+        "text": "Literature Review"
+      },
+      {
+        "id": "node4",
+        "text": "Hypothesis"
+      },
+      {
+        "id": "node5",
+        "text": "Research Methodology"
+      },
+      {
+        "id": "node6",
+        "text": "Data Collection"
+      },
+      {
+        "id": "node7",
+        "text": "Data Analysis"
+      },
+      {
+        "id": "node8",
+        "text": "Results"
+      },
+      {
+        "id": "node9",
+        "text": "Conclusion"
+      },
+      {
+        "id": "node10",
+        "text": "Recommendations"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node4",
+        "target": "node8"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node3",
+        "target": "node10"
+      },
+      {
+        "source": "node5",
+        "target": "node7"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node2",
+        "target": "node10"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node5",
+        "target": "node6"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node5",
+        "target": "node10"
+      },
+      {
+        "source": "node4",
+        "target": "node7"
+      },
+      {
+        "source": "node3",
+        "target": "node9"
+      },
+      {
+        "source": "node1",
+        "target": "node4"
+      },
+      {
+        "source": "node2",
+        "target": "node9"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node4",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node1",
+        "target": "node8"
+      },
+      {
+        "source": "node5",
+        "target": "node9"
+      },
+      {
+        "source": "node6",
+        "target": "node7"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node7",
+        "target": "node10"
+      },
+      {
+        "source": "node6",
+        "target": "node10"
+      },
+      {
+        "source": "node1",
+        "target": "node7"
+      },
+      {
+        "source": "node4",
+        "target": "node9"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node9",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node1",
+        "target": "node5"
+      },
+      {
+        "source": "node1",
+        "target": "node6"
+      },
+      {
+        "source": "node1",
+        "target": "node10"
+      },
+      {
+        "source": "node3",
+        "target": "node8"
+      },
+      {
+        "source": "node8",
+        "target": "node10"
+      },
+      {
+        "source": "node6",
+        "target": "node9"
+      },
+      {
+        "source": "node2",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node5",
+        "target": "node8"
+      },
+      {
+        "source": "node8",
+        "target": "node9"
+      },
+      {
+        "source": "node1",
+        "target": "node9"
+      },
+      {
+        "source": "node3",
+        "target": "node7"
+      },
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node2",
+        "target": "node7"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node6": "node6"
+    },
+    "scores": {
+      "precision": 0.05263157894736842,
+      "recall": 0.1,
+      "f1": 0.06896551724137931
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [],
+    "scores": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "generated_path": "..\\evaluate_png\\claude\\condorcet_framework.png",
+  "reference_path": "..\\ground_png\\condorcet_framework.png"
+}

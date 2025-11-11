@@ -1,0 +1,475 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Server Interaction"
+      },
+      {
+        "id": "node2",
+        "text": "Server Aggregation"
+      },
+      {
+        "id": "node3",
+        "text": "Global item embedding (C)"
+      },
+      {
+        "id": "node4",
+        "text": "Server aggregates models"
+      },
+      {
+        "id": "node5",
+        "text": "Personalization"
+      },
+      {
+        "id": "node6",
+        "text": "Enforce Difference"
+      },
+      {
+        "id": "node7",
+        "text": "Difference enforced to personalize"
+      },
+      {
+        "id": "node8",
+        "text": "Local item embedding (Di)"
+      },
+      {
+        "id": "node9",
+        "text": "User embedding (ui)"
+      },
+      {
+        "id": "node10",
+        "text": "Reconstruction Error"
+      },
+      {
+        "id": "node11",
+        "text": "User ratings (ri)"
+      },
+      {
+        "id": "node12",
+        "text": "Compute Loss"
+      },
+      {
+        "id": "node13",
+        "text": "Predicted user ratings (ri_hat)"
+      },
+      {
+        "id": "node14",
+        "text": "Loss computed for optimization"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node6",
+        "target": "node9"
+      },
+      {
+        "source": "node8",
+        "target": "node14"
+      },
+      {
+        "source": "node7",
+        "target": "node13"
+      },
+      {
+        "source": "node12",
+        "target": "node14"
+      },
+      {
+        "source": "node11",
+        "target": "node14"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node13",
+        "target": "node14"
+      },
+      {
+        "source": "node9",
+        "target": "node14"
+      },
+      {
+        "source": "node8",
+        "target": "node12"
+      },
+      {
+        "source": "node6",
+        "target": "node14"
+      },
+      {
+        "source": "node11",
+        "target": "node12"
+      },
+      {
+        "source": "node7",
+        "target": "node14"
+      },
+      {
+        "source": "node9",
+        "target": "node12"
+      },
+      {
+        "source": "node13",
+        "target": "node12"
+      },
+      {
+        "source": "node8",
+        "target": "node13"
+      },
+      {
+        "source": "node6",
+        "target": "node12"
+      },
+      {
+        "source": "node8",
+        "target": "node9"
+      },
+      {
+        "source": "node9",
+        "target": "node13"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node12"
+      },
+      {
+        "source": "node6",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Server Aggregation"
+      },
+      {
+        "id": "node2",
+        "text": "C"
+      },
+      {
+        "id": "node3",
+        "text": "Enforce Difference"
+      },
+      {
+        "id": "node4",
+        "text": "D(i)"
+      },
+      {
+        "id": "node5",
+        "text": "Additive Personalization"
+      },
+      {
+        "id": "node6",
+        "text": "ui"
+      },
+      {
+        "id": "node7",
+        "text": "Enforce Sparsity"
+      },
+      {
+        "id": "node8",
+        "text": "ri"
+      },
+      {
+        "id": "node9",
+        "text": "Compute Loss"
+      },
+      {
+        "id": "node10",
+        "text": "r\u0302i"
+      },
+      {
+        "id": "node11",
+        "text": "Reconstruction Error"
+      },
+      {
+        "id": "node12",
+        "text": "Client i"
+      },
+      {
+        "id": "node13",
+        "text": "Legend"
+      },
+      {
+        "id": "node14",
+        "text": "ri: User ratings"
+      },
+      {
+        "id": "node15",
+        "text": "r\u0302i: Predicted user ratings"
+      },
+      {
+        "id": "node16",
+        "text": "ui: User embedding"
+      },
+      {
+        "id": "node17",
+        "text": "D(i): Local item embedding"
+      },
+      {
+        "id": "node18",
+        "text": "C: Global item embedding"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node5",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node6",
+        "target": "node9"
+      },
+      {
+        "source": "node2",
+        "target": "node7"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node9",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node8"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node6",
+        "target": "node10"
+      },
+      {
+        "source": "node1",
+        "target": "node4"
+      },
+      {
+        "source": "node5",
+        "target": "node7"
+      },
+      {
+        "source": "node5",
+        "target": "node9"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node9"
+      },
+      {
+        "source": "node5",
+        "target": "node10"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node3",
+        "target": "node11"
+      },
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node1",
+        "target": "node5"
+      },
+      {
+        "source": "node7",
+        "target": "node10"
+      },
+      {
+        "source": "node8",
+        "target": "node11"
+      },
+      {
+        "source": "node1",
+        "target": "node11"
+      },
+      {
+        "source": "node4",
+        "target": "node11"
+      },
+      {
+        "source": "node2",
+        "target": "node10"
+      },
+      {
+        "source": "node3",
+        "target": "node7"
+      },
+      {
+        "source": "node3",
+        "target": "node8"
+      },
+      {
+        "source": "node4",
+        "target": "node7"
+      },
+      {
+        "source": "node1",
+        "target": "node7"
+      },
+      {
+        "source": "node4",
+        "target": "node8"
+      },
+      {
+        "source": "node1",
+        "target": "node8"
+      },
+      {
+        "source": "node9",
+        "target": "node11"
+      },
+      {
+        "source": "node6",
+        "target": "node5"
+      },
+      {
+        "source": "node3",
+        "target": "node9"
+      },
+      {
+        "source": "node6",
+        "target": "node11"
+      },
+      {
+        "source": "node10",
+        "target": "node11"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node8",
+        "target": "node9"
+      },
+      {
+        "source": "node1",
+        "target": "node9"
+      },
+      {
+        "source": "node4",
+        "target": "node9"
+      },
+      {
+        "source": "node6",
+        "target": "node7"
+      },
+      {
+        "source": "node3",
+        "target": "node10"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node8",
+        "target": "node10"
+      },
+      {
+        "source": "node5",
+        "target": "node11"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node4",
+        "target": "node10"
+      },
+      {
+        "source": "node7",
+        "target": "node11"
+      },
+      {
+        "source": "node1",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node11"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node2": "node1",
+      "node3": "node18",
+      "node6": "node3",
+      "node8": "node17",
+      "node9": "node6",
+      "node10": "node11",
+      "node11": "node14",
+      "node12": "node9",
+      "node13": "node15"
+    },
+    "scores": {
+      "precision": 0.6428571428571429,
+      "recall": 0.5,
+      "f1": 0.5625000000000001
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [
+      [
+        "node3",
+        "node9"
+      ],
+      [
+        "node6",
+        "node9"
+      ]
+    ],
+    "scores": {
+      "precision": 0.16666666666666666,
+      "recall": 0.0392156862745098,
+      "f1": 0.06349206349206349
+    }
+  },
+  "generated_path": "..\\evaluate_png\\gpt4o\\new-framework.png",
+  "reference_path": "..\\ground_png\\new-framework.png"
+}

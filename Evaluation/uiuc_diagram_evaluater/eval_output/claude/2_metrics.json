@@ -1,0 +1,582 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Holistic Instance Segmentation and Tracking Framework"
+      },
+      {
+        "id": "node2",
+        "text": "Video Frame\nt=0\nH x W x 3"
+      },
+      {
+        "id": "node3",
+        "text": "Video Frame\nt=1\nH x W x 3"
+      },
+      {
+        "id": "node4",
+        "text": "Video Frame\nt=N\nH x W x 3"
+      },
+      {
+        "id": "node5",
+        "text": "Deep Recurrent Network (RSHN)\nOutput: H x W x C"
+      },
+      {
+        "id": "node6",
+        "text": "Deep Recurrent Network (RSHN)\nOutput: H x W x C"
+      },
+      {
+        "id": "node7",
+        "text": "Deep Recurrent Network (RSHN)\nOutput: H x W x C"
+      },
+      {
+        "id": "node8",
+        "text": "Pixel-wise Embedding\nH x W x D space\nUnified representation"
+      },
+      {
+        "id": "node9",
+        "text": "Pixel-wise Embedding\nH x W x D space\nUnified representation"
+      },
+      {
+        "id": "node10",
+        "text": "Pixel-wise Embedding\nH x W x D space\nUnified representation"
+      },
+      {
+        "id": "node11",
+        "text": "Faster Mean-shift Clustering\nGPU\nPlug-and-play replacement\n7-10x speedup"
+      },
+      {
+        "id": "node12",
+        "text": "Faster Mean-shift Clustering\nGPU\nPlug-and-play replacement\n7-10x speedup"
+      },
+      {
+        "id": "node13",
+        "text": "Faster Mean-shift Clustering\nGPU\nPlug-and-play replacement\n7-10x speedup"
+      },
+      {
+        "id": "node14",
+        "text": "Segmentation and Tracking\nOutput t=0\nH x W masks\nInstance masks with tracking IDs"
+      },
+      {
+        "id": "node15",
+        "text": "Segmentation and Tracking\nOutput t=1\nH x W masks\nInstance masks with tracking IDs"
+      },
+      {
+        "id": "node16",
+        "text": "Segmentation and Tracking\nOutput t=N\nH x W masks\nInstance masks with tracking IDs"
+      },
+      {
+        "id": "node17",
+        "text": "Real-time processing enabled"
+      },
+      {
+        "id": "node18",
+        "text": "Vertical flow: data processing pipeline | Horizontal flow: temporal continuity\nGPU acceleration enables real-time performance"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node4",
+        "target": "node10"
+      },
+      {
+        "source": "node5",
+        "target": "node8"
+      },
+      {
+        "source": "node4",
+        "target": "node8"
+      },
+      {
+        "source": "node3",
+        "target": "node14"
+      },
+      {
+        "source": "node4",
+        "target": "node6"
+      },
+      {
+        "source": "node6",
+        "target": "node9"
+      },
+      {
+        "source": "node7",
+        "target": "node11"
+      },
+      {
+        "source": "node7",
+        "target": "node15"
+      },
+      {
+        "source": "node2",
+        "target": "node11"
+      },
+      {
+        "source": "node3",
+        "target": "node8"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node7"
+      },
+      {
+        "source": "node4",
+        "target": "node16"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node10",
+        "target": "node16"
+      },
+      {
+        "source": "node4",
+        "target": "node13"
+      },
+      {
+        "source": "node4",
+        "target": "node12"
+      },
+      {
+        "source": "node6",
+        "target": "node11"
+      },
+      {
+        "source": "node6",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node8",
+        "target": "node11"
+      },
+      {
+        "source": "node9",
+        "target": "node12"
+      },
+      {
+        "source": "node7",
+        "target": "node14"
+      },
+      {
+        "source": "node2",
+        "target": "node14"
+      },
+      {
+        "source": "node3",
+        "target": "node12"
+      },
+      {
+        "source": "node4",
+        "target": "node9"
+      },
+      {
+        "source": "node6",
+        "target": "node5"
+      },
+      {
+        "source": "node7",
+        "target": "node6"
+      },
+      {
+        "source": "node7",
+        "target": "node10"
+      },
+      {
+        "source": "node6",
+        "target": "node14"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node8",
+        "target": "node14"
+      },
+      {
+        "source": "node2",
+        "target": "node8"
+      },
+      {
+        "source": "node11",
+        "target": "node14"
+      },
+      {
+        "source": "node3",
+        "target": "node9"
+      },
+      {
+        "source": "node13",
+        "target": "node16"
+      },
+      {
+        "source": "node5",
+        "target": "node11"
+      },
+      {
+        "source": "node4",
+        "target": "node11"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node5"
+      },
+      {
+        "source": "node7",
+        "target": "node16"
+      },
+      {
+        "source": "node4",
+        "target": "node15"
+      },
+      {
+        "source": "node7",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node7",
+        "target": "node12"
+      },
+      {
+        "source": "node9",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node11"
+      },
+      {
+        "source": "node12",
+        "target": "node15"
+      },
+      {
+        "source": "node5",
+        "target": "node14"
+      },
+      {
+        "source": "node4",
+        "target": "node14"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node10",
+        "target": "node13"
+      },
+      {
+        "source": "node6",
+        "target": "node12"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Video Frames"
+      },
+      {
+        "id": "node2",
+        "text": "t=0"
+      },
+      {
+        "id": "node3",
+        "text": "t=1"
+      },
+      {
+        "id": "node4",
+        "text": "t=N"
+      },
+      {
+        "id": "node5",
+        "text": "Deep Recurrent Network"
+      },
+      {
+        "id": "node6",
+        "text": "RSHN"
+      },
+      {
+        "id": "node7",
+        "text": "RSHN"
+      },
+      {
+        "id": "node8",
+        "text": "RSHN"
+      },
+      {
+        "id": "node9",
+        "text": "Pixel-wise Embedding"
+      },
+      {
+        "id": "node10",
+        "text": "[a_11  a_12  \u2026  a_1n\n a_21  a_22  \u2026  a_2n\n \u2026\n a_m1  a_m2  \u2026  a_mn]"
+      },
+      {
+        "id": "node11",
+        "text": "[a_11  a_12  \u2026  a_1n\n a_21  a_22  \u2026  a_2n\n \u2026\n a_m1  a_m2  \u2026  a_mn]"
+      },
+      {
+        "id": "node12",
+        "text": "[a_11  a_12  \u2026  a_1n\n a_21  a_22  \u2026  a_2n\n \u2026\n a_m1  a_m2  \u2026  a_mn]"
+      },
+      {
+        "id": "node13",
+        "text": "Mean-shift Clustering"
+      },
+      {
+        "id": "node14",
+        "text": "Faster Mean-shift"
+      },
+      {
+        "id": "node15",
+        "text": "Faster Mean-shift"
+      },
+      {
+        "id": "node16",
+        "text": "Faster Mean-shift"
+      },
+      {
+        "id": "node17",
+        "text": "Output"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node8",
+        "target": "node16"
+      },
+      {
+        "source": "node8",
+        "target": "node12"
+      },
+      {
+        "source": "node4",
+        "target": "node8"
+      },
+      {
+        "source": "node3",
+        "target": "node17"
+      },
+      {
+        "source": "node12",
+        "target": "node17"
+      },
+      {
+        "source": "node15",
+        "target": "node17"
+      },
+      {
+        "source": "node7",
+        "target": "node11"
+      },
+      {
+        "source": "node7",
+        "target": "node15"
+      },
+      {
+        "source": "node1",
+        "target": "node14"
+      },
+      {
+        "source": "node1",
+        "target": "node17"
+      },
+      {
+        "source": "node4",
+        "target": "node16"
+      },
+      {
+        "source": "node1",
+        "target": "node6"
+      },
+      {
+        "source": "node1",
+        "target": "node10"
+      },
+      {
+        "source": "node4",
+        "target": "node12"
+      },
+      {
+        "source": "node1",
+        "target": "node8"
+      },
+      {
+        "source": "node16",
+        "target": "node17"
+      },
+      {
+        "source": "node12",
+        "target": "node16"
+      },
+      {
+        "source": "node3",
+        "target": "node7"
+      },
+      {
+        "source": "node7",
+        "target": "node17"
+      },
+      {
+        "source": "node11",
+        "target": "node15"
+      },
+      {
+        "source": "node2",
+        "target": "node14"
+      },
+      {
+        "source": "node1",
+        "target": "node4"
+      },
+      {
+        "source": "node2",
+        "target": "node17"
+      },
+      {
+        "source": "node14",
+        "target": "node17"
+      },
+      {
+        "source": "node1",
+        "target": "node16"
+      },
+      {
+        "source": "node1",
+        "target": "node7"
+      },
+      {
+        "source": "node6",
+        "target": "node14"
+      },
+      {
+        "source": "node6",
+        "target": "node17"
+      },
+      {
+        "source": "node2",
+        "target": "node10"
+      },
+      {
+        "source": "node1",
+        "target": "node12"
+      },
+      {
+        "source": "node10",
+        "target": "node14"
+      },
+      {
+        "source": "node10",
+        "target": "node17"
+      },
+      {
+        "source": "node8",
+        "target": "node17"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node11",
+        "target": "node17"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node6",
+        "target": "node10"
+      },
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node3",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node11"
+      },
+      {
+        "source": "node1",
+        "target": "node11"
+      },
+      {
+        "source": "node4",
+        "target": "node17"
+      },
+      {
+        "source": "node1",
+        "target": "node15"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node1": "node17",
+      "node2": "node2",
+      "node3": "node3",
+      "node4": "node4",
+      "node8": "node9",
+      "node11": "node14",
+      "node12": "node15",
+      "node13": "node16"
+    },
+    "scores": {
+      "precision": 0.4444444444444444,
+      "recall": 0.47058823529411764,
+      "f1": 0.45714285714285713
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [
+      [
+        "node2",
+        "node14"
+      ],
+      [
+        "node3",
+        "node15"
+      ],
+      [
+        "node4",
+        "node16"
+      ]
+    ],
+    "scores": {
+      "precision": 0.3,
+      "recall": 0.06976744186046512,
+      "f1": 0.11320754716981132
+    }
+  },
+  "generated_path": "..\\evaluate_png\\2.png",
+  "reference_path": "..\\ground_png\\2.png"
+}

@@ -1,0 +1,533 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Masked Autoencoder (MAE) Architecture"
+      },
+      {
+        "id": "node2",
+        "text": "Input Image"
+      },
+      {
+        "id": "node3",
+        "text": "Reconstruction Target"
+      },
+      {
+        "id": "node4",
+        "text": "Processes 25% of patches\n3x faster than full image"
+      },
+      {
+        "id": "node5",
+        "text": "Processes all tokens\nReconstructs complete image"
+      },
+      {
+        "id": "node6",
+        "text": "Encoder\n(Lightweight)"
+      },
+      {
+        "id": "node7",
+        "text": "Patch Embedding\n+ Pos. Encoding"
+      },
+      {
+        "id": "node8",
+        "text": "Transformer Blocks\nCross-Attention\nSelf-Attention"
+      },
+      {
+        "id": "node9",
+        "text": "Deep Blocks\n(fewer layers)"
+      },
+      {
+        "id": "node10",
+        "text": "Latent\nRepresentations"
+      },
+      {
+        "id": "node11",
+        "text": "Learned Features\nfrom visible patches"
+      },
+      {
+        "id": "node12",
+        "text": "Decoder\n(Heavier - more layers)"
+      },
+      {
+        "id": "node13",
+        "text": "Token Fusion\n+ Pos. Encoding"
+      },
+      {
+        "id": "node14",
+        "text": "Transformer\nMulti-Head\nSelf-Attention"
+      },
+      {
+        "id": "node15",
+        "text": "Reconstruction Blocks\n(deeper processing)\n(more layers)"
+      },
+      {
+        "id": "node16",
+        "text": "Pixel Predictor\nfor all patches"
+      },
+      {
+        "id": "node17",
+        "text": "Full Image Output"
+      },
+      {
+        "id": "node18",
+        "text": "Complete Reconstruction\n(visible + masked patches)"
+      },
+      {
+        "id": "node19",
+        "text": "Loss Computation\nMSE on masked patches only\nSelf-supervised learning objective\nLearns holistic semantic representations"
+      },
+      {
+        "id": "node20",
+        "text": "latent representations\ncombined with\nmask tokens\n(learned embeddings)"
+      },
+      {
+        "id": "node21",
+        "text": "predicted pixels\nfor all patches"
+      },
+      {
+        "id": "node22",
+        "text": "Random masking: 75% ratio\nOnly 25% visible patches processed"
+      },
+      {
+        "id": "node23",
+        "text": "visible patches\nwith positional\nembeddings"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node17",
+        "target": "node19"
+      },
+      {
+        "source": "node13",
+        "target": "node15"
+      },
+      {
+        "source": "node20",
+        "target": "node8"
+      },
+      {
+        "source": "node15",
+        "target": "node19"
+      },
+      {
+        "source": "node14",
+        "target": "node15"
+      },
+      {
+        "source": "node14",
+        "target": "node16"
+      },
+      {
+        "source": "node23",
+        "target": "node15"
+      },
+      {
+        "source": "node17",
+        "target": "node18"
+      },
+      {
+        "source": "node13",
+        "target": "node17"
+      },
+      {
+        "source": "node2",
+        "target": "node8"
+      },
+      {
+        "source": "node18",
+        "target": "node19"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node7",
+        "target": "node16"
+      },
+      {
+        "source": "node13",
+        "target": "node19"
+      },
+      {
+        "source": "node23",
+        "target": "node17"
+      },
+      {
+        "source": "node2",
+        "target": "node10"
+      },
+      {
+        "source": "node14",
+        "target": "node19"
+      },
+      {
+        "source": "node20",
+        "target": "node16"
+      },
+      {
+        "source": "node10",
+        "target": "node16"
+      },
+      {
+        "source": "node23",
+        "target": "node20"
+      },
+      {
+        "source": "node8",
+        "target": "node15"
+      },
+      {
+        "source": "node15",
+        "target": "node17"
+      },
+      {
+        "source": "node23",
+        "target": "node19"
+      },
+      {
+        "source": "node13",
+        "target": "node18"
+      },
+      {
+        "source": "node2",
+        "target": "node7"
+      },
+      {
+        "source": "node14",
+        "target": "node18"
+      },
+      {
+        "source": "node7",
+        "target": "node19"
+      },
+      {
+        "source": "node2",
+        "target": "node9"
+      },
+      {
+        "source": "node8",
+        "target": "node17"
+      },
+      {
+        "source": "node23",
+        "target": "node18"
+      },
+      {
+        "source": "node13",
+        "target": "node8"
+      },
+      {
+        "source": "node9",
+        "target": "node16"
+      },
+      {
+        "source": "node10",
+        "target": "node19"
+      },
+      {
+        "source": "node8",
+        "target": "node19"
+      },
+      {
+        "source": "node15",
+        "target": "node18"
+      },
+      {
+        "source": "node23",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node15"
+      },
+      {
+        "source": "node14",
+        "target": "node17"
+      },
+      {
+        "source": "node14",
+        "target": "node20"
+      },
+      {
+        "source": "node8",
+        "target": "node18"
+      },
+      {
+        "source": "node20",
+        "target": "node15"
+      },
+      {
+        "source": "node10",
+        "target": "node15"
+      },
+      {
+        "source": "node23",
+        "target": "node10"
+      },
+      {
+        "source": "node16",
+        "target": "node19"
+      },
+      {
+        "source": "node9",
+        "target": "node19"
+      },
+      {
+        "source": "node23",
+        "target": "node13"
+      },
+      {
+        "source": "node7",
+        "target": "node17"
+      },
+      {
+        "source": "node23",
+        "target": "node14"
+      },
+      {
+        "source": "node7",
+        "target": "node20"
+      },
+      {
+        "source": "node23",
+        "target": "node7"
+      },
+      {
+        "source": "node2",
+        "target": "node15"
+      },
+      {
+        "source": "node10",
+        "target": "node17"
+      },
+      {
+        "source": "node2",
+        "target": "node16"
+      },
+      {
+        "source": "node10",
+        "target": "node20"
+      },
+      {
+        "source": "node9",
+        "target": "node15"
+      },
+      {
+        "source": "node20",
+        "target": "node19"
+      },
+      {
+        "source": "node14",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node18"
+      },
+      {
+        "source": "node2",
+        "target": "node20"
+      },
+      {
+        "source": "node16",
+        "target": "node17"
+      },
+      {
+        "source": "node9",
+        "target": "node17"
+      },
+      {
+        "source": "node20",
+        "target": "node18"
+      },
+      {
+        "source": "node14",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node19"
+      },
+      {
+        "source": "node10",
+        "target": "node18"
+      },
+      {
+        "source": "node14",
+        "target": "node13"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node9",
+        "target": "node20"
+      },
+      {
+        "source": "node10",
+        "target": "node8"
+      },
+      {
+        "source": "node2",
+        "target": "node18"
+      },
+      {
+        "source": "node7",
+        "target": "node10"
+      },
+      {
+        "source": "node13",
+        "target": "node16"
+      },
+      {
+        "source": "node7",
+        "target": "node13"
+      },
+      {
+        "source": "node14",
+        "target": "node9"
+      },
+      {
+        "source": "node20",
+        "target": "node17"
+      },
+      {
+        "source": "node16",
+        "target": "node18"
+      },
+      {
+        "source": "node9",
+        "target": "node18"
+      },
+      {
+        "source": "node7",
+        "target": "node14"
+      },
+      {
+        "source": "node23",
+        "target": "node9"
+      },
+      {
+        "source": "node23",
+        "target": "node16"
+      },
+      {
+        "source": "node20",
+        "target": "node13"
+      },
+      {
+        "source": "node10",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node17"
+      },
+      {
+        "source": "node15",
+        "target": "node16"
+      },
+      {
+        "source": "node9",
+        "target": "node8"
+      },
+      {
+        "source": "node2",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node23"
+      },
+      {
+        "source": "node8",
+        "target": "node16"
+      },
+      {
+        "source": "node9",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node14"
+      },
+      {
+        "source": "node9",
+        "target": "node13"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "input"
+      },
+      {
+        "id": "node2",
+        "text": "encoder"
+      },
+      {
+        "id": "node3",
+        "text": "decoder"
+      },
+      {
+        "id": "node4",
+        "text": "target"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node1",
+        "target": "node4"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node2": "node1",
+      "node6": "node2",
+      "node12": "node3",
+      "node3": "node4"
+    },
+    "scores": {
+      "precision": 0.17391304347826086,
+      "recall": 1.0,
+      "f1": 0.29629629629629634
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [],
+    "scores": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "generated_path": "..\\evaluate_png\\claude\\mae.png",
+  "reference_path": "..\\ground_png\\mae.png"
+}

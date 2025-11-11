@@ -1,0 +1,1159 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Observation"
+      },
+      {
+        "id": "node2",
+        "text": "z_theta"
+      },
+      {
+        "id": "node3",
+        "text": "Statics Propagation\nBEV features"
+      },
+      {
+        "id": "node4",
+        "text": "b_hat"
+      },
+      {
+        "id": "node5",
+        "text": "b1"
+      },
+      {
+        "id": "node6",
+        "text": "x1"
+      },
+      {
+        "id": "node7",
+        "text": "Dynamics Memory"
+      },
+      {
+        "id": "node8",
+        "text": "Dynamic memory bank with interaction"
+      },
+      {
+        "id": "node9",
+        "text": "y_hat1"
+      },
+      {
+        "id": "node10",
+        "text": "l_theta"
+      },
+      {
+        "id": "node11",
+        "text": "z_1"
+      },
+      {
+        "id": "node12",
+        "text": "m_theta"
+      },
+      {
+        "id": "node13",
+        "text": "y_hat_T"
+      },
+      {
+        "id": "node14",
+        "text": "f_theta"
+      },
+      {
+        "id": "node15",
+        "text": "h1"
+      },
+      {
+        "id": "node16",
+        "text": "h_T"
+      },
+      {
+        "id": "node17",
+        "text": "mu_theta, sigma_theta\nprior"
+      },
+      {
+        "id": "node18",
+        "text": "s1"
+      },
+      {
+        "id": "node19",
+        "text": "mu_phi, sigma_phi\nposterior"
+      },
+      {
+        "id": "node20",
+        "text": "MLN"
+      },
+      {
+        "id": "node21",
+        "text": "s1_T"
+      },
+      {
+        "id": "node22",
+        "text": "h_Tplus1"
+      },
+      {
+        "id": "node23",
+        "text": "pi_theta"
+      },
+      {
+        "id": "node24",
+        "text": "mu_theta, sigma_theta\nprior"
+      },
+      {
+        "id": "node25",
+        "text": "a_hat_T"
+      },
+      {
+        "id": "node26",
+        "text": "s_Tplus1"
+      },
+      {
+        "id": "node27",
+        "text": "mu_phi, sigma_phi\nposterior"
+      },
+      {
+        "id": "node28",
+        "text": "MLN"
+      },
+      {
+        "id": "node29",
+        "text": "y_hat_Tplus1"
+      },
+      {
+        "id": "node30",
+        "text": "Temporal aware path via MLN and memory, Spatial aware path via BEV static propagation"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node3",
+        "target": "node14"
+      },
+      {
+        "source": "node2",
+        "target": "node25"
+      },
+      {
+        "source": "node11",
+        "target": "node30"
+      },
+      {
+        "source": "node21",
+        "target": "node22"
+      },
+      {
+        "source": "node27",
+        "target": "node30"
+      },
+      {
+        "source": "node16",
+        "target": "node22"
+      },
+      {
+        "source": "node22",
+        "target": "node30"
+      },
+      {
+        "source": "node11",
+        "target": "node28"
+      },
+      {
+        "source": "node4",
+        "target": "node20"
+      },
+      {
+        "source": "node15",
+        "target": "node23"
+      },
+      {
+        "source": "node12",
+        "target": "node29"
+      },
+      {
+        "source": "node2",
+        "target": "node19"
+      },
+      {
+        "source": "node27",
+        "target": "node28"
+      },
+      {
+        "source": "node11",
+        "target": "node14"
+      },
+      {
+        "source": "node19",
+        "target": "node20"
+      },
+      {
+        "source": "node4",
+        "target": "node11"
+      },
+      {
+        "source": "node2",
+        "target": "node23"
+      },
+      {
+        "source": "node15",
+        "target": "node30"
+      },
+      {
+        "source": "node4",
+        "target": "node29"
+      },
+      {
+        "source": "node15",
+        "target": "node28"
+      },
+      {
+        "source": "node4",
+        "target": "node22"
+      },
+      {
+        "source": "node23",
+        "target": "node28"
+      },
+      {
+        "source": "node15",
+        "target": "node14"
+      },
+      {
+        "source": "node26",
+        "target": "node23"
+      },
+      {
+        "source": "node2",
+        "target": "node30"
+      },
+      {
+        "source": "node24",
+        "target": "node23"
+      },
+      {
+        "source": "node2",
+        "target": "node12"
+      },
+      {
+        "source": "node2",
+        "target": "node28"
+      },
+      {
+        "source": "node28",
+        "target": "node29"
+      },
+      {
+        "source": "node2",
+        "target": "node14"
+      },
+      {
+        "source": "node12",
+        "target": "node16"
+      },
+      {
+        "source": "node26",
+        "target": "node30"
+      },
+      {
+        "source": "node24",
+        "target": "node30"
+      },
+      {
+        "source": "node26",
+        "target": "node27"
+      },
+      {
+        "source": "node26",
+        "target": "node28"
+      },
+      {
+        "source": "node3",
+        "target": "node21"
+      },
+      {
+        "source": "node25",
+        "target": "node29"
+      },
+      {
+        "source": "node4",
+        "target": "node16"
+      },
+      {
+        "source": "node25",
+        "target": "node22"
+      },
+      {
+        "source": "node14",
+        "target": "node22"
+      },
+      {
+        "source": "node11",
+        "target": "node21"
+      },
+      {
+        "source": "node3",
+        "target": "node20"
+      },
+      {
+        "source": "node21",
+        "target": "node19"
+      },
+      {
+        "source": "node16",
+        "target": "node19"
+      },
+      {
+        "source": "node3",
+        "target": "node11"
+      },
+      {
+        "source": "node11",
+        "target": "node20"
+      },
+      {
+        "source": "node26",
+        "target": "node25"
+      },
+      {
+        "source": "node12",
+        "target": "node22"
+      },
+      {
+        "source": "node16",
+        "target": "node17"
+      },
+      {
+        "source": "node21",
+        "target": "node23"
+      },
+      {
+        "source": "node24",
+        "target": "node25"
+      },
+      {
+        "source": "node3",
+        "target": "node29"
+      },
+      {
+        "source": "node15",
+        "target": "node21"
+      },
+      {
+        "source": "node16",
+        "target": "node23"
+      },
+      {
+        "source": "node3",
+        "target": "node22"
+      },
+      {
+        "source": "node26",
+        "target": "node24"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node2",
+        "target": "node21"
+      },
+      {
+        "source": "node11",
+        "target": "node29"
+      },
+      {
+        "source": "node21",
+        "target": "node30"
+      },
+      {
+        "source": "node29",
+        "target": "node30"
+      },
+      {
+        "source": "node16",
+        "target": "node30"
+      },
+      {
+        "source": "node4",
+        "target": "node19"
+      },
+      {
+        "source": "node15",
+        "target": "node20"
+      },
+      {
+        "source": "node11",
+        "target": "node22"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node21",
+        "target": "node28"
+      },
+      {
+        "source": "node16",
+        "target": "node28"
+      },
+      {
+        "source": "node4",
+        "target": "node17"
+      },
+      {
+        "source": "node16",
+        "target": "node14"
+      },
+      {
+        "source": "node4",
+        "target": "node23"
+      },
+      {
+        "source": "node2",
+        "target": "node20"
+      },
+      {
+        "source": "node28",
+        "target": "node22"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node15",
+        "target": "node29"
+      },
+      {
+        "source": "node23",
+        "target": "node29"
+      },
+      {
+        "source": "node3",
+        "target": "node16"
+      },
+      {
+        "source": "node4",
+        "target": "node30"
+      },
+      {
+        "source": "node23",
+        "target": "node22"
+      },
+      {
+        "source": "node2",
+        "target": "node11"
+      },
+      {
+        "source": "node24",
+        "target": "node28"
+      },
+      {
+        "source": "node2",
+        "target": "node29"
+      },
+      {
+        "source": "node11",
+        "target": "node16"
+      },
+      {
+        "source": "node12",
+        "target": "node15"
+      },
+      {
+        "source": "node14",
+        "target": "node19"
+      },
+      {
+        "source": "node21",
+        "target": "node25"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node16",
+        "target": "node25"
+      },
+      {
+        "source": "node26",
+        "target": "node29"
+      },
+      {
+        "source": "node4",
+        "target": "node10"
+      },
+      {
+        "source": "node14",
+        "target": "node23"
+      },
+      {
+        "source": "node4",
+        "target": "node15"
+      },
+      {
+        "source": "node15",
+        "target": "node16"
+      },
+      {
+        "source": "node25",
+        "target": "node30"
+      },
+      {
+        "source": "node12",
+        "target": "node19"
+      },
+      {
+        "source": "node14",
+        "target": "node30"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node4",
+        "target": "node25"
+      },
+      {
+        "source": "node14",
+        "target": "node28"
+      },
+      {
+        "source": "node12",
+        "target": "node17"
+      },
+      {
+        "source": "node2",
+        "target": "node16"
+      },
+      {
+        "source": "node3",
+        "target": "node19"
+      },
+      {
+        "source": "node16",
+        "target": "node21"
+      },
+      {
+        "source": "node12",
+        "target": "node23"
+      },
+      {
+        "source": "node3",
+        "target": "node17"
+      },
+      {
+        "source": "node27",
+        "target": "node29"
+      },
+      {
+        "source": "node3",
+        "target": "node23"
+      },
+      {
+        "source": "node22",
+        "target": "node29"
+      },
+      {
+        "source": "node11",
+        "target": "node19"
+      },
+      {
+        "source": "node27",
+        "target": "node22"
+      },
+      {
+        "source": "node12",
+        "target": "node30"
+      },
+      {
+        "source": "node21",
+        "target": "node20"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node16",
+        "target": "node20"
+      },
+      {
+        "source": "node11",
+        "target": "node17"
+      },
+      {
+        "source": "node12",
+        "target": "node28"
+      },
+      {
+        "source": "node3",
+        "target": "node30"
+      },
+      {
+        "source": "node12",
+        "target": "node14"
+      },
+      {
+        "source": "node15",
+        "target": "node22"
+      },
+      {
+        "source": "node14",
+        "target": "node25"
+      },
+      {
+        "source": "node21",
+        "target": "node29"
+      },
+      {
+        "source": "node16",
+        "target": "node29"
+      },
+      {
+        "source": "node4",
+        "target": "node12"
+      },
+      {
+        "source": "node4",
+        "target": "node28"
+      },
+      {
+        "source": "node15",
+        "target": "node17"
+      },
+      {
+        "source": "node4",
+        "target": "node14"
+      },
+      {
+        "source": "node2",
+        "target": "node22"
+      },
+      {
+        "source": "node3",
+        "target": "node10"
+      },
+      {
+        "source": "node28",
+        "target": "node30"
+      },
+      {
+        "source": "node3",
+        "target": "node15"
+      },
+      {
+        "source": "node2",
+        "target": "node17"
+      },
+      {
+        "source": "node24",
+        "target": "node29"
+      },
+      {
+        "source": "node12",
+        "target": "node25"
+      },
+      {
+        "source": "node26",
+        "target": "node22"
+      },
+      {
+        "source": "node23",
+        "target": "node30"
+      },
+      {
+        "source": "node24",
+        "target": "node22"
+      },
+      {
+        "source": "node14",
+        "target": "node21"
+      },
+      {
+        "source": "node11",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node25"
+      },
+      {
+        "source": "node25",
+        "target": "node28"
+      },
+      {
+        "source": "node11",
+        "target": "node25"
+      },
+      {
+        "source": "node14",
+        "target": "node20"
+      },
+      {
+        "source": "node12",
+        "target": "node21"
+      },
+      {
+        "source": "node2",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node15"
+      },
+      {
+        "source": "node14",
+        "target": "node29"
+      },
+      {
+        "source": "node11",
+        "target": "node23"
+      },
+      {
+        "source": "node15",
+        "target": "node25"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node23",
+        "target": "node25"
+      },
+      {
+        "source": "node4",
+        "target": "node21"
+      },
+      {
+        "source": "node12",
+        "target": "node20"
+      },
+      {
+        "source": "node3",
+        "target": "node12"
+      },
+      {
+        "source": "node3",
+        "target": "node28"
+      },
+      {
+        "source": "node15",
+        "target": "node19"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "b\u0302"
+      },
+      {
+        "id": "node2",
+        "text": "z\u03b8"
+      },
+      {
+        "id": "node3",
+        "text": "Statics Propagation"
+      },
+      {
+        "id": "node4",
+        "text": "b'"
+      },
+      {
+        "id": "node5",
+        "text": "s\u2081"
+      },
+      {
+        "id": "node6",
+        "text": "s\u2081"
+      },
+      {
+        "id": "node7",
+        "text": "x\u2081"
+      },
+      {
+        "id": "node8",
+        "text": "b\u2081"
+      },
+      {
+        "id": "node9",
+        "text": "h\u2081"
+      },
+      {
+        "id": "node10",
+        "text": "m\u03b8"
+      },
+      {
+        "id": "node11",
+        "text": "y\u0302\u2081"
+      },
+      {
+        "id": "node12",
+        "text": "\u00e2\u2081"
+      },
+      {
+        "id": "node13",
+        "text": "\u03b8"
+      },
+      {
+        "id": "node14",
+        "text": "\u03bc\u03b8\u2080, \u03c3\u03b8\u2080"
+      },
+      {
+        "id": "node15",
+        "text": "f\u03b8"
+      },
+      {
+        "id": "node16",
+        "text": "MIN"
+      },
+      {
+        "id": "node17",
+        "text": "Dynamics Memory"
+      },
+      {
+        "id": "node18",
+        "text": "a\u209c\u208b\u2081"
+      },
+      {
+        "id": "node19",
+        "text": "x\u209c"
+      },
+      {
+        "id": "node20",
+        "text": "b\u209c"
+      },
+      {
+        "id": "node21",
+        "text": "h\u209c"
+      },
+      {
+        "id": "node22",
+        "text": "m\u03b8"
+      },
+      {
+        "id": "node23",
+        "text": "y\u0302\u209c"
+      },
+      {
+        "id": "node24",
+        "text": "\u00e2\u209c"
+      },
+      {
+        "id": "node25",
+        "text": "\u03b8"
+      },
+      {
+        "id": "node26",
+        "text": "\u03bc\u03b8, \u03c3\u03b8"
+      },
+      {
+        "id": "node27",
+        "text": "f\u03b8"
+      },
+      {
+        "id": "node28",
+        "text": "MIN"
+      },
+      {
+        "id": "node29",
+        "text": "Dynamics Memory"
+      },
+      {
+        "id": "node30",
+        "text": "s\u209c"
+      },
+      {
+        "id": "node31",
+        "text": "b\u209c"
+      },
+      {
+        "id": "node32",
+        "text": "h\u209c\u208a\u2081"
+      },
+      {
+        "id": "node33",
+        "text": "m\u03b8"
+      },
+      {
+        "id": "node34",
+        "text": "y\u0302\u209c\u208a\u2081"
+      },
+      {
+        "id": "node35",
+        "text": "\u00e2\u209c\u208a\u2081"
+      },
+      {
+        "id": "node36",
+        "text": "\u03b8"
+      },
+      {
+        "id": "node37",
+        "text": "\u03bc\u03b8, \u03c3\u03b8"
+      },
+      {
+        "id": "node38",
+        "text": "s\u209c\u208a\u2081"
+      },
+      {
+        "id": "node39",
+        "text": "Observation"
+      },
+      {
+        "id": "node40",
+        "text": "Prediction"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node17",
+        "target": "node23"
+      },
+      {
+        "source": "node5",
+        "target": "node16"
+      },
+      {
+        "source": "node21",
+        "target": "node22"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node3",
+        "target": "node8"
+      },
+      {
+        "source": "node9",
+        "target": "node16"
+      },
+      {
+        "source": "node4",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node5",
+        "target": "node12"
+      },
+      {
+        "source": "node29",
+        "target": "node33"
+      },
+      {
+        "source": "node33",
+        "target": "node35"
+      },
+      {
+        "source": "node17",
+        "target": "node21"
+      },
+      {
+        "source": "node9",
+        "target": "node12"
+      },
+      {
+        "source": "node19",
+        "target": "node20"
+      },
+      {
+        "source": "node32",
+        "target": "node33"
+      },
+      {
+        "source": "node21",
+        "target": "node24"
+      },
+      {
+        "source": "node9",
+        "target": "node14"
+      },
+      {
+        "source": "node5",
+        "target": "node14"
+      },
+      {
+        "source": "node17",
+        "target": "node28"
+      },
+      {
+        "source": "node21",
+        "target": "node23"
+      },
+      {
+        "source": "node14",
+        "target": "node16"
+      },
+      {
+        "source": "node9",
+        "target": "node10"
+      },
+      {
+        "source": "node5",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node29",
+        "target": "node30"
+      },
+      {
+        "source": "node9",
+        "target": "node11"
+      },
+      {
+        "source": "node10",
+        "target": "node12"
+      },
+      {
+        "source": "node5",
+        "target": "node11"
+      },
+      {
+        "source": "node17",
+        "target": "node18"
+      },
+      {
+        "source": "node29",
+        "target": "node35"
+      },
+      {
+        "source": "node32",
+        "target": "node35"
+      },
+      {
+        "source": "node33",
+        "target": "node34"
+      },
+      {
+        "source": "node5",
+        "target": "node9"
+      },
+      {
+        "source": "node21",
+        "target": "node28"
+      },
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node17",
+        "target": "node26"
+      },
+      {
+        "source": "node2",
+        "target": "node8"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node2",
+        "target": "node1"
+      },
+      {
+        "source": "node26",
+        "target": "node28"
+      },
+      {
+        "source": "node17",
+        "target": "node22"
+      },
+      {
+        "source": "node10",
+        "target": "node11"
+      },
+      {
+        "source": "node1",
+        "target": "node4"
+      },
+      {
+        "source": "node22",
+        "target": "node24"
+      },
+      {
+        "source": "node29",
+        "target": "node34"
+      },
+      {
+        "source": "node32",
+        "target": "node34"
+      },
+      {
+        "source": "node22",
+        "target": "node23"
+      },
+      {
+        "source": "node21",
+        "target": "node26"
+      },
+      {
+        "source": "node29",
+        "target": "node32"
+      },
+      {
+        "source": "node17",
+        "target": "node24"
+      },
+      {
+        "source": "node1",
+        "target": "node8"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node1": "node39",
+      "node2": "node2",
+      "node3": "node3",
+      "node4": "node1",
+      "node8": "node29",
+      "node9": "node11",
+      "node10": "node13",
+      "node12": "node10",
+      "node14": "node15",
+      "node17": "node26",
+      "node20": "node16",
+      "node25": "node35",
+      "node29": "node34"
+    },
+    "scores": {
+      "precision": 0.43333333333333335,
+      "recall": 0.325,
+      "f1": 0.37142857142857144
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [
+      [
+        "node2",
+        "node1"
+      ],
+      [
+        "node2",
+        "node3"
+      ]
+    ],
+    "scores": {
+      "precision": 0.06060606060606061,
+      "recall": 0.0392156862745098,
+      "f1": 0.04761904761904762
+    }
+  },
+  "generated_path": "..\\evaluate_png\\gpt5\\mssm.png",
+  "reference_path": "..\\ground_png\\mssm.png"
+}

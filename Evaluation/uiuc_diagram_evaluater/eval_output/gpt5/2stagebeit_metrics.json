@@ -1,0 +1,635 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Stage 1"
+      },
+      {
+        "id": "node2",
+        "text": "Original Image"
+      },
+      {
+        "id": "node3",
+        "text": "dVAE Tokenizer"
+      },
+      {
+        "id": "node4",
+        "text": "discrete tokens"
+      },
+      {
+        "id": "node5",
+        "text": "11"
+      },
+      {
+        "id": "node6",
+        "text": "45"
+      },
+      {
+        "id": "node7",
+        "text": "87"
+      },
+      {
+        "id": "node8",
+        "text": "23"
+      },
+      {
+        "id": "node9",
+        "text": "64"
+      },
+      {
+        "id": "node10",
+        "text": "dVAE Decoder"
+      },
+      {
+        "id": "node11",
+        "text": "Reconstructed Image"
+      },
+      {
+        "id": "node12",
+        "text": "Stage 2"
+      },
+      {
+        "id": "node13",
+        "text": "Image"
+      },
+      {
+        "id": "node14",
+        "text": "frozen"
+      },
+      {
+        "id": "node15",
+        "text": "reuse"
+      },
+      {
+        "id": "node16",
+        "text": "12"
+      },
+      {
+        "id": "node17",
+        "text": "58"
+      },
+      {
+        "id": "node18",
+        "text": "91"
+      },
+      {
+        "id": "node19",
+        "text": "37"
+      },
+      {
+        "id": "node20",
+        "text": "49"
+      },
+      {
+        "id": "node21",
+        "text": "75"
+      },
+      {
+        "id": "node22",
+        "text": "token targets"
+      },
+      {
+        "id": "node23",
+        "text": "discrete codes"
+      },
+      {
+        "id": "node24",
+        "text": "targets"
+      },
+      {
+        "id": "node25",
+        "text": "Masked Image Modeling Head"
+      },
+      {
+        "id": "node26",
+        "text": "CE loss over tokenizer codes"
+      },
+      {
+        "id": "node27",
+        "text": "BEiT Encoder"
+      },
+      {
+        "id": "node28",
+        "text": "self attention map"
+      },
+      {
+        "id": "node29",
+        "text": "image patches"
+      },
+      {
+        "id": "node30",
+        "text": "masked tokens use MASK placeholder"
+      },
+      {
+        "id": "node31",
+        "text": "unmasked use patch embedding"
+      },
+      {
+        "id": "node32",
+        "text": "patch embedding"
+      },
+      {
+        "id": "node33",
+        "text": "MASK"
+      },
+      {
+        "id": "node34",
+        "text": "p1"
+      },
+      {
+        "id": "node35",
+        "text": "p2"
+      },
+      {
+        "id": "node36",
+        "text": "p3"
+      },
+      {
+        "id": "node37",
+        "text": "p4"
+      },
+      {
+        "id": "node38",
+        "text": "p5"
+      },
+      {
+        "id": "node39",
+        "text": "p6"
+      },
+      {
+        "id": "node40",
+        "text": "p7"
+      },
+      {
+        "id": "node41",
+        "text": "position embedding"
+      },
+      {
+        "id": "node42",
+        "text": "pos0"
+      },
+      {
+        "id": "node43",
+        "text": "pos1"
+      },
+      {
+        "id": "node44",
+        "text": "pos2"
+      },
+      {
+        "id": "node45",
+        "text": "pos3"
+      },
+      {
+        "id": "node46",
+        "text": "pos4"
+      },
+      {
+        "id": "node47",
+        "text": "pos5"
+      },
+      {
+        "id": "node48",
+        "text": "pos6"
+      },
+      {
+        "id": "node49",
+        "text": "pos7"
+      },
+      {
+        "id": "node50",
+        "text": "same image"
+      },
+      {
+        "id": "node51",
+        "text": "Figure fig beit Overview of BEiT pre training"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node10",
+        "target": "node11"
+      },
+      {
+        "source": "node2",
+        "target": "node26"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node22",
+        "target": "node26"
+      },
+      {
+        "source": "node30",
+        "target": "node28"
+      },
+      {
+        "source": "node31",
+        "target": "node28"
+      },
+      {
+        "source": "node13",
+        "target": "node26"
+      },
+      {
+        "source": "node13",
+        "target": "node3"
+      },
+      {
+        "source": "node3",
+        "target": "node26"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      },
+      {
+        "source": "node2",
+        "target": "node22"
+      },
+      {
+        "source": "node29",
+        "target": "node28"
+      },
+      {
+        "source": "node27",
+        "target": "node28"
+      },
+      {
+        "source": "node31",
+        "target": "node27"
+      },
+      {
+        "source": "node30",
+        "target": "node27"
+      },
+      {
+        "source": "node2",
+        "target": "node25"
+      },
+      {
+        "source": "node13",
+        "target": "node22"
+      },
+      {
+        "source": "node41",
+        "target": "node28"
+      },
+      {
+        "source": "node2",
+        "target": "node11"
+      },
+      {
+        "source": "node22",
+        "target": "node25"
+      },
+      {
+        "source": "node13",
+        "target": "node25"
+      },
+      {
+        "source": "node3",
+        "target": "node22"
+      },
+      {
+        "source": "node2",
+        "target": "node10"
+      },
+      {
+        "source": "node13",
+        "target": "node11"
+      },
+      {
+        "source": "node29",
+        "target": "node27"
+      },
+      {
+        "source": "node3",
+        "target": "node11"
+      },
+      {
+        "source": "node3",
+        "target": "node25"
+      },
+      {
+        "source": "node13",
+        "target": "node10"
+      },
+      {
+        "source": "node3",
+        "target": "node10"
+      },
+      {
+        "source": "node25",
+        "target": "node26"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node41",
+        "target": "node27"
+      },
+      {
+        "source": "node4",
+        "target": "node11"
+      },
+      {
+        "source": "node13",
+        "target": "node4"
+      },
+      {
+        "source": "node4",
+        "target": "node10"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Stage 1"
+      },
+      {
+        "id": "node2",
+        "text": "Original Image"
+      },
+      {
+        "id": "node3",
+        "text": "Tokenizer"
+      },
+      {
+        "id": "node4",
+        "text": "Decoder"
+      },
+      {
+        "id": "node5",
+        "text": "Reconstructed Image"
+      },
+      {
+        "id": "node6",
+        "text": "123 234 456 567\n987 876 765 543\n112 223 334 445\n211 322 433 544"
+      },
+      {
+        "id": "node7",
+        "text": "Stage 2"
+      },
+      {
+        "id": "node8",
+        "text": "123 234 567"
+      },
+      {
+        "id": "node9",
+        "text": "987 543"
+      },
+      {
+        "id": "node10",
+        "text": "122 223 334 445"
+      },
+      {
+        "id": "node11",
+        "text": "211 433 544"
+      },
+      {
+        "id": "node12",
+        "text": "Masked Image Modeling Head"
+      },
+      {
+        "id": "node13",
+        "text": "h3"
+      },
+      {
+        "id": "node14",
+        "text": "h6"
+      },
+      {
+        "id": "node15",
+        "text": "h12"
+      },
+      {
+        "id": "node16",
+        "text": "h14"
+      },
+      {
+        "id": "node17",
+        "text": "BEiT Encoder"
+      },
+      {
+        "id": "node18",
+        "text": "Flatten\n[S] [M] [M] [M] [M]"
+      },
+      {
+        "id": "node19",
+        "text": "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16"
+      },
+      {
+        "id": "node20",
+        "text": "Position Embedding"
+      },
+      {
+        "id": "node21",
+        "text": "Patch Embedding"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node20",
+        "target": "node17"
+      },
+      {
+        "source": "node6",
+        "target": "node5"
+      },
+      {
+        "source": "node21",
+        "target": "node14"
+      },
+      {
+        "source": "node18",
+        "target": "node14"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node19",
+        "target": "node20"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node3",
+        "target": "node5"
+      },
+      {
+        "source": "node3",
+        "target": "node6"
+      },
+      {
+        "source": "node9",
+        "target": "node12"
+      },
+      {
+        "source": "node21",
+        "target": "node13"
+      },
+      {
+        "source": "node18",
+        "target": "node13"
+      },
+      {
+        "source": "node19",
+        "target": "node14"
+      },
+      {
+        "source": "node21",
+        "target": "node16"
+      },
+      {
+        "source": "node17",
+        "target": "node14"
+      },
+      {
+        "source": "node18",
+        "target": "node16"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node21",
+        "target": "node15"
+      },
+      {
+        "source": "node18",
+        "target": "node15"
+      },
+      {
+        "source": "node8",
+        "target": "node12"
+      },
+      {
+        "source": "node19",
+        "target": "node13"
+      },
+      {
+        "source": "node17",
+        "target": "node13"
+      },
+      {
+        "source": "node21",
+        "target": "node17"
+      },
+      {
+        "source": "node18",
+        "target": "node17"
+      },
+      {
+        "source": "node20",
+        "target": "node14"
+      },
+      {
+        "source": "node10",
+        "target": "node12"
+      },
+      {
+        "source": "node19",
+        "target": "node16"
+      },
+      {
+        "source": "node19",
+        "target": "node15"
+      },
+      {
+        "source": "node17",
+        "target": "node16"
+      },
+      {
+        "source": "node6",
+        "target": "node4"
+      },
+      {
+        "source": "node17",
+        "target": "node15"
+      },
+      {
+        "source": "node11",
+        "target": "node12"
+      },
+      {
+        "source": "node20",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node4"
+      },
+      {
+        "source": "node20",
+        "target": "node16"
+      },
+      {
+        "source": "node19",
+        "target": "node17"
+      },
+      {
+        "source": "node20",
+        "target": "node15"
+      },
+      {
+        "source": "node3",
+        "target": "node4"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node1": "node1",
+      "node2": "node2",
+      "node5": "node6",
+      "node12": "node7",
+      "node11": "node5",
+      "node25": "node12",
+      "node27": "node17",
+      "node41": "node20",
+      "node32": "node21"
+    },
+    "scores": {
+      "precision": 0.17647058823529413,
+      "recall": 0.42857142857142855,
+      "f1": 0.25
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [
+      [
+        "node2",
+        "node5"
+      ],
+      [
+        "node20",
+        "node17"
+      ]
+    ],
+    "scores": {
+      "precision": 0.6666666666666666,
+      "recall": 0.05128205128205128,
+      "f1": 0.09523809523809523
+    }
+  },
+  "generated_path": "..\\evaluate_png\\gpt5\\2stagebeit.png",
+  "reference_path": "..\\ground_png\\2stagebeit.png"
+}

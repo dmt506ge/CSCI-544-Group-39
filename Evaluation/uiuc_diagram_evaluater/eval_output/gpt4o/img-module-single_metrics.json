@@ -1,0 +1,343 @@
+{
+  "generated_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Input Feature"
+      },
+      {
+        "id": "node2",
+        "text": "Image Memory\nReorganize\nAdd & Shift\nTemporal Agg."
+      },
+      {
+        "id": "node3",
+        "text": "Image Adapter\nIntegrate"
+      },
+      {
+        "id": "node4",
+        "text": "3D Memory\nStores Temporal Context"
+      },
+      {
+        "id": "node5",
+        "text": "Processing Grid\nProject\nAggregate\nEnhance"
+      },
+      {
+        "id": "node6",
+        "text": "3D to 2D Adapter\nAdapt 3D to 2D"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node5"
+      },
+      {
+        "source": "node4",
+        "target": "node6"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node1",
+        "target": "node5"
+      },
+      {
+        "source": "node1",
+        "target": "node6"
+      },
+      {
+        "source": "node5",
+        "target": "node6"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      }
+    ]
+  },
+  "reference_graph": {
+    "nodes": [
+      {
+        "id": "node1",
+        "text": "Input feature"
+      },
+      {
+        "id": "node2",
+        "text": "Image memory"
+      },
+      {
+        "id": "node3",
+        "text": "Image adapter"
+      },
+      {
+        "id": "node4",
+        "text": "3D memory"
+      },
+      {
+        "id": "node5",
+        "text": "3D to 2D adapter"
+      },
+      {
+        "id": "node6",
+        "text": "shift in from memory"
+      },
+      {
+        "id": "node7",
+        "text": "reorganize"
+      },
+      {
+        "id": "node8",
+        "text": "shift"
+      },
+      {
+        "id": "node9",
+        "text": "shift out to memory"
+      },
+      {
+        "id": "node10",
+        "text": "add"
+      },
+      {
+        "id": "node11",
+        "text": "project"
+      },
+      {
+        "id": "node12",
+        "text": "aggregate"
+      },
+      {
+        "id": "node13",
+        "text": "densify"
+      }
+    ],
+    "edges": [
+      {
+        "source": "node12",
+        "target": "node5"
+      },
+      {
+        "source": "node8",
+        "target": "node9"
+      },
+      {
+        "source": "node1",
+        "target": "node9"
+      },
+      {
+        "source": "node13",
+        "target": "node13"
+      },
+      {
+        "source": "node5",
+        "target": "node12"
+      },
+      {
+        "source": "node6",
+        "target": "node3"
+      },
+      {
+        "source": "node2",
+        "target": "node6"
+      },
+      {
+        "source": "node11",
+        "target": "node12"
+      },
+      {
+        "source": "node6",
+        "target": "node6"
+      },
+      {
+        "source": "node4",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node8"
+      },
+      {
+        "source": "node7",
+        "target": "node10"
+      },
+      {
+        "source": "node12",
+        "target": "node12"
+      },
+      {
+        "source": "node2",
+        "target": "node9"
+      },
+      {
+        "source": "node4",
+        "target": "node11"
+      },
+      {
+        "source": "node6",
+        "target": "node9"
+      },
+      {
+        "source": "node6",
+        "target": "node8"
+      },
+      {
+        "source": "node8",
+        "target": "node10"
+      },
+      {
+        "source": "node1",
+        "target": "node10"
+      },
+      {
+        "source": "node13",
+        "target": "node5"
+      },
+      {
+        "source": "node1",
+        "target": "node7"
+      },
+      {
+        "source": "node9",
+        "target": "node10"
+      },
+      {
+        "source": "node2",
+        "target": "node10"
+      },
+      {
+        "source": "node5",
+        "target": "node13"
+      },
+      {
+        "source": "node11",
+        "target": "node13"
+      },
+      {
+        "source": "node2",
+        "target": "node7"
+      },
+      {
+        "source": "node4",
+        "target": "node5"
+      },
+      {
+        "source": "node6",
+        "target": "node10"
+      },
+      {
+        "source": "node13",
+        "target": "node12"
+      },
+      {
+        "source": "node12",
+        "target": "node13"
+      },
+      {
+        "source": "node6",
+        "target": "node7"
+      },
+      {
+        "source": "node1",
+        "target": "node2"
+      },
+      {
+        "source": "node4",
+        "target": "node12"
+      },
+      {
+        "source": "node1",
+        "target": "node3"
+      },
+      {
+        "source": "node6",
+        "target": "node2"
+      },
+      {
+        "source": "node2",
+        "target": "node2"
+      },
+      {
+        "source": "node5",
+        "target": "node5"
+      },
+      {
+        "source": "node7",
+        "target": "node9"
+      },
+      {
+        "source": "node1",
+        "target": "node6"
+      },
+      {
+        "source": "node7",
+        "target": "node8"
+      },
+      {
+        "source": "node11",
+        "target": "node5"
+      },
+      {
+        "source": "node2",
+        "target": "node3"
+      },
+      {
+        "source": "node1",
+        "target": "node8"
+      }
+    ]
+  },
+  "node_alignment": {
+    "matches": {
+      "node1": "node1",
+      "node2": "node2",
+      "node3": "node3",
+      "node4": "node4",
+      "node6": "node5"
+    },
+    "scores": {
+      "precision": 0.8333333333333334,
+      "recall": 0.38461538461538464,
+      "f1": 0.5263157894736842
+    }
+  },
+  "path_alignment": {
+    "matched_paths": [
+      [
+        "node1",
+        "node2"
+      ],
+      [
+        "node1",
+        "node3"
+      ],
+      [
+        "node2",
+        "node3"
+      ],
+      [
+        "node4",
+        "node5"
+      ]
+    ],
+    "scores": {
+      "precision": 0.6666666666666666,
+      "recall": 0.09302325581395349,
+      "f1": 0.16326530612244897
+    }
+  },
+  "generated_path": "..\\evaluate_png\\gpt4o\\img-module-single.png",
+  "reference_path": "..\\ground_png\\img-module-single.png"
+}
