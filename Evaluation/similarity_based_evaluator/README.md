@@ -17,8 +17,9 @@ more details about this embedding model:
 
 ### utilize reranking model and its average result:
 
-[similarity.ipynb](similarity.ipynb)
+[reranker_similarity.ipynb](reranker_similarity.ipynb)
 
 more details about this reranker model: 
 [reranker](https://huggingface.co/BAAI/bge-reranker-v2-minicpm-layerwise)
+
 
