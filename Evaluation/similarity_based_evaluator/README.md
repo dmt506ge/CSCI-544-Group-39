@@ -4,6 +4,9 @@
 
 ![**Pipeline**](./diagram.png)
 
+### data format conversion
+`python data_transform.py`
+
 ### summary generation using gemini:
 
 `python generate_summary.py [model name that used to gen diagram] [gemini api key]`
@@ -21,5 +24,6 @@ more details about this embedding model:
 
 more details about this reranker model: 
 [reranker](https://huggingface.co/BAAI/bge-reranker-v2-minicpm-layerwise)
+
 
 
